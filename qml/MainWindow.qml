@@ -1,46 +1,79 @@
 import QtQuick 2.4
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 2.4
 
 Rectangle {
+    id: root
     width: 800
     height: 640
-    color: "white"
 
-    Component {
-        id: todoListDelegate
+    RowLayout {
+        anchors.fill: parent
+        spacing: 2
 
-        Rectangle {
-            id: todoListItem
-            width: 200; height: 40;
-            color: "white"
+        Component {
+            id: todoListDelegate
 
-            MouseArea {
-                id: todoListItemMouseArea
-                anchors.fill: parent
-                hoverEnabled: true
+            Rectangle {
+                id: todoListItem
+                height: 40
+                width: parent.width
+                color: root.color
 
-                onEntered: {
-                    todoListItem.color = "lightsteelblue";
+                Rectangle {
+                    width: 1
+
+                    color: "lightsteelblue"
+                    anchors.right: parent.right
+                    anchors.top: parent.top
+                    anchors.bottom: parent.bottom
                 }
 
-                onExited: {
-                    todoListItem.color = "white"
-                }
+                MouseArea {
+                    id: todoListItemMouseArea
+                    anchors.fill: parent
+                    hoverEnabled: true
 
-                Column {
-                    anchors.verticalCenter: todoListItemMouseArea.verticalCenter
-                    Text { 
-                        text: "<b>" + description + "</b>"
+                    onEntered: {
+                        todoListItem.color = "lightsteelblue";
+                    }
+
+                    onExited: {
+                        todoListItem.color = root.color
+                    }
+
+                    Column {
+                        anchors.verticalCenter: todoListItemMouseArea.verticalCenter
+                        Text { 
+                            text: "<b>" + description + "</b>"
+                        }
                     }
                 }
             }
         }
-    }
 
-    ListView {
-        anchors.fill: parent
+        ListView {
+            Layout.preferredWidth: parent.width / 3
+            height: parent.height
+            flickableDirection: Flickable.VerticalFlick
+            boundsBehavior: Flickable.StopAtBounds
+            clip: true
+            
+            model: TodoListModel {}
+            delegate: todoListDelegate
+            focus: true
 
-        model: TodoListModel {}
-        delegate: todoListDelegate
-        focus: true
+            ScrollBar.vertical: ScrollBar {}
+        }
+
+        Rectangle {
+            Layout.preferredWidth: parent.width * 2 / 3
+            
+            Text { 
+                anchors.centerIn: parent
+
+                text: "Some text 2" 
+            }
+        }
     }
 }
