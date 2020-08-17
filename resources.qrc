@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/MainWindow.qml</file>
+        <file>qml/TodoListModel.qml</file>
     </qresource>
 </RCC>
