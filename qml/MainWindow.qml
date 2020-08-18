@@ -67,12 +67,45 @@ Rectangle {
         }
 
         Rectangle {
+            height: parent.height
             Layout.preferredWidth: parent.width * 2 / 3
             
-            Text { 
-                anchors.centerIn: parent
+            ColumnLayout {
+                anchors.fill: parent
+                spacing: 1
+                anchors.bottomMargin: 3
+                anchors.rightMargin: 4
 
-                text: "Some text 2" 
+                Text {
+                    id: goalPlaceholder
+                    anchors.topMargin: 10
+
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 40
+
+                    text: qsTr("Day goals:")
+                }
+
+                TextArea {
+                    id: goalDescription
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+
+                    placeholderText: qsTr("Enter description")
+
+                    background: Rectangle {
+                        border.width: 1
+                        border.color: goalDescription.activeFocus ? "#000000" : "#BDBEBF"
+                    }
+                }
+
+                Button {
+                    Layout.preferredHeight: 28
+                    Layout.alignment: Qt.AlignRight
+
+                    text: qsTr("Save")
+                }
             }
         }
     }
