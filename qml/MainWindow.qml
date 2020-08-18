@@ -9,6 +9,8 @@ ApplicationWindow {
     title: qsTr("CodeMore")
     visible: true
 
+    menuBar : MainMenu {}
+
     Rectangle {
         anchors.fill: parent
 
