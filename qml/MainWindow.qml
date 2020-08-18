@@ -2,109 +2,121 @@ import QtQuick 2.4
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
 
-Rectangle {
+ApplicationWindow {
     id: root
     width: 800
     height: 640
+    title: qsTr("CodeMore")
+    visible: true
 
-    RowLayout {
+    Rectangle {
         anchors.fill: parent
-        spacing: 2
 
-        Component {
-            id: todoListDelegate
+        GridLayout {
+            anchors.fill: parent
+            rows: 1
+            columns: 2
 
-            Rectangle {
-                id: todoListItem
-                height: 40
-                width: parent.width
-                color: root.color
+            Component {
+                id: todoListDelegate
 
                 Rectangle {
-                    width: 1
+                    id: todoListItem
+                    height: 40
+                    width: parent.width
+                    color: root.color
 
-                    color: "lightsteelblue"
-                    anchors.right: parent.right
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
-                }
+                    Rectangle {
+                        width: 1
 
-                MouseArea {
-                    id: todoListItemMouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-
-                    onEntered: {
-                        todoListItem.color = "lightsteelblue";
+                        color: "lightsteelblue"
+                        anchors.right: parent.right
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
                     }
 
-                    onExited: {
-                        todoListItem.color = root.color
-                    }
+                    MouseArea {
+                        id: todoListItemMouseArea
+                        anchors.fill: parent
+                        hoverEnabled: true
 
-                    Column {
-                        anchors.verticalCenter: todoListItemMouseArea.verticalCenter
-                        Text { 
-                            text: "<b>" + description + "</b>"
+                        onEntered: {
+                            todoListItem.color = "lightsteelblue";
+                        }
+
+                        onExited: {
+                            todoListItem.color = root.color
+                        }
+
+                        ColumnLayout {
+                            anchors.verticalCenter: todoListItemMouseArea.verticalCenter
+                            Text { 
+                                text: "<b>" + description + "</b>"
+                            }
                         }
                     }
                 }
             }
-        }
 
-        ListView {
-            Layout.preferredWidth: parent.width / 3
-            height: parent.height
-            flickableDirection: Flickable.VerticalFlick
-            boundsBehavior: Flickable.StopAtBounds
-            clip: true
-            
-            model: TodoListModel {}
-            delegate: todoListDelegate
-            focus: true
+            ListView {
+                Layout.preferredWidth: parent.width / 3
+                Layout.row: 1
+                Layout.column: 1
 
-            ScrollBar.vertical: ScrollBar {}
-        }
+                Layout.preferredHeight: parent.height
+                flickableDirection: Flickable.VerticalFlick
+                boundsBehavior: Flickable.StopAtBounds
+                clip: true
+                
+                model: TodoListModel {}
+                delegate: todoListDelegate
+                focus: true
 
-        Rectangle {
-            height: parent.height
-            Layout.preferredWidth: parent.width * 2 / 3
-            
-            ColumnLayout {
-                anchors.fill: parent
-                spacing: 1
-                anchors.bottomMargin: 3
-                anchors.rightMargin: 4
+                ScrollBar.vertical: ScrollBar {}
+            }
 
-                Text {
-                    id: goalPlaceholder
-                    anchors.topMargin: 10
+            Rectangle {
+                Layout.preferredHeight: parent.height
+                Layout.preferredWidth: parent.width * 2 / 3 - 4
+                Layout.row: 1
+                Layout.column: 2
+                
+                ColumnLayout {
+                    anchors.fill: parent
+                    spacing: 2
+                    anchors.bottomMargin: 3
+                    anchors.rightMargin: 4
 
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: 40
+                    Text {
+                        id: goalPlaceholder
+                        anchors.topMargin: 10
 
-                    text: qsTr("Day goals:")
-                }
+                        Layout.fillWidth: true
+                        Layout.preferredHeight: 40
 
-                TextArea {
-                    id: goalDescription
-
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-
-                    placeholderText: qsTr("Enter description")
-
-                    background: Rectangle {
-                        border.width: 1
-                        border.color: goalDescription.activeFocus ? "#000000" : "#BDBEBF"
+                        text: qsTr("Day goals:")
                     }
-                }
 
-                Button {
-                    Layout.preferredHeight: 28
-                    Layout.alignment: Qt.AlignRight
+                    TextArea {
+                        id: goalDescription
 
-                    text: qsTr("Save")
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                        placeholderText: qsTr("Enter description")
+
+                        background: Rectangle {
+                            border.width: 1
+                            border.color: goalDescription.activeFocus ? "#000000" : "#BDBEBF"
+                        }
+                    }
+
+                    Button {
+                        Layout.preferredHeight: 28
+                        Layout.alignment: Qt.AlignRight
+
+                        text: qsTr("Save")
+                    }
                 }
             }
         }
