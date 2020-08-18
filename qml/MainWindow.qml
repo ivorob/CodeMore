@@ -24,7 +24,7 @@ ApplicationWindow {
                     id: todoListItem
                     height: 40
                     width: parent.width
-                    color: root.color
+                    color: todoListView.currentIndex == index ? "lightsteelblue" : root.color
 
                     Rectangle {
                         width: 1
@@ -45,11 +45,25 @@ ApplicationWindow {
                         }
 
                         onExited: {
-                            todoListItem.color = root.color
+                            if (index != todoListView.currentIndex) {
+                                todoListItem.color = root.color
+                            }
+                        }
+
+                        onClicked: {
+                            if (index != todoListView.currentIndex) {
+                                goalDescription.clear()
+
+                                todoListView.currentItem.color = root.color
+                                todoListView.currentIndex = index
+                            }
+
+                            parent.color = "lightsteelblue"
                         }
 
                         ColumnLayout {
                             anchors.verticalCenter: todoListItemMouseArea.verticalCenter
+
                             Text { 
                                 text: "<b>" + description + "</b>"
                             }
@@ -59,6 +73,8 @@ ApplicationWindow {
             }
 
             ListView {
+                id: todoListView
+
                 Layout.preferredWidth: parent.width / 3
                 Layout.row: 1
                 Layout.column: 1
