@@ -25,6 +25,18 @@ MenuBar {
     Menu {
         title: qsTr("&Help")
 
-        Action { text: qsTr("&About") }
+        Action { 
+            text: qsTr("&About")
+
+            onTriggered: { 
+                var component = Qt.createComponent("qrc:/qml/AboutWindow.qml");
+                if (component.status == Component.Ready) {
+                    var dialog = component.createObject(root)
+                    if (dialog) {
+                        dialog.open()
+                    }
+                }
+            }
+        }
     }
 }
