@@ -54,7 +54,8 @@ ApplicationWindow {
 
                         onClicked: {
                             if (index != todoListView.currentIndex) {
-                                goalDescription.clear()
+                                expectationsControl.clear()
+                                realityControl.clear()
 
                                 todoListView.currentItem.color = root.color
                                 todoListView.currentIndex = index
@@ -115,17 +116,35 @@ ApplicationWindow {
                         text: qsTr("Day goals:")
                     }
 
-                    TextArea {
-                        id: goalDescription
-
+                    ScrollView {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
 
-                        placeholderText: qsTr("Enter description")
+                        TextArea {
+                            id: expectationsControl
 
-                        background: Rectangle {
-                            border.width: 1
-                            border.color: goalDescription.activeFocus ? "#000000" : "#BDBEBF"
+                            placeholderText: qsTr("Expectations")
+
+                            background: Rectangle {
+                                border.width: 1
+                                border.color: expectationsControl.activeFocus ? "#000000" : "#BDBEBF"
+                            }
+                        }
+                    }
+
+                    ScrollView {
+                        Layout.fillWidth: true
+                        Layout.fillHeight: true
+
+                        TextArea {
+                            id: realityControl
+
+                            placeholderText: qsTr("Reality")
+
+                            background: Rectangle {
+                                border.width: 1
+                                border.color: realityControl.activeFocus ? "#000000" : "#BDBEBF"
+                            }
                         }
                     }
 
@@ -133,7 +152,7 @@ ApplicationWindow {
                         Layout.preferredHeight: 28
                         Layout.alignment: Qt.AlignRight
 
-                        text: qsTr("Save")
+                        text: qsTr("Next day")
                     }
                 }
             }
