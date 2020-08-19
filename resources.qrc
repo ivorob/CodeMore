@@ -3,5 +3,6 @@
         <file>qml/MainWindow.qml</file>
         <file>qml/TodoListModel.qml</file>
         <file>qml/MainMenu.qml</file>
+        <file>img/favicon.png</file>
     </qresource>
 </RCC>
