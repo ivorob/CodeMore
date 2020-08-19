@@ -3,5 +3,7 @@
         <file>qml/MainWindow.qml</file>
         <file>qml/TodoListModel.qml</file>
         <file>qml/MainMenu.qml</file>
+        <file>qml/TodoGoalsTreeView.qml</file>
+        <file>qml/TodoGoalsTreeModel.qml</file>
     </qresource>
 </RCC>

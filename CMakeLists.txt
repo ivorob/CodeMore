@@ -6,9 +6,11 @@ SET (INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 SET (SOURCES
         ${SRC_DIR}/main.cpp
+        ${SRC_DIR}/TodoGoalsTreeModel.cpp
     )
 
 SET (HEADERS
+        ${SRC_DIR}/TodoGoalsTreeModel.h
     )
 
 SET (CMAKE_AUTOMOC ON)

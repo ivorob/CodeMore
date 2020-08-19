@@ -99,43 +99,7 @@ ApplicationWindow {
                 Layout.row: 1
                 Layout.column: 2
                 
-                ColumnLayout {
-                    anchors.fill: parent
-                    spacing: 2
-                    anchors.bottomMargin: 3
-                    anchors.rightMargin: 4
-
-                    Text {
-                        id: goalPlaceholder
-                        anchors.topMargin: 10
-
-                        Layout.fillWidth: true
-                        Layout.preferredHeight: 40
-
-                        text: qsTr("Day goals:")
-                    }
-
-                    TextArea {
-                        id: goalDescription
-
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        placeholderText: qsTr("Enter description")
-
-                        background: Rectangle {
-                            border.width: 1
-                            border.color: goalDescription.activeFocus ? "#000000" : "#BDBEBF"
-                        }
-                    }
-
-                    Button {
-                        Layout.preferredHeight: 28
-                        Layout.alignment: Qt.AlignRight
-
-                        text: qsTr("Save")
-                    }
-                }
+                TodoGoalsTreeView {}
             }
         }
     }
