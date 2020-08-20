@@ -2,303 +2,403 @@ import QtQuick 2.0
 
 ListModel {
     ListElement {
-        description: "Day #1"
+        day: 1
+        itemState: 0
     }
     ListElement {
-        description: "Day #2"
+        day: 2
+        itemState: 0
     }
     ListElement {
-        description: "Day #3"
+        day: 3
+        itemState: 0
     }
     ListElement {
-        description: "Day #4"
+        day: 4
+        itemState: 0
     }
     ListElement {
-        description: "Day #5"
+        day: 5
+        itemState: 0
     }
     ListElement {
-        description: "Day #6"
+        day: 6
+        itemState: 0
     }
     ListElement {
-        description: "Day #7"
+        day: 7
+        itemState: 0
     }
     ListElement {
-        description: "Day #8"
+        day: 8
+        itemState: 0
     }
     ListElement {
-        description: "Day #9"
+        day: 9
+        itemState: 0
     }
     ListElement {
-        description: "Day #10"
+        day: 10
+        itemState: 0
     }
     ListElement {
-        description: "Day #11"
+        day: 11
+        itemState: 0
     }
     ListElement {
-        description: "Day #12"
+        day: 12
+        itemState: 0
     }
     ListElement {
-        description: "Day #13"
+        day: 13
+        itemState: 0
     }
     ListElement {
-        description: "Day #14"
+        day: 14
+        itemState: 0
     }
     ListElement {
-        description: "Day #15"
+        day: 15
+        itemState: 0
     }
     ListElement {
-        description: "Day #16"
+        day: 16
+        itemState: 0
     }
     ListElement {
-        description: "Day #17"
+        day: 17
+        itemState: 0
     }
     ListElement {
-        description: "Day #18"
+        day: 18
+        itemState: 0
     }
     ListElement {
-        description: "Day #19"
+        day: 19
+        itemState: 0
     }
     ListElement {
-        description: "Day #20"
+        day: 20
+        itemState: 0
     }
     ListElement {
-        description: "Day #21"
+        day: 21
+        itemState: 0
     }
     ListElement {
-        description: "Day #22"
+        day: 22
+        itemState: 0
     }
     ListElement {
-        description: "Day #23"
+        day: 23
+        itemState: 0
     }
     ListElement {
-        description: "Day #24"
+        day: 24
+        itemState: 0
     }
     ListElement {
-        description: "Day #25"
+        day: 25
+        itemState: 0
     }
     ListElement {
-        description: "Day #26"
+        day: 26
+        itemState: 0
     }
     ListElement {
-        description: "Day #27"
+        day: 27
+        itemState: 0
     }
     ListElement {
-        description: "Day #28"
+        day: 28
+        itemState: 0
     }
     ListElement {
-        description: "Day #29"
+        day: 29
+        itemState: 0
     }
     ListElement {
-        description: "Day #30"
+        day: 30
+        itemState: 0
     }
     ListElement {
-        description: "Day #31"
+        day: 31
+        itemState: 0
     }
     ListElement {
-        description: "Day #32"
+        day: 32
+        itemState: 0
     }
     ListElement {
-        description: "Day #33"
+        day: 33
+        itemState: 0
     }
     ListElement {
-        description: "Day #34"
+        day: 34
+        itemState: 0
     }
     ListElement {
-        description: "Day #35"
+        day: 35
+        itemState: 0
     }
     ListElement {
-        description: "Day #36"
+        day: 36
+        itemState: 0
     }
     ListElement {
-        description: "Day #37"
+        day: 37
+        itemState: 0
     }
     ListElement {
-        description: "Day #38"
+        day: 38
+        itemState: 0
     }
     ListElement {
-        description: "Day #39"
+        day: 39
+        itemState: 0
     }
     ListElement {
-        description: "Day #40"
+        day: 40
+        itemState: 0
     }
     ListElement {
-        description: "Day #41"
+        day: 41
+        itemState: 0
     }
     ListElement {
-        description: "Day #42"
+        day: 42
+        itemState: 0
     }
     ListElement {
-        description: "Day #43"
+        day: 43
+        itemState: 0
     }
     ListElement {
-        description: "Day #44"
+        day: 44
+        itemState: 0
     }
     ListElement {
-        description: "Day #45"
+        day: 45
+        itemState: 0
     }
     ListElement {
-        description: "Day #46"
+        day: 46
+        itemState: 0
     }
     ListElement {
-        description: "Day #47"
+        day: 47
+        itemState: 0
     }
     ListElement {
-        description: "Day #48"
+        day: 48
+        itemState: 0
     }
     ListElement {
-        description: "Day #49"
+        day: 49
+        itemState: 0
     }
     ListElement {
-        description: "Day #50"
+        day: 50
+        itemState: 0
     }
     ListElement {
-        description: "Day #51"
+        day: 51
+        itemState: 0
     }
     ListElement {
-        description: "Day #52"
+        day: 52
+        itemState: 0
     }
     ListElement {
-        description: "Day #53"
+        day: 53
+        itemState: 0
     }
     ListElement {
-        description: "Day #54"
+        day: 54
+        itemState: 0
     }
     ListElement {
-        description: "Day #55"
+        day: 55
+        itemState: 0
     }
     ListElement {
-        description: "Day #56"
+        day: 56
+        itemState: 0
     }
     ListElement {
-        description: "Day #57"
+        day: 57
+        itemState: 0
     }
     ListElement {
-        description: "Day #58"
+        day: 58
+        itemState: 0
     }
     ListElement {
-        description: "Day #59"
+        day: 59
+        itemState: 0
     }
     ListElement {
-        description: "Day #60"
+        day: 60
+        itemState: 0
     }
     ListElement {
-        description: "Day #61"
+        day: 61
+        itemState: 0
     }
     ListElement {
-        description: "Day #62"
+        day: 62
+        itemState: 0
     }
     ListElement {
-        description: "Day #63"
+        day: 63
+        itemState: 0
     }
     ListElement {
-        description: "Day #64"
+        day: 64
+        itemState: 0
     }
     ListElement {
-        description: "Day #65"
+        day: 65
+        itemState: 0
     }
     ListElement {
-        description: "Day #66"
+        day: 66
+        itemState: 0
     }
     ListElement {
-        description: "Day #67"
+        day: 67
+        itemState: 0
     }
     ListElement {
-        description: "Day #68"
+        day: 68
+        itemState: 0
     }
     ListElement {
-        description: "Day #69"
+        day: 69
+        itemState: 0
     }
     ListElement {
-        description: "Day #70"
+        day: 70
+        itemState: 0
     }
     ListElement {
-        description: "Day #71"
+        day: 71
+        itemState: 0
     }
     ListElement {
-        description: "Day #72"
+        day: 72
+        itemState: 0
     }
     ListElement {
-        description: "Day #73"
+        day: 73
+        itemState: 0
     }
     ListElement {
-        description: "Day #74"
+        day: 74
+        itemState: 0
     }
     ListElement {
-        description: "Day #75"
+        day: 75
+        itemState: 0
     }
     ListElement {
-        description: "Day #76"
+        day: 76
+        itemState: 0
     }
     ListElement {
-        description: "Day #77"
+        day: 77
+        itemState: 0
     }
     ListElement {
-        description: "Day #78"
+        day: 78
+        itemState: 0
     }
     ListElement {
-        description: "Day #79"
+        day: 79
+        itemState: 0
     }
     ListElement {
-        description: "Day #80"
+        day: 80
+        itemState: 0
     }
     ListElement {
-        description: "Day #81"
+        day: 81
+        itemState: 0
     }
     ListElement {
-        description: "Day #82"
+        day: 82
+        itemState: 0
     }
     ListElement {
-        description: "Day #83"
+        day: 83
+        itemState: 0
     }
     ListElement {
-        description: "Day #84"
+        day: 84
+        itemState: 0
     }
     ListElement {
-        description: "Day #85"
+        day: 85
+        itemState: 0
     }
     ListElement {
-        description: "Day #86"
+        day: 86
+        itemState: 0
     }
     ListElement {
-        description: "Day #87"
+        day: 87
+        itemState: 0
     }
     ListElement {
-        description: "Day #88"
+        day: 88
+        itemState: 0
     }
     ListElement {
-        description: "Day #89"
+        day: 89
+        itemState: 0
     }
     ListElement {
-        description: "Day #90"
+        day: 90
+        itemState: 0
     }
     ListElement {
-        description: "Day #91"
+        day: 91
+        itemState: 0
     }
     ListElement {
-        description: "Day #92"
+        day: 92
+        itemState: 0
     }
     ListElement {
-        description: "Day #93"
+        day: 93
+        itemState: 0
     }
     ListElement {
-        description: "Day #94"
+        day: 94
+        itemState: 0
     }
     ListElement {
-        description: "Day #95"
+        day: 95
+        itemState: 0
     }
     ListElement {
-        description: "Day #96"
+        day: 96
+        itemState: 0
     }
     ListElement {
-        description: "Day #97"
+        day: 97
+        itemState: 0
     }
     ListElement {
-        description: "Day #98"
+        day: 98
+        itemState: 0
     }
     ListElement {
-        description: "Day #99"
+        day: 99
+        itemState: 0
     }
     ListElement {
-        description: "Day #100"
+        day: 100
+        itemState: 0
     }
 }

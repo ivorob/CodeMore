@@ -64,11 +64,27 @@ ApplicationWindow {
                             parent.color = "lightsteelblue"
                         }
 
-                        ColumnLayout {
-                            anchors.verticalCenter: todoListItemMouseArea.verticalCenter
+                        RowLayout {
+                            anchors.verticalCenter: parent.verticalCenter
+                            anchors.fill: parent
 
                             Text { 
-                                text: "<b>" + description + "</b>"
+                                Layout.fillWidth: true
+
+                                text: "<b>Day #" + day + "</b>"
+                            }
+
+                            Image {
+                                Layout.preferredWidth: 30
+                                Layout.preferredHeight: 30
+                                Layout.alignment: Qt.AlignRight
+
+                                source: itemState != 0 ? "qrc:/img/completed.svg" : ""
+                                fillMode: Image.PreserveAspectFit
+                            }
+
+                            Rectangle {
+                                Layout.preferredWidth: 10
                             }
                         }
                     }
@@ -92,6 +108,15 @@ ApplicationWindow {
                 focus: true
 
                 ScrollBar.vertical: ScrollBar {}
+
+                Component.onCompleted: {
+                    for (var i = 0; i < model.count; ++i) {
+                        if (model.get(i).itemState == 0) {
+                            currentIndex = i
+                            break
+                        }
+                    }
+                }
             }
 
             Rectangle {
