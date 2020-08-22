@@ -7,5 +7,6 @@
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
         <file>img/completed.svg</file>
+        <file>js/TodoDataHandling.js</file>
     </qresource>
 </RCC>
