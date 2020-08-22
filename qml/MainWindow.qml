@@ -1,6 +1,7 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
+import '../js/TodoDataHandling.js' as TodoDataHandler
 
 ApplicationWindow {
     id: root
@@ -54,11 +55,18 @@ ApplicationWindow {
 
                         onClicked: {
                             if (index != todoListView.currentIndex) {
-                                expectationsControl.clear()
-                                realityControl.clear()
+                                TodoDataHandler.keepData(todoListView.goals,
+                                    todoListView.currentIndex, 
+                                    expectationsControl.text,
+                                    realityControl.text)
 
                                 todoListView.currentItem.color = root.color
                                 todoListView.currentIndex = index
+
+                                var data = TodoDataHandler.restoreData(todoListView.goals,
+                                        index)
+                                expectationsControl.text = data.expectations
+                                realityControl.text = data.reality
                             }
 
                             parent.color = "lightsteelblue"
@@ -93,6 +101,8 @@ ApplicationWindow {
 
             ListView {
                 id: todoListView
+
+                property variant goals: { 0 : { "expectations" : "", "reality" : "" } }
 
                 Layout.preferredWidth: parent.width / 3
                 Layout.row: 1
