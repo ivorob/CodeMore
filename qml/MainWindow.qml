@@ -188,6 +188,12 @@ ApplicationWindow {
                         Layout.alignment: Qt.AlignRight
 
                         text: qsTr("Next day")
+
+                        onClicked: {
+                            var model = todoListView.model
+                            model.get(todoListView.currentIndex).itemState = 1
+                            ++todoListView.currentIndex
+                        }
                     }
                 }
             }
