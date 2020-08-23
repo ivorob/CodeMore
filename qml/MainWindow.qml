@@ -12,6 +12,8 @@ ApplicationWindow {
 
     menuBar : MainMenu {}
 
+    signal save(string files)
+
     Rectangle {
         anchors.fill: parent
 
@@ -111,6 +113,12 @@ ApplicationWindow {
                             break
                         }
                     }
+
+                    root.save.connect(saveToDisk)
+                }
+
+                function saveToDisk(file) {
+                    console.log("save to file: " + file)
                 }
             }
 
