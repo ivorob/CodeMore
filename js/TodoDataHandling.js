@@ -19,3 +19,29 @@ function restoreData(goals, day)
 
     return goals[day]
 }
+
+function nextDay(viewId, newDay)
+{
+    var model = viewId.model
+    if (newDay >= model.count) {
+        newDay = model.count - 1
+    }
+
+    if (viewId.currentIndex != newDay)
+    {
+        TodoDataHandler.keepData(viewId.goals,
+            viewId.currentIndex, 
+            expectationsControl.text,
+            realityControl.text)
+
+        viewId.currentItem.color = root.color
+        viewId.currentIndex = newDay
+
+        var data = TodoDataHandler.restoreData(viewId.goals,
+                newDay)
+        expectationsControl.text = data.expectations
+        realityControl.text = data.reality
+
+        viewId.currentItem.color = "lightsteelblue"
+    }
+}
