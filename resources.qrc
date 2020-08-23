@@ -4,6 +4,7 @@
         <file>qml/TodoListModel.qml</file>
         <file>qml/MainMenu.qml</file>
         <file>qml/AboutWindow.qml</file>
+        <file>qml/SaveDialog.qml</file>
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
         <file>img/completed.svg</file>
