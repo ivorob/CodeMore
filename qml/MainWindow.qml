@@ -54,22 +54,7 @@ ApplicationWindow {
                         }
 
                         onClicked: {
-                            if (index != todoListView.currentIndex) {
-                                TodoDataHandler.keepData(todoListView.goals,
-                                    todoListView.currentIndex, 
-                                    expectationsControl.text,
-                                    realityControl.text)
-
-                                todoListView.currentItem.color = root.color
-                                todoListView.currentIndex = index
-
-                                var data = TodoDataHandler.restoreData(todoListView.goals,
-                                        index)
-                                expectationsControl.text = data.expectations
-                                realityControl.text = data.reality
-                            }
-
-                            parent.color = "lightsteelblue"
+                            TodoDataHandler.nextDay(todoListView, index)
                         }
 
                         RowLayout {
@@ -192,7 +177,8 @@ ApplicationWindow {
                         onClicked: {
                             var model = todoListView.model
                             model.get(todoListView.currentIndex).itemState = 1
-                            ++todoListView.currentIndex
+
+                            TodoDataHandler.nextDay(todoListView, todoListView.currentIndex + 1)
                         }
                     }
                 }
