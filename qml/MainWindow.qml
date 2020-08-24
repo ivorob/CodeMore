@@ -14,7 +14,6 @@ ApplicationWindow {
     menuBar : MainMenu {}
 
     signal save(string file)
-    signal saveDataToDisk(string file, string treeJson, string itemsJson)
 
     Rectangle {
         anchors.fill: parent
@@ -120,10 +119,9 @@ ApplicationWindow {
                 }
 
                 function saveToDisk(file) {
-                    console.log("save to file: " + file)
-
-                    console.log("model: " + JsonUtils.convertListModelToJson(model))
-                    console.log("data: " + JSON.stringify(goals))
+                    businessLogic.saveToFile(file, 
+                        JsonUtils.convertListModelToJson(model),
+                        JSON.stringify(goals));
                 }
             }
 

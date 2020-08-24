@@ -21,15 +21,19 @@ CONFIGURE_FILE (${SRC_DIR}/CodeMore.rc.in ${CMAKE_BINARY_DIR}/CodeMore.rc)
 
 SET (SOURCES
         ${SRC_DIR}/main.cpp
+        ${SRC_DIR}/BusinessLogic.cpp
+        ${SRC_DIR}/TodoListSerializer.cpp
     )
 
 SET (HEADERS
+        ${SRC_DIR}/BusinessLogic.h
+        ${SRC_DIR}/TodoListSerializer.h
     )
 
 SET (CMAKE_AUTOMOC ON)
 SET (CMAKE_AUTORCC ON)
 
-FIND_PACKAGE (Qt5 COMPONENTS Quick Qml Widgets)
+FIND_PACKAGE (Qt5 COMPONENTS Quick Qml Widgets Core)
 QT5_ADD_RESOURCES (RESOURCES ${CMAKE_CURRENT_SOURCE_DIR}/resources.qrc)
 
 IF (WIN32)
