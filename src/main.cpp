@@ -1,6 +1,9 @@
 #include <QApplication>
 #include <QIcon>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+
+#include "BusinessLogic.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,5 +15,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/qml/MainWindow.qml")));
+
+    BusinessLogic businessLogic;
+    engine.rootContext()->setContextProperty("businessLogic", &businessLogic);
     return app.exec();
 }
