@@ -1,7 +1,8 @@
 import QtQuick 2.4
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
-import '../js/TodoDataHandling.js' as TodoDataHandler
+import "qrc:/js/TodoDataHandling.js" as TodoDataHandler
+import "qrc:/js/JsonUtils.js" as JsonUtils
 
 ApplicationWindow {
     id: root
@@ -12,7 +13,8 @@ ApplicationWindow {
 
     menuBar : MainMenu {}
 
-    signal save(string files)
+    signal save(string file)
+    signal saveDataToDisk(string file, string treeJson, string itemsJson)
 
     Rectangle {
         anchors.fill: parent
@@ -119,6 +121,9 @@ ApplicationWindow {
 
                 function saveToDisk(file) {
                     console.log("save to file: " + file)
+
+                    console.log("model: " + JsonUtils.convertListModelToJson(model))
+                    console.log("data: " + JSON.stringify(goals))
                 }
             }
 

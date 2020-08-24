@@ -9,5 +9,6 @@
         <file>img/logo.png</file>
         <file>img/completed.svg</file>
         <file>js/TodoDataHandling.js</file>
+        <file>js/JsonUtils.js</file>
     </qresource>
 </RCC>
