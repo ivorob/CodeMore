@@ -1,18 +1,19 @@
 #include <QJsonDocument>
 #include <QJsonArray>
 #include <QVariant>
+#include <QTextStream>
 
 #include "TodoListSerializer.h"
 
 void
 TodoListSerializer::write(QXmlStreamWriter& writer, const QString& itemsJson, const QString& dataJson) const
 {
-    QJsonObject data = parseDataJson(dataJson);
+    writer.writeStartDocument();
+    writer.writeStartElement("todoList");
 
+    QJsonObject data = parseDataJson(dataJson);
     QJsonDocument document = QJsonDocument::fromJson(itemsJson.toUtf8());
     if (!document.isNull() && document.isArray()) {
-        writer.writeStartDocument();
-
         QJsonArray items = document.array();
         for (const auto& item : items) {
             if (item.isObject()) {
@@ -38,9 +39,10 @@ TodoListSerializer::write(QXmlStreamWriter& writer, const QString& itemsJson, co
                 }
             }
         }
-
-        writer.writeEndDocument();
     }
+
+    writer.writeEndElement();
+    writer.writeEndDocument();
 }
 
 QJsonObject
@@ -67,4 +69,55 @@ TodoListSerializer::obtainJsonField(const QJsonValue& dayDataValue, const QStrin
     }
 
     return {};
+}
+
+QString
+TodoListSerializer::read(QXmlStreamReader& reader) const
+{
+    QJsonArray todoListJson;
+    if (reader.readNextStartElement()) {
+        if (reader.name() == "todoList") {
+            todoListJson = readTodoList(reader);
+        } else {
+            reader.raiseError(QObject::tr("Incorrect file"));
+        }
+    }
+
+    return reader.hasError() ? QString() : QJsonDocument(todoListJson).toJson(QJsonDocument::JsonFormat::Compact);
+}
+
+QJsonArray
+TodoListSerializer::readTodoList(QXmlStreamReader& reader) const
+{
+    QJsonArray result;
+    while (reader.readNextStartElement()) {
+        if (reader.name() == "day") {
+            result.append(readDay(reader));
+        } else {
+            reader.raiseError(QObject::tr("Incorrect file"));
+        }
+    }
+
+    return result;
+}
+
+QJsonValue
+TodoListSerializer::readDay(QXmlStreamReader& reader) const
+{
+    QJsonObject result;
+    while (reader.readNextStartElement()) {
+        if (reader.name() == "index") {
+            result.insert("index", reader.readElementText());
+        } else if (reader.name() == "state") {
+            result.insert("state", reader.readElementText());
+        } else if (reader.name() == "expectations") {
+            result.insert("expectations", reader.readElementText());
+        } else if (reader.name() == "reality") {
+            result.insert("reality", reader.readElementText());
+        } else {
+            reader.raiseError(QObject::tr("Incorrect file"));
+        }
+    }
+
+    return result;
 }
