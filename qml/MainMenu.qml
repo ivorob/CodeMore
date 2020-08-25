@@ -24,7 +24,11 @@ MenuBar {
         title: qsTr("&File")
 
         Action { text: qsTr("&New") }
-        Action { text: qsTr("&Open...") }
+        Action { 
+            text: qsTr("&Open...")
+        
+            onTriggered: openDialog("qrc:/qml/OpenDialog.qml", root)
+        }
         Action { 
             text: qsTr("&Save")
 

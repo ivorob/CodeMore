@@ -14,6 +14,7 @@ ApplicationWindow {
     menuBar : MainMenu {}
 
     signal save(string file)
+    signal open(string file)
 
     Rectangle {
         anchors.fill: parent
@@ -116,12 +117,37 @@ ApplicationWindow {
                     }
 
                     root.save.connect(saveToDisk)
+                    root.open.connect(openFromDisk)
                 }
 
                 function saveToDisk(file) {
                     businessLogic.saveToFile(file, 
                         JsonUtils.convertListModelToJson(model),
                         JSON.stringify(goals));
+                }
+
+                function openFromDisk(file) {
+                    var json = JSON.parse(businessLogic.loadFromFile(file));
+                    if (json && json.length != 0) {
+                        model.clear();
+                        goals = {}
+
+                        for (var i = 0; i < json.length; ++i) {
+                            var currentDay = parseInt(json[i].index)
+
+                            model.append({
+                                "day" : currentDay,
+                                "itemState" : parseInt(json[i].state)
+                            })
+
+                            TodoDataHandler.keepData(goals, currentDay - 1, json[i].expectations, json[i].reality)
+                        }
+
+                        var data = TodoDataHandler.restoreData(goals,
+                                Object.keys(goals)[0])
+                        expectationsControl.text = data.expectations
+                        realityControl.text = data.reality
+                    }
                 }
             }
 
