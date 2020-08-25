@@ -7,12 +7,11 @@
 void
 TodoListSerializer::write(QXmlStreamWriter& writer, const QString& itemsJson, const QString& dataJson) const
 {
-    QJsonObject data = parseDataJson(dataJson);
+    writer.writeStartDocument();
 
+    QJsonObject data = parseDataJson(dataJson);
     QJsonDocument document = QJsonDocument::fromJson(itemsJson.toUtf8());
     if (!document.isNull() && document.isArray()) {
-        writer.writeStartDocument();
-
         QJsonArray items = document.array();
         for (const auto& item : items) {
             if (item.isObject()) {
@@ -38,9 +37,9 @@ TodoListSerializer::write(QXmlStreamWriter& writer, const QString& itemsJson, co
                 }
             }
         }
-
-        writer.writeEndDocument();
     }
+
+    writer.writeEndDocument();
 }
 
 QJsonObject

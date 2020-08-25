@@ -15,6 +15,11 @@ QString dataJson()
     return "{\"0\":{\"expectations\":\"- first task\",\"reality\":\"- first task: completed\"},\"1\":{\"expectations\":\"- some new task\",\"reality\":\"\"},\"6\":{\"expectations\":\"\",\"reality\":\"\"}}";
 }
 
+QString dataJson1()
+{
+    return "{\"0\":{\"expectations\":\"- first task\",\"reality\":\"- first task: completed\"},\"1\":{\"expectations\":\"- some new task\",\"reality\":\"\"},\"13\":{\"expectations\":\"\",\"reality\":\"\"}}";
+}
+
 }
 
 TEST(TodoListSerializer, saveTest)
@@ -46,5 +51,51 @@ TEST(TodoListSerializer, saveTest)
     <expectations></expectations>
     <reality></reality>
 </day>
+)", data.toStdString());
+}
+
+TEST(TodoListSerializer, unassignedDayDataSaveTest)
+{
+    TodoListSerializer serializer;
+
+    QString data;
+    QXmlStreamWriter stream(&data);
+    stream.setAutoFormatting(true);
+    stream.setAutoFormattingIndent(4);
+    serializer.write(stream, itemsTreeJson(), dataJson1());
+
+    ASSERT_EQ(R"(<?xml version="1.0"?>
+<day>
+    <index>1</index>
+    <state>1</state>
+    <expectations>- first task</expectations>
+    <reality>- first task: completed</reality>
+</day>
+<day>
+    <index>2</index>
+    <state>0</state>
+    <expectations>- some new task</expectations>
+    <reality></reality>
+</day>
+<day>
+    <index>7</index>
+    <state>0</state>
+    <expectations></expectations>
+    <reality></reality>
+</day>
+)", data.toStdString());
+}
+
+TEST(TodoListSerializer, emptyDataSaveTest)
+{
+    TodoListSerializer serializer;
+
+    QString data;
+    QXmlStreamWriter stream(&data);
+    stream.setAutoFormatting(true);
+    stream.setAutoFormattingIndent(4);
+    serializer.write(stream, {}, dataJson1());
+
+    ASSERT_EQ(R"(<?xml version="1.0"?>
 )", data.toStdString());
 }
