@@ -121,6 +121,11 @@ ApplicationWindow {
                 }
 
                 function saveToDisk(file) {
+                    TodoDataHandler.keepData(goals, 
+                        todoListView.currentIndex, 
+                        expectationsControl.text,
+                        realityControl.text)
+
                     businessLogic.saveToFile(file, 
                         JsonUtils.convertListModelToJson(model),
                         JSON.stringify(goals));
