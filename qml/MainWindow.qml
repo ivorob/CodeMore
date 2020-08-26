@@ -197,6 +197,7 @@ ApplicationWindow {
 
                         TextArea {
                             id: expectationsControl
+                            anchors.fill: parent
 
                             placeholderText: qsTr("Expectations")
 
@@ -213,6 +214,7 @@ ApplicationWindow {
 
                         TextArea {
                             id: realityControl
+                            anchors.fill: parent
 
                             placeholderText: qsTr("Reality")
 
