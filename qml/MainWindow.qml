@@ -15,6 +15,7 @@ ApplicationWindow {
 
     signal save(string file)
     signal open(string file)
+    signal newTodoList()
 
     Rectangle {
         anchors.fill: parent
@@ -118,6 +119,7 @@ ApplicationWindow {
 
                     root.save.connect(saveToDisk)
                     root.open.connect(openFromDisk)
+                    root.newTodoList.connect(newTodoList)
                 }
 
                 function saveToDisk(file) {
@@ -152,6 +154,17 @@ ApplicationWindow {
                                 Object.keys(goals)[0])
                         expectationsControl.text = data.expectations
                         realityControl.text = data.reality
+                    }
+                }
+
+                function newTodoList() {
+                    console.log("new todo list")
+                    var component = Qt.createComponent("qrc:/qml/TodoListModel.qml")
+                    if (component.status == Component.Ready) {
+                        var newModel = component.createObject(todoListView, {})
+                        if (newModel) {
+                            model = newModel
+                        }
                     }
                 }
             }

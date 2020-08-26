@@ -23,7 +23,11 @@ MenuBar {
     Menu {
         title: qsTr("&File")
 
-        Action { text: qsTr("&New") }
+        Action { 
+            text: qsTr("&New")
+
+            onTriggered: root.newTodoList()
+        }
         Action { 
             text: qsTr("&Open...")
         
