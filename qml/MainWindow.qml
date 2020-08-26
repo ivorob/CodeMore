@@ -197,14 +197,19 @@ ApplicationWindow {
 
                         TextArea {
                             id: expectationsControl
-                            anchors.fill: parent
 
                             placeholderText: qsTr("Expectations")
 
                             background: Rectangle {
                                 border.width: 1
                                 border.color: expectationsControl.activeFocus ? "#000000" : "#BDBEBF"
+
+                                anchors.fill: parent
                             }
+                        }
+
+                        Component.onCompleted: {
+                            console.log("width: " + width)
                         }
                     }
 
@@ -214,13 +219,14 @@ ApplicationWindow {
 
                         TextArea {
                             id: realityControl
-                            anchors.fill: parent
 
                             placeholderText: qsTr("Reality")
 
                             background: Rectangle {
                                 border.width: 1
                                 border.color: realityControl.activeFocus ? "#000000" : "#BDBEBF"
+
+                                anchors.fill: parent
                             }
                         }
                     }
