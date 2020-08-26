@@ -15,7 +15,7 @@ void
 BusinessLogic::saveToFile(const QString& filename, const QString& treeJson, const QString& itemsJson) const
 {
     QFile file(QUrl(filename).toLocalFile());
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::NewOnly)) {
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
         return;
     }
 
