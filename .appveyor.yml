@@ -1,0 +1,47 @@
+image: Visual Studio 2017
+version: 0.1.{build}
+
+init:
+    - git config --global core.autocrlf input
+
+clone_folder: c:\projects\CodeMore
+shallow_clone: true
+
+matrix:
+    fast_finish: true
+
+platform:
+    - x64
+
+configuration:
+    - Release
+
+environment:
+    matrix:
+        - TOOLCHAIN: msvc15
+
+install:
+
+build_script:
+    - mkdir build
+    - cd build
+    - cmake -G "Visual Studio 15 2017 Win64" .. -DCMAKE_PREFIX_PATH=C:\Qt\5.12.6\msvc2017_64
+    - cmake --build . --config Release
+    - c:\Qt\5.12.6\msvc2017_64\bin\windeployqt --qmldir C:\Qt\5.12.6\msvc2017_64\qml %APPVEYOR_BUILD_FOLDER%\build\Release\CodeMore.exe
+
+after_build:
+    - cmd: 7z a CodeMore.zip %APPVEYOR_BUILD_FOLDER%\build\Release\*
+
+artifacts:
+    - path: build\CodeMore.zip
+
+deploy:
+    - provider: GitHub
+      auth_token:
+        secure: XDu4+kIKFFYWIc3yR7x9eX1kWZzF5aBmItTxzytX+Rwy5bwazcAHuN+wzOe8XkOE
+      draft: false
+      prerelease: false
+      on:
+        branch: master
+        APPVEYOR_REPO_TAG: true 
+
