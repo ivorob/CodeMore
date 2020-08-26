@@ -3,7 +3,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 
-#include "BusinessLogc.h"
+#include "BusinessLogic.h"
 
 int main(int argc, char *argv[])
 {
