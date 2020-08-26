@@ -1,6 +1,6 @@
 # CodeMore
 
-[https://ci.appveyor.com/api/projects/status/github/ivorob/CodeMore?branch=master&svg=true](https://ci.appveyor.com/api/projects/status/github/ivorob/CodeMore?branch=master&svg=true)
+[https://ci.appveyor.com/api/projects/status/github/ivorob/CodeMore?branch=master](https://ci.appveyor.com/api/projects/status/github/ivorob/CodeMore?branch=master)
 
 ## Build on windows
 
