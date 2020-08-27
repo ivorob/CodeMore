@@ -11,5 +11,6 @@
         <file>img/completed.svg</file>
         <file>js/TodoDataHandling.js</file>
         <file>js/JsonUtils.js</file>
+        <file>js/InternalDataController.js</file>
     </qresource>
 </RCC>

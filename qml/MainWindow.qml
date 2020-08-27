@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
 import "qrc:/js/TodoDataHandling.js" as TodoDataHandler
 import "qrc:/js/JsonUtils.js" as JsonUtils
+import "qrc:/js/InternalDataController.js" as InternalDataController
 
 ApplicationWindow {
     id: root
@@ -117,55 +118,15 @@ ApplicationWindow {
                         }
                     }
 
-                    root.save.connect(saveToDisk)
-                    root.open.connect(openFromDisk)
-                    root.newTodoList.connect(newTodoList)
+                    root.save.connect(InternalDataController.saveToDisk)
+                    root.open.connect(InternalDataController.openFromDisk)
+                    root.newTodoList.connect(InternalDataController.newTodoList)
                 }
 
-                function saveToDisk(file) {
-                    TodoDataHandler.keepData(goals, 
-                        todoListView.currentIndex, 
-                        expectationsControl.text,
-                        realityControl.text)
-
-                    businessLogic.saveToFile(file, 
-                        JsonUtils.convertListModelToJson(model),
-                        JSON.stringify(goals));
-                }
-
-                function openFromDisk(file) {
-                    var json = JSON.parse(businessLogic.loadFromFile(file));
-                    if (json && json.length != 0) {
-                        model.clear();
-                        goals = {}
-
-                        for (var i = 0; i < json.length; ++i) {
-                            var currentDay = parseInt(json[i].index)
-
-                            model.append({
-                                "day" : currentDay,
-                                "itemState" : parseInt(json[i].state)
-                            })
-
-                            TodoDataHandler.keepData(goals, currentDay - 1, json[i].expectations, json[i].reality)
-                        }
-
-                        var data = TodoDataHandler.restoreData(goals,
-                                Object.keys(goals)[0])
-                        expectationsControl.text = data.expectations
-                        realityControl.text = data.reality
-                    }
-                }
-
-                function newTodoList() {
-                    console.log("new todo list")
-                    var component = Qt.createComponent("qrc:/qml/TodoListModel.qml")
-                    if (component.status == Component.Ready) {
-                        var newModel = component.createObject(todoListView, {})
-                        if (newModel) {
-                            model = newModel
-                        }
-                    }
+                onCurrentItemChanged: {
+                    var data = TodoDataHandler.restoreData(goals, currentIndex)
+                    expectationsControl.text = data.expectations
+                    realityControl.text = data.reality
                 }
             }
 
@@ -206,10 +167,6 @@ ApplicationWindow {
 
                                 anchors.fill: parent
                             }
-                        }
-
-                        Component.onCompleted: {
-                            console.log("width: " + width)
                         }
                     }
 
