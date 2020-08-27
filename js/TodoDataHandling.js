@@ -37,11 +37,6 @@ function nextDay(viewId, newDay)
         viewId.currentItem.color = root.color
         viewId.currentIndex = newDay
 
-        var data = TodoDataHandler.restoreData(viewId.goals,
-                newDay)
-        expectationsControl.text = data.expectations
-        realityControl.text = data.reality
-
         viewId.currentItem.color = "lightsteelblue"
     }
 }
