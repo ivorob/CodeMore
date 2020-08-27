@@ -36,7 +36,13 @@ MenuBar {
         Action { 
             text: qsTr("&Save")
 
-            onTriggered: openDialog("qrc:/qml/SaveDialog.qml", root)
+            onTriggered: {
+                if (root.filename.length == 0) {
+                    openDialog("qrc:/qml/SaveDialog.qml", root)
+                } else {
+                    root.save(root.filename)
+                }
+            }
         }
         Action { text: qsTr("Save &As...") }
         MenuSeparator {}

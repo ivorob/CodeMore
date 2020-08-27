@@ -1,19 +1,24 @@
 function saveToDisk(file) {
-    TodoDataHandler.keepData(todoListView.goals, 
-        todoListView.currentIndex, 
-        expectationsControl.text,
-        realityControl.text)
+    if (isNewChanges()) {
+        TodoDataHandler.keepData(todoListView.goals, 
+            todoListView.currentIndex, 
+            expectationsControl.text,
+            realityControl.text)
 
-    businessLogic.saveToFile(file, 
-        JsonUtils.convertListModelToJson(todoListView.model),
-        JSON.stringify(todoListView.goals));
+        businessLogic.saveToFile(file, 
+            JsonUtils.convertListModelToJson(todoListView.model),
+            JSON.stringify(todoListView.goals));
+
+        root.filename = file
+        noChanges()
+    }
 }
 
 function openFromDisk(file) {
     var json = JSON.parse(businessLogic.loadFromFile(file));
     if (json && json.length != 0) {
         todoListView.model.clear();
-        todoListView.goals = {}
+        resetGoalsData()
 
         var lastCompletedIndex = 0;
         for (var i = 0; i < json.length; ++i) {
@@ -37,6 +42,9 @@ function openFromDisk(file) {
 
         console.log("index: " + lastCompletedIndex)
         todoListView.currentIndex = lastCompletedIndex
+
+        root.filename = file
+        noChanges()
     }
 }
 
@@ -46,11 +54,33 @@ function newTodoList() {
     if (component.status == Component.Ready) {
         var newModel = component.createObject(todoListView, {})
         if (newModel) {
-            todoListView.goals = {}
+            resetGoalsData()
             todoListView.model = newModel
 
             expectationsControl.clear()
             realityControl.clear()
+            root.filename = ""
         }
     }
+}
+
+function resetGoalsData()
+{
+    todoListView.goals = {}
+    noChanges()
+}
+
+function newChanges()
+{
+    root.changes = true
+}
+
+function noChanges()
+{
+    root.changes = false
+}
+
+function isNewChanges()
+{
+    return root.changes
 }

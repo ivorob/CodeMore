@@ -4,15 +4,32 @@ import QtQuick.Controls 2.4
 import "qrc:/js/TodoDataHandling.js" as TodoDataHandler
 import "qrc:/js/JsonUtils.js" as JsonUtils
 import "qrc:/js/InternalDataController.js" as InternalDataController
+import "qrc:/js/FileUtils.js" as FileUtils
 
 ApplicationWindow {
     id: root
     width: 800
     height: 640
-    title: qsTr("CodeMore")
+    title: {
+        var result = qsTr("CodeMore")
+
+        if (changes) {
+            result = "*" + result;
+        }
+
+        if (filename.length != 0) {
+            result += " - " + FileUtils.basename(filename)
+        }
+
+        return result
+    }
+
     visible: true
 
     menuBar : MainMenu {}
+
+    property bool changes: false
+    property string filename: ""
 
     signal save(string file)
     signal open(string file)
@@ -167,6 +184,14 @@ ApplicationWindow {
 
                                 anchors.fill: parent
                             }
+
+                            Keys.onPressed: {
+                                if (((event.modifiers & Qt.AltModifiers) == 0 || (event.modifiers & Qt.ControlModifier) == 0) &&
+                                    (event.key != Qt.Key_Alt && event.key != Qt.Key_Control))
+                                {
+                                    InternalDataController.newChanges()
+                                }
+                            }
                         }
                     }
 
@@ -184,6 +209,14 @@ ApplicationWindow {
                                 border.color: realityControl.activeFocus ? "#000000" : "#BDBEBF"
 
                                 anchors.fill: parent
+                            }
+
+                            Keys.onPressed: {
+                                if (((event.modifiers & Qt.AltModifiers) == 0 || (event.modifiers & Qt.ControlModifier) == 0) &&
+                                    (event.key != Qt.Key_Alt && event.key != Qt.Key_Control))
+                                {
+                                    InternalDataController.newChanges()
+                                }
                             }
                         }
                     }
