@@ -1,23 +1,11 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.3
+import "qrc:/js/Dialogs.js" as Dialogs
 
 MenuBar {
     background: Rectangle {
         color: root.color
-    }
-
-    function openDialog(dialogUrl, id)
-    {
-        console.log("open dialog: " + dialogUrl)
-
-        var component = Qt.createComponent(dialogUrl)
-        if (component.status == Component.Ready) {
-            var dialog = component.createObject(id)
-            if (dialog) {
-                dialog.open()
-            }
-        }
     }
 
     Menu {
@@ -31,14 +19,14 @@ MenuBar {
         Action { 
             text: qsTr("&Open...")
         
-            onTriggered: openDialog("qrc:/qml/OpenDialog.qml", root)
+            onTriggered: Dialogs.openOpenDialog(root)
         }
         Action { 
             text: qsTr("&Save")
 
             onTriggered: {
                 if (root.filename.length == 0) {
-                    openDialog("qrc:/qml/SaveDialog.qml", root)
+                    Dialogs.openSaveDialog(root)
                 } else {
                     root.save(root.filename)
                 }
@@ -59,7 +47,7 @@ MenuBar {
         Action { 
             text: qsTr("&About")
 
-            onTriggered: openDialog("qrc:/qml/AboutWindow.qml", root)
+            onTriggered: Dialogs.openAboutDialog(root)
         }
     }
 }

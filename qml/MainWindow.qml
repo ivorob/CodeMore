@@ -5,6 +5,7 @@ import "qrc:/js/TodoDataHandling.js" as TodoDataHandler
 import "qrc:/js/JsonUtils.js" as JsonUtils
 import "qrc:/js/InternalDataController.js" as InternalDataController
 import "qrc:/js/FileUtils.js" as FileUtils
+import "qrc:/js/Dialogs.js" as Dialogs
 
 ApplicationWindow {
     id: root
@@ -237,5 +238,10 @@ ApplicationWindow {
                 }
             }
         }
+    }
+
+    onClosing: {
+        close.accepted = false
+        InternalDataController.closeApplication();
     }
 }
