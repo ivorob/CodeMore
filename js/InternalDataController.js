@@ -18,7 +18,7 @@ function openFromDisk(file) {
         todoListView.model.clear();
         resetGoalsData()
 
-        var lastCompletedIndex = 0;
+        var lastCompletedIndex = -1;
         for (var i = 0; i < json.length; ++i) {
             var currentDay = parseInt(json[i].index)
 
@@ -48,17 +48,29 @@ function openFromDisk(file) {
 
 function newTodoList() {
     console.log("new todo list")
-    var component = Qt.createComponent("qrc:/qml/TodoListModel.qml")
-    if (component.status == Component.Ready) {
-        var newModel = component.createObject(todoListView, {})
-        if (newModel) {
-            resetGoalsData()
-            todoListView.model = newModel
 
-            expectationsControl.clear()
-            realityControl.clear()
-            root.filename = ""
+    var newTodoListHandler = function() {
+        var component = Qt.createComponent("qrc:/qml/TodoListModel.qml")
+        if (component.status == Component.Ready) {
+            var newModel = component.createObject(todoListView, {})
+            if (newModel) {
+                resetGoalsData()
+                todoListView.model = newModel
+
+                expectationsControl.clear()
+                realityControl.clear()
+                root.filename = ""
+            }
         }
+    }
+
+    if (isNewChanges()) {
+        var dialog = Dialogs.openSaveChangesDialog(root)
+
+        dialog.no.connect(newTodoListHandler)
+        dialog.accepted.connect(newTodoListHandler)
+    } else {
+        newTodoListHandler()
     }
 }
 
@@ -81,4 +93,20 @@ function noChanges()
 function isNewChanges()
 {
     return root.changes
+}
+
+function closeApplication()
+{
+    var closeApplicationHandler = function() {
+        Qt.quit()
+    }
+
+    if (isNewChanges()) {
+        var dialog = Dialogs.openSaveChangesDialog(root)
+
+        dialog.no.connect(closeApplicationHandler)
+        dialog.accepted.connect(closeApplicationHandler)
+    } else {
+        closeApplicationHandler()
+    }
 }

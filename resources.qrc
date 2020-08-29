@@ -6,6 +6,7 @@
         <file>qml/AboutWindow.qml</file>
         <file>qml/SaveDialog.qml</file>
         <file>qml/OpenDialog.qml</file>
+        <file>qml/SaveChanges.qml</file>
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
         <file>img/completed.svg</file>
@@ -13,5 +14,6 @@
         <file>js/JsonUtils.js</file>
         <file>js/InternalDataController.js</file>
         <file>js/FileUtils.js</file>
+        <file>js/Dialogs.js</file>
     </qresource>
 </RCC>
