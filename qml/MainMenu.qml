@@ -25,16 +25,21 @@ MenuBar {
 
         Action { 
             text: qsTr("&New")
+            shortcut: "Ctrl+N"
 
             onTriggered: root.newTodoList()
         }
+
         Action { 
             text: qsTr("&Open...")
+            shortcut: "Ctrl+O"
         
             onTriggered: openDialog("qrc:/qml/OpenDialog.qml", root)
         }
+
         Action { 
             text: qsTr("&Save")
+            shortcut: "Ctrl+S"
 
             onTriggered: {
                 if (root.filename.length == 0) {
@@ -44,7 +49,15 @@ MenuBar {
                 }
             }
         }
-        Action { text: qsTr("Save &As...") }
+
+        Action { 
+            text: qsTr("Save &As...")
+            shortcut: "Ctrl+Shift+S"
+
+            onTriggered: {
+                openDialog("qrc:/qml/SaveDialog.qml", root)
+            }
+        }
         MenuSeparator {}
         Action { 
             text: qsTr("&Quit") 
@@ -58,6 +71,7 @@ MenuBar {
 
         Action { 
             text: qsTr("&About")
+            shortcut: "F1"
 
             onTriggered: openDialog("qrc:/qml/AboutWindow.qml", root)
         }

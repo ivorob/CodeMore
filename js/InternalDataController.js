@@ -1,17 +1,15 @@
 function saveToDisk(file) {
-    if (isNewChanges()) {
-        TodoDataHandler.keepData(todoListView.goals, 
-            todoListView.currentIndex, 
-            expectationsControl.text,
-            realityControl.text)
+    TodoDataHandler.keepData(todoListView.goals, 
+        todoListView.currentIndex, 
+        expectationsControl.text,
+        realityControl.text)
 
-        businessLogic.saveToFile(file, 
-            JsonUtils.convertListModelToJson(todoListView.model),
-            JSON.stringify(todoListView.goals));
+    businessLogic.saveToFile(file, 
+        JsonUtils.convertListModelToJson(todoListView.model),
+        JSON.stringify(todoListView.goals));
 
-        root.filename = file
-        noChanges()
-    }
+    root.filename = file
+    noChanges()
 }
 
 function openFromDisk(file) {
