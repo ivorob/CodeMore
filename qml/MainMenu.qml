@@ -55,6 +55,14 @@ MenuBar {
     }
 
     Menu {
+        title: qsTr("&Language")
+
+        Action {
+            text: qsTr("&English")
+        }
+    }
+
+    Menu {
         title: qsTr("&Help")
 
         Action { 

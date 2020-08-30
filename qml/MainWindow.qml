@@ -86,9 +86,10 @@ ApplicationWindow {
                             anchors.fill: parent
 
                             Text { 
+                                Layout.leftMargin: 5
                                 Layout.fillWidth: true
 
-                                text: "<b>Day #" + day + "</b>"
+                                text: "<b>" + qsTr("Day #") + day + "</b>"
                             }
 
                             Image {
