@@ -27,3 +27,6 @@ To disable build tests use the following command in build directory:
 ```sh
 cmake . -DBUILD_TESTING=OFF
 ```
+
+## Translation
+Add issue if u want to translate that app to your language
