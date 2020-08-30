@@ -14,7 +14,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="12"/>
         <source>&amp;File</source>
-        <translation>&amp;Справка</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="15"/>
