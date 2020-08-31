@@ -10,54 +10,68 @@
     </message>
 </context>
 <context>
+    <name>Languages</name>
+    <message>
+        <location filename="../src/Localization.cpp" line="11"/>
+        <location filename="../src/Localization.cpp" line="21"/>
+        <source>English</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../src/Localization.cpp" line="12"/>
+        <source>Russian</source>
+        <translation>Русский</translation>
+    </message>
+    <message>
+        <location filename="../src/Localization.cpp" line="13"/>
+        <source>Deutch</source>
+        <translation>中文</translation>
+    </message>
+</context>
+<context>
     <name>MainMenu</name>
     <message>
-        <location filename="../qml/MainMenu.qml" line="12"/>
+        <location filename="../qml/MainMenu.qml" line="13"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="15"/>
+        <location filename="../qml/MainMenu.qml" line="16"/>
         <source>&amp;New</source>
         <translation>Создать</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="22"/>
+        <location filename="../qml/MainMenu.qml" line="23"/>
         <source>&amp;Open...</source>
         <translation>&amp;Открыть...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="29"/>
+        <location filename="../qml/MainMenu.qml" line="30"/>
         <source>&amp;Save</source>
         <translation>&amp;Сохранить</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="42"/>
+        <location filename="../qml/MainMenu.qml" line="43"/>
         <source>Save &amp;As...</source>
         <translation>&amp;Сохранить как...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="51"/>
+        <location filename="../qml/MainMenu.qml" line="52"/>
         <source>&amp;Quit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="58"/>
+        <location filename="../qml/MainMenu.qml" line="59"/>
         <source>&amp;Language</source>
         <translation>&amp;Язык</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="61"/>
-        <source>&amp;English</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenu.qml" line="66"/>
+        <location filename="../qml/MainMenu.qml" line="90"/>
         <source>&amp;Help</source>
         <translation>&amp;Справка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="69"/>
+        <location filename="../qml/MainMenu.qml" line="93"/>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>

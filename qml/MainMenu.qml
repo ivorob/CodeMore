@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.3
+import QtQml 2.2
 import "qrc:/js/Dialogs.js" as Dialogs
 
 MenuBar {
@@ -57,8 +58,31 @@ MenuBar {
     Menu {
         title: qsTr("&Language")
 
-        Action {
-            text: qsTr("&English")
+        Repeater {
+            id: languagesMenu
+            model: languageList
+
+            MenuItem {
+                checkable: true
+                checked: currentLanguage == modelData
+
+                text : modelData
+
+                onTriggered: {
+                    currentLanguage = modelData
+
+                    for (var i = 0; i < languageList.length; ++i) {
+                        var menuItem = languagesMenu.itemAt(i)
+                        if (menuItem) {
+                            menuItem.checked = modelData == menuItem.text
+
+                            if (menuItem.checked) {
+                                businessLogic.retranslate(modelData)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
