@@ -25,11 +25,13 @@ SET (SOURCES
         ${SRC_DIR}/main.cpp
         ${SRC_DIR}/BusinessLogic.cpp
         ${SRC_DIR}/TodoListSerializer.cpp
+        ${SRC_DIR}/Localization.cpp
     )
 
 SET (HEADERS
         ${SRC_DIR}/BusinessLogic.h
         ${SRC_DIR}/TodoListSerializer.h
+        ${SRC_DIR}/Localization.h
     )
 
 SET (QML_FILES
