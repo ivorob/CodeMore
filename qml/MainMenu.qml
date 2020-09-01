@@ -60,27 +60,27 @@ MenuBar {
 
         Repeater {
             id: languagesMenu
-            model: languageList
+            model: localizator.getLanguages()
 
             MenuItem {
                 checkable: true
-                checked: currentLanguage == modelData
+                checked: modelData == localizator.getCurrentLanguage()
 
                 text : modelData
 
                 onTriggered: {
-                    currentLanguage = modelData
-
-                    for (var i = 0; i < languageList.length; ++i) {
+                    var currentLanguage = localizator.getCurrentLanguage()
+                    for (var i = 0; i < languagesMenu.model.length; ++i) {
                         var menuItem = languagesMenu.itemAt(i)
                         if (menuItem) {
-                            menuItem.checked = modelData == menuItem.text
+                            menuItem.checked = menuItem.text == modelData
 
-                            if (menuItem.checked) {
-                                businessLogic.retranslate(modelData)
+                            if (menuItem.checked && menuItem.text != currentLanguage) {
+                                localizator.setCurrentLanguage(modelData)
                             }
                         }
                     }
+
                 }
             }
         }
