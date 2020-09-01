@@ -51,7 +51,7 @@ MenuBar {
         Action { 
             text: qsTr("&Quit") 
 
-            onTriggered: Qt.quit()
+            onTriggered: root.close()
         }
     }
 
