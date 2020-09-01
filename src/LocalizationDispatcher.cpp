@@ -112,6 +112,8 @@ LocalizationDispatcher::retranslate()
         QString translationDirectory = "translations";
         if (translator->load(locale, prefix, "_", translationDirectory)) {
             QCoreApplication::installTranslator(translator);
+
+            fillCurrentTranslation();
         } else {
             qDebug() << "Cannot load translation";
         }
