@@ -1,3 +1,4 @@
+#include <QCoreApplication>
 #include <QXmlStreamWriter>
 #include <QXmlStreamReader>
 #include <QFile>
@@ -39,11 +40,4 @@ BusinessLogic::loadFromFile(const QString& filename) const
 
     QXmlStreamReader reader(&file);
     return serializer.read(reader);
-}
-
-#include <QDebug>
-void
-BusinessLogic::retranslate(const QString& language) const
-{
-    qDebug() << "retranslate: " << language;
 }

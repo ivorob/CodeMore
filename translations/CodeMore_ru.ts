@@ -12,20 +12,20 @@
 <context>
     <name>Languages</name>
     <message>
-        <location filename="../src/Localization.cpp" line="11"/>
-        <location filename="../src/Localization.cpp" line="21"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="64"/>
         <source>English</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/Localization.cpp" line="12"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="12"/>
         <source>Russian</source>
         <translation>Русский</translation>
     </message>
     <message>
-        <location filename="../src/Localization.cpp" line="13"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="13"/>
         <source>Deutch</source>
-        <translation>中文</translation>
+        <translation>Deutch</translation>
     </message>
 </context>
 <context>

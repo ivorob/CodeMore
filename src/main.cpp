@@ -6,10 +6,7 @@
 #include <QDebug>
 
 #include "BusinessLogic.h"
-#include "Localization.h"
-
-using QHashType = QHash<QString, QString>;
-Q_DECLARE_METATYPE(QHashType)
+#include "LocalizationDispatcher.h"
 
 int main(int argc, char *argv[])
 {
@@ -19,17 +16,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     app.setWindowIcon(QIcon(":/img/favicon.png"));
 
-    QTranslator translator;
-    if (translator.load(QLocale(), "CodeMore", "_", "translations")) {
-        QCoreApplication::installTranslator(&translator);
-    } else {
-        qDebug() << "Cannot load translation";
-    }
-
     QQmlApplicationEngine engine;
-    QStringList languages = Localization::fillLanguages("CodeMore", "translations");
-    engine.rootContext()->setContextProperty("languageList", languages);
-    engine.rootContext()->setContextProperty("currentLanguage", Localization::getCurrentLanguage());
+
+    LocalizationDispatcher localizator(&engine, QLocale());
+    engine.rootContext()->setContextProperty("localizator", &localizator);
 
     BusinessLogic businessLogic;
     engine.rootContext()->setContextProperty("businessLogic", &businessLogic);
