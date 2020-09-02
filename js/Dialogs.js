@@ -36,3 +36,8 @@ function openSaveChangesDialog(id)
 {
     return openDialog("qrc:/qml/SaveChanges.qml", id)
 }
+
+function openNewTaskDialog(id)
+{
+    return openDialog("qrc:/qml/NewTaskDialog.qml", id)
+}

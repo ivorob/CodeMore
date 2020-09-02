@@ -143,98 +143,52 @@ ApplicationWindow {
                 }
 
                 onCurrentItemChanged: {
-                    var data = TodoDataHandler.restoreData(goals, currentIndex)
-                    expectationsControl.text = data.expectations
-                    realityControl.text = data.reality
+                    console.log(JSON.stringify(expectationsControl.dataModel))
+                    var day = TodoDataHandler.restoreData(goals, currentIndex)
+                    TodoDataHandler.deserializeTodoList(expectationsControl.dataModel, day.expectations)
+                    TodoDataHandler.deserializeTodoList(realityControl.dataModel, day.reality)
                 }
             }
 
-            Rectangle {
+            ColumnLayout {
                 Layout.preferredHeight: parent.height
                 Layout.preferredWidth: parent.width * 2 / 3 - 4
+                Layout.bottomMargin: 3
+                Layout.rightMargin: 3
                 Layout.row: 1
                 Layout.column: 2
-                
-                ColumnLayout {
-                    anchors.fill: parent
-                    spacing: 2
-                    anchors.bottomMargin: 3
-                    anchors.rightMargin: 4
 
-                    Text {
-                        id: goalPlaceholder
-                        anchors.topMargin: 10
+                TaskList {
+                    id: expectationsControl
+                    title: qsTr("Expectations")
 
-                        Layout.fillWidth: true
-                        Layout.preferredHeight: 40
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
 
-                        text: qsTr("Day goals:")
-                    }
+                    dataModel: ListModel {}
+                }
 
-                    ScrollView {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
+                TaskList {
+                    id: realityControl
+                    title: qsTr("Reality")
 
-                        TextArea {
-                            id: expectationsControl
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
 
-                            placeholderText: qsTr("Expectations")
+                    dataModel: ListModel {}
+                }
 
-                            background: Rectangle {
-                                border.width: 1
-                                border.color: expectationsControl.activeFocus ? "#000000" : "#BDBEBF"
+                Button {
+                    Layout.preferredHeight: 28
+                    Layout.alignment: Qt.AlignRight
 
-                                anchors.fill: parent
-                            }
+                    text: qsTr("Next day")
 
-                            Keys.onPressed: {
-                                if (((event.modifiers & Qt.AltModifiers) == 0 || (event.modifiers & Qt.ControlModifier) == 0) &&
-                                    (event.key != Qt.Key_Alt && event.key != Qt.Key_Control))
-                                {
-                                    InternalDataController.newChanges()
-                                }
-                            }
-                        }
-                    }
+                    onClicked: {
+                        var model = todoListView.model
+                        model.get(todoListView.currentIndex).itemState = 1
 
-                    ScrollView {
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-
-                        TextArea {
-                            id: realityControl
-
-                            placeholderText: qsTr("Reality")
-
-                            background: Rectangle {
-                                border.width: 1
-                                border.color: realityControl.activeFocus ? "#000000" : "#BDBEBF"
-
-                                anchors.fill: parent
-                            }
-
-                            Keys.onPressed: {
-                                if (((event.modifiers & Qt.AltModifiers) == 0 || (event.modifiers & Qt.ControlModifier) == 0) &&
-                                    (event.key != Qt.Key_Alt && event.key != Qt.Key_Control))
-                                {
-                                    InternalDataController.newChanges()
-                                }
-                            }
-                        }
-                    }
-
-                    Button {
-                        Layout.preferredHeight: 28
-                        Layout.alignment: Qt.AlignRight
-
-                        text: qsTr("Next day")
-
-                        onClicked: {
-                            var model = todoListView.model
-                            model.get(todoListView.currentIndex).itemState = 1
-
-                            TodoDataHandler.nextDay(todoListView, todoListView.currentIndex + 1)
-                        }
+                        TodoDataHandler.nextDay(todoListView, todoListView.currentIndex + 1)
                     }
                 }
             }

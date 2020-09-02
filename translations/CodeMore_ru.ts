@@ -89,22 +89,21 @@
         <translation>День #</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="171"/>
         <source>Day goals:</source>
-        <translation>Цели</translation>
+        <translation type="vanished">Цели</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="181"/>
+        <location filename="../qml/MainWindow.qml" line="163"/>
         <source>Expectations</source>
         <translation>Ожидания</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="207"/>
+        <location filename="../qml/MainWindow.qml" line="173"/>
         <source>Reality</source>
         <translation>Реальность</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="230"/>
+        <location filename="../qml/MainWindow.qml" line="185"/>
         <source>Next day</source>
         <translation>Завершить день</translation>
     </message>

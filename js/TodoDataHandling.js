@@ -31,12 +31,34 @@ function nextDay(viewId, newDay)
     {
         TodoDataHandler.keepData(viewId.goals,
             viewId.currentIndex, 
-            expectationsControl.text,
-            realityControl.text)
+            TodoDataHandler.serializeTodoList(expectationsControl.dataModel),
+            TodoDataHandler.serializeTodoList(realityControl.dataModel)
+        )
 
         viewId.currentItem.color = root.color
         viewId.currentIndex = newDay
 
         viewId.currentItem.color = "lightsteelblue"
+    }
+}
+
+function serializeTodoList(model)
+{
+    var dataModel = []
+    for (var i = 0; i < model.count; ++i) {
+        dataModel.push(model.get(i))
+    }
+
+    return JSON.stringify(dataModel)
+}
+
+function deserializeTodoList(model, text)
+{
+    model.clear()
+    if (text.length != 0) {
+        var dataModel = JSON.parse(text)
+        for (var i = 0; i < dataModel.length; ++i) {
+            model.append(dataModel[i])
+        }
     }
 }
