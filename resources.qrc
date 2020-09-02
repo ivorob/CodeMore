@@ -7,6 +7,8 @@
         <file>qml/SaveDialog.qml</file>
         <file>qml/OpenDialog.qml</file>
         <file>qml/SaveChanges.qml</file>
+        <file>qml/NewTaskDialog.qml</file>
+        <file>qml/TaskList.qml</file>
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
         <file>img/completed.svg</file>

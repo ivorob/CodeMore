@@ -89,24 +89,41 @@
         <translation>День #</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="171"/>
         <source>Day goals:</source>
-        <translation>Цели</translation>
+        <translation type="vanished">Цели</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="181"/>
+        <location filename="../qml/MainWindow.qml" line="163"/>
         <source>Expectations</source>
         <translation>Ожидания</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="207"/>
+        <location filename="../qml/MainWindow.qml" line="173"/>
         <source>Reality</source>
         <translation>Реальность</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="230"/>
+        <location filename="../qml/MainWindow.qml" line="185"/>
         <source>Next day</source>
         <translation>Завершить день</translation>
+    </message>
+</context>
+<context>
+    <name>NewTaskDialog</name>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="9"/>
+        <source>New task</source>
+        <translation>Добавить задачу</translation>
+    </message>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="25"/>
+        <source>Task</source>
+        <translation>Задача</translation>
+    </message>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="35"/>
+        <source>Task description</source>
+        <translation>Описание задачи</translation>
     </message>
 </context>
 <context>

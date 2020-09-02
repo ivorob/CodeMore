@@ -1,8 +1,8 @@
 function saveToDisk(file) {
     TodoDataHandler.keepData(todoListView.goals, 
         todoListView.currentIndex, 
-        expectationsControl.text,
-        realityControl.text)
+        TodoDataHandler.serializeTodoList(expectationsControl.dataModel),
+        TodoDataHandler.serializeTodoList(realityControl.dataModel))
 
     businessLogic.saveToFile(file, 
         JsonUtils.convertListModelToJson(todoListView.model),
@@ -57,8 +57,8 @@ function newTodoList() {
                 resetGoalsData()
                 todoListView.model = newModel
 
-                expectationsControl.clear()
-                realityControl.clear()
+                expectationsControl.dataModel.clear()
+                realityControl.dataModel.clear()
                 root.filename = ""
             }
         }
