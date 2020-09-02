@@ -38,9 +38,12 @@ SET (QML_FILES
         ${QML_DIR}/AboutWindow.qml
         ${QML_DIR}/MainMenu.qml
         ${QML_DIR}/MainWindow.qml
+        ${QML_DIR}/NewTaskDialog.qml
         ${QML_DIR}/OpenDialog.qml
         ${QML_DIR}/SaveChanges.qml
         ${QML_DIR}/SaveDialog.qml
+        ${QML_DIR}/TaskList.qml
+        ${QML_DIR}/TodoListModel.qml
     )
 
 SET (TRANSLATION

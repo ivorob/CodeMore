@@ -109,6 +109,24 @@
     </message>
 </context>
 <context>
+    <name>NewTaskDialog</name>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="9"/>
+        <source>New task</source>
+        <translation>Добавить задачу</translation>
+    </message>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="25"/>
+        <source>Task</source>
+        <translation>Задача</translation>
+    </message>
+    <message>
+        <location filename="../qml/NewTaskDialog.qml" line="35"/>
+        <source>Task description</source>
+        <translation>Описание задачи</translation>
+    </message>
+</context>
+<context>
     <name>OpenDialog</name>
     <message>
         <location filename="../qml/OpenDialog.qml" line="6"/>
