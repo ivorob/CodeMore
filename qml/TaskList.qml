@@ -33,6 +33,7 @@ Rectangle {
                     if (dialog) {
                         var newTaskCreated = function() {
                             dataModel.append({"task": dialog.text});
+                            taskListView.currentIndex = dataModel.count - 1
 
                             InternalDataController.newChanges()
                         }
@@ -51,10 +52,29 @@ Rectangle {
             border.color: "#ccc"
 
             ListView {
-                anchors.fill: parent
+                id: taskListView
 
-                delegate: Text {
-                    text: task
+                anchors.margins: 3, 3, 3, 3
+                anchors.fill: parent
+                focus: true
+                snapMode: ListView.SnapOneItem
+
+                delegate: Rectangle {
+                    height: 20
+                    width: parent.width
+                    color: ListView.isCurrentItem ? "lightsteelblue" : root.color
+
+                    Text {
+                        anchors.left: parent.left
+                        anchors.leftMargin: 3
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: task
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: taskListView.currentIndex = index
+                    }
                 }
 
                 model: dataModel
