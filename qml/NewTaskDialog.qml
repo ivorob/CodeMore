@@ -35,4 +35,9 @@ Dialog {
             placeholderText: qsTr("Task description")
         }
     }
+
+    Component.onCompleted: {
+        visible = true
+        textInput.focus = true
+    }
 }
