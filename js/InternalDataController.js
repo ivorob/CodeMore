@@ -110,3 +110,19 @@ function closeApplication()
         closeApplicationHandler()
     }
 }
+
+function openFile()
+{
+    var openFileDialog = function() {
+        Dialogs.openOpenDialog(root)
+    }
+
+    if (isNewChanges()) {
+        var dialog = Dialogs.openSaveChangesDialog(root)
+
+        dialog.no.connect(openFileDialog)
+        dialog.accepted.connect(openFileDialog)
+    } else {
+        openFileDialog()
+    }
+}
