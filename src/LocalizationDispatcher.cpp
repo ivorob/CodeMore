@@ -10,7 +10,8 @@ const char *languagesTranslation[] =
 {
     QT_TRANSLATE_NOOP("Languages", "English"),
     QT_TRANSLATE_NOOP("Languages", "Russian"),
-    QT_TRANSLATE_NOOP("Languages", "Deutch")
+    QT_TRANSLATE_NOOP("Languages", "Deutch"),
+    QT_TRANSLATE_NOOP("Languages", "Spanish")
 };
 
 }
