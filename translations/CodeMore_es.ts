@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ru_RU">
+<TS version="2.1" language="es_ES">
 <context>
     <name>AboutWindow</name>
     <message>
         <location filename="../qml/AboutWindow.qml" line="7"/>
         <source>About</source>
-        <translation>О программе</translation>
+        <translation>Sobre el programa</translation>
     </message>
 </context>
 <context>
@@ -38,47 +38,47 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="13"/>
         <source>&amp;File</source>
-        <translation>&amp;Файл</translation>
+        <translation>Expediente</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="16"/>
         <source>&amp;New</source>
-        <translation>Создать</translation>
+        <translation>&amp;Nuevo</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="23"/>
         <source>&amp;Open...</source>
-        <translation>&amp;Открыть...</translation>
+        <translation>&amp;Abierto...</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="30"/>
         <source>&amp;Save</source>
-        <translation>&amp;Сохранить</translation>
+        <translation>&amp;Salvar</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="43"/>
         <source>Save &amp;As...</source>
-        <translation>&amp;Сохранить как...</translation>
+        <translation>Guardar &amp;como...</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="52"/>
         <source>&amp;Quit</source>
-        <translation>В&amp;ыход</translation>
+        <translation>&amp;Desconectarse</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="59"/>
         <source>&amp;Language</source>
-        <translation>&amp;Язык</translation>
+        <translation>&amp;Lengua</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="90"/>
         <source>&amp;Help</source>
-        <translation>&amp;Справка</translation>
+        <translation>&amp;Ayuda</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="93"/>
         <source>&amp;About</source>
-        <translation>&amp;О программе</translation>
+        <translation>&amp;Sobre el programa</translation>
     </message>
 </context>
 <context>
@@ -91,26 +91,22 @@
     <message>
         <location filename="../qml/MainWindow.qml" line="92"/>
         <source>Day #</source>
-        <translation>День #</translation>
-    </message>
-    <message>
-        <source>Day goals:</source>
-        <translation type="vanished">Цели</translation>
+        <translation>Día #</translation>
     </message>
     <message>
         <location filename="../qml/MainWindow.qml" line="163"/>
         <source>Expectations</source>
-        <translation>Ожидания</translation>
+        <translation>Expectativas</translation>
     </message>
     <message>
         <location filename="../qml/MainWindow.qml" line="173"/>
         <source>Reality</source>
-        <translation>Реальность</translation>
+        <translation>Realidad</translation>
     </message>
     <message>
         <location filename="../qml/MainWindow.qml" line="185"/>
         <source>Next day</source>
-        <translation>Завершить день</translation>
+        <translation>Terminar el dia</translation>
     </message>
 </context>
 <context>
@@ -118,17 +114,17 @@
     <message>
         <location filename="../qml/NewTaskDialog.qml" line="9"/>
         <source>New task</source>
-        <translation>Добавить задачу</translation>
+        <translation>Nuevo desafío</translation>
     </message>
     <message>
         <location filename="../qml/NewTaskDialog.qml" line="25"/>
         <source>Task</source>
-        <translation>Задача</translation>
+        <translation>Una tarea</translation>
     </message>
     <message>
         <location filename="../qml/NewTaskDialog.qml" line="35"/>
         <source>Task description</source>
-        <translation>Описание задачи</translation>
+        <translation>Descripción de la tarea</translation>
     </message>
 </context>
 <context>
@@ -136,17 +132,17 @@
     <message>
         <location filename="../qml/OpenDialog.qml" line="6"/>
         <source>Open</source>
-        <translation>Открыть</translation>
+        <translation>Abierto</translation>
     </message>
     <message>
         <location filename="../qml/OpenDialog.qml" line="8"/>
         <source>Xml files (*.xml)</source>
-        <translation></translation>
+        <translation>Archivos xml (*.xml)</translation>
     </message>
     <message>
         <location filename="../qml/OpenDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Все файлы (*.*)</translation>
+        <translation>Todos los archivos (*.*)</translation>
     </message>
 </context>
 <context>
@@ -156,7 +152,7 @@
         <location filename="../src/TodoListSerializer.cpp" line="97"/>
         <location filename="../src/TodoListSerializer.cpp" line="118"/>
         <source>Incorrect file</source>
-        <translation>Ошибка в формате файла</translation>
+        <translation>Archivo incorrecto</translation>
     </message>
 </context>
 <context>
@@ -164,7 +160,7 @@
     <message>
         <location filename="../qml/SaveChanges.qml" line="25"/>
         <source>Do you want to save changes in current todo list?</source>
-        <translation>Вы ходитте сохранить изменения в текущем списке дел?</translation>
+        <translation>¿Quieres guardar los cambios en la lista actual de tareas pendientes?</translation>
     </message>
 </context>
 <context>
@@ -172,17 +168,17 @@
     <message>
         <location filename="../qml/SaveDialog.qml" line="6"/>
         <source>Save</source>
-        <translation>Сохранить</translation>
+        <translation>Salvar</translation>
     </message>
     <message>
         <location filename="../qml/SaveDialog.qml" line="8"/>
         <source>Xml files (*.xml)</source>
-        <translation></translation>
+        <translation>Archivos xml (*.xml)</translation>
     </message>
     <message>
         <location filename="../qml/SaveDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Все файлы (*.*)</translation>
+        <translation>Todos los archivos (*.*)</translation>
     </message>
 </context>
 </TS>
