@@ -23,7 +23,7 @@ MenuBar {
             text: qsTr("&Open...")
             shortcut: "Ctrl+O"
         
-            onTriggered: Dialogs.openOpenDialog(root)
+            onTriggered: root.openFile()
         }
 
         Action { 

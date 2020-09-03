@@ -89,7 +89,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="92"/>
+        <location filename="../qml/MainWindow.qml" line="93"/>
         <source>Day #</source>
         <translation>День #</translation>
     </message>

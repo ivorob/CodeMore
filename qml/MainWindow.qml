@@ -35,6 +35,7 @@ ApplicationWindow {
     signal save(string file)
     signal open(string file)
     signal newTodoList()
+    signal openFile()
 
     Rectangle {
         anchors.fill: parent
@@ -139,7 +140,6 @@ ApplicationWindow {
 
                     root.save.connect(InternalDataController.saveToDisk)
                     root.open.connect(InternalDataController.openFromDisk)
-                    root.newTodoList.connect(InternalDataController.newTodoList)
                 }
 
                 onCurrentItemChanged: {
@@ -198,5 +198,10 @@ ApplicationWindow {
     onClosing: {
         close.accepted = false
         InternalDataController.closeApplication();
+    }
+
+    Component.onCompleted: {
+        root.newTodoList.connect(InternalDataController.newTodoList)
+        root.openFile.connect(InternalDataController.openFile)
     }
 }
