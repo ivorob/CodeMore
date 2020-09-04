@@ -46,6 +46,8 @@ SET (QML_FILES
         ${QML_DIR}/TodoListModel.qml
     )
 
+FILE (GLOB JS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/js/*.js)
+
 SET (TRANSLATION
         # russian
         ${TRANSLATION_DIR}/CodeMore_ru.ts
@@ -85,8 +87,8 @@ ADD_CUSTOM_COMMAND(TARGET CodeMore
 
 ADD_CUSTOM_COMMAND(TARGET CodeMore
         PRE_BUILD
-        COMMAND lupdate ${QML_FILES} ${SOURCES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_ru.ts
-        COMMAND lupdate ${QML_FILES} ${SOURCES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_es.ts
+        COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_ru.ts
+        COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_es.ts
     )
 
 ADD_DEPENDENCIES (CodeMore version)

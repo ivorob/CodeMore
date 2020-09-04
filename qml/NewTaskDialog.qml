@@ -33,6 +33,12 @@ Dialog {
             Layout.preferredHeight: 30
 
             placeholderText: qsTr("Task description")
+
+            Component.onCompleted: {
+                if (newTaskDialog.text !== undefined) {
+                    text = newTaskDialog.text
+                }
+            }
         }
     }
 

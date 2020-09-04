@@ -10,6 +10,14 @@
     </message>
 </context>
 <context>
+    <name>Dialogs</name>
+    <message>
+        <location filename="../js/Dialogs.js" line="48"/>
+        <source>Modify task</source>
+        <translation>Изменить задачу</translation>
+    </message>
+</context>
+<context>
     <name>Languages</name>
     <message>
         <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
@@ -98,17 +106,17 @@
         <translation type="vanished">Цели</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="163"/>
+        <location filename="../qml/MainWindow.qml" line="162"/>
         <source>Expectations</source>
         <translation>Ожидания</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="173"/>
+        <location filename="../qml/MainWindow.qml" line="172"/>
         <source>Reality</source>
         <translation>Реальность</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="185"/>
+        <location filename="../qml/MainWindow.qml" line="184"/>
         <source>Next day</source>
         <translation>Завершить день</translation>
     </message>

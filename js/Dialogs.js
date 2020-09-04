@@ -1,4 +1,4 @@
-function openDialog(dialogUrl, id)
+function openDialog(dialogUrl, id, state)
 {
     console.log("open dialog: " + dialogUrl)
 
@@ -7,7 +7,7 @@ function openDialog(dialogUrl, id)
         console.log(component.errorString())
     } else if (component.status == Component.Ready)
     {
-        var dialog = component.createObject(id)
+        var dialog = component.createObject(id, state)
         if (dialog) {
             dialog.open()
             return dialog
@@ -19,25 +19,33 @@ function openDialog(dialogUrl, id)
 
 function openSaveDialog(id)
 {
-    return openDialog("qrc:/qml/SaveDialog.qml", id)
+    return openDialog("qrc:/qml/SaveDialog.qml", id, {})
 }
 
 function openOpenDialog(id)
 {
-    return openDialog("qrc:/qml/OpenDialog.qml", id)
+    return openDialog("qrc:/qml/OpenDialog.qml", id, {})
 }
 
 function openAboutDialog(id)
 {
-    return openDialog("qrc:/qml/AboutWindow.qml", id)
+    return openDialog("qrc:/qml/AboutWindow.qml", id, {})
 }
 
 function openSaveChangesDialog(id)
 {
-    return openDialog("qrc:/qml/SaveChanges.qml", id)
+    return openDialog("qrc:/qml/SaveChanges.qml", id, {})
 }
 
 function openNewTaskDialog(id)
 {
-    return openDialog("qrc:/qml/NewTaskDialog.qml", id)
+    return openDialog("qrc:/qml/NewTaskDialog.qml", id, {})
+}
+
+function openEditTaskDialog(id, task)
+{
+    return openDialog("qrc:/qml/NewTaskDialog.qml", id, {
+        title: qsTr("Modify task"),
+        text: task
+    })
 }

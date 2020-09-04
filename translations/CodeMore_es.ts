@@ -10,6 +10,14 @@
     </message>
 </context>
 <context>
+    <name>Dialogs</name>
+    <message>
+        <location filename="../js/Dialogs.js" line="48"/>
+        <source>Modify task</source>
+        <translation>modificar tarea</translation>
+    </message>
+</context>
+<context>
     <name>Languages</name>
     <message>
         <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
@@ -94,17 +102,17 @@
         <translation>Día #</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="163"/>
+        <location filename="../qml/MainWindow.qml" line="162"/>
         <source>Expectations</source>
         <translation>Expectativas</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="173"/>
+        <location filename="../qml/MainWindow.qml" line="172"/>
         <source>Reality</source>
         <translation>Realidad</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="185"/>
+        <location filename="../qml/MainWindow.qml" line="184"/>
         <source>Next day</source>
         <translation>Terminar el dia</translation>
     </message>
