@@ -23,6 +23,7 @@ private:
 private:
     QQmlEngine *engine;
     QTranslator *translator;
+    QTranslator *systemTranslator;
     QHash<QString, QString> languages;
     QHash<QString, QString> currentTranslation;
     QString currentLanguage;

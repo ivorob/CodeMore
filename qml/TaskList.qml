@@ -74,6 +74,19 @@ Rectangle {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: taskListView.currentIndex = index
+
+                        onDoubleClicked: {
+                            var dialog = Dialogs.openEditTaskDialog(root, task)
+                            if (dialog) {
+                                var taskChanged = function() {
+                                    task = dialog.text
+
+                                    InternalDataController.newChanges()
+                                }
+
+                                dialog.accepted.connect(taskChanged)
+                            }
+                        }
                     }
                 }
 

@@ -143,7 +143,6 @@ ApplicationWindow {
                 }
 
                 onCurrentItemChanged: {
-                    console.log(JSON.stringify(expectationsControl.dataModel))
                     var day = TodoDataHandler.restoreData(goals, currentIndex)
                     TodoDataHandler.deserializeTodoList(expectationsControl.dataModel, day.expectations)
                     TodoDataHandler.deserializeTodoList(realityControl.dataModel, day.reality)

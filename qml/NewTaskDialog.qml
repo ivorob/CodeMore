@@ -7,10 +7,10 @@ import QtQuick.Layouts 1.0
 Dialog {
     id: newTaskDialog
     title: qsTr("New task")
-    property var text;
-
     modality: Qt.WindowModal
     standardButtons: StandardButton.Ok | StandardButton.Cancel
+
+    property var text;
 
     onAccepted: {
         text = textInput.text
@@ -27,12 +27,19 @@ Dialog {
 
         TextField {
             id: textInput
+            selectByMouse: true
 
             Layout.fillWidth: true
             Layout.minimumWidth: 150
             Layout.preferredHeight: 30
 
             placeholderText: qsTr("Task description")
+
+            Component.onCompleted: {
+                if (newTaskDialog.text !== undefined) {
+                    text = newTaskDialog.text
+                }
+            }
         }
     }
 
