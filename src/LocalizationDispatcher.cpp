@@ -20,6 +20,7 @@ LocalizationDispatcher::LocalizationDispatcher(QQmlEngine *engine, QLocale local
     : QObject(parent),
       engine(engine),
       translator(new QTranslator(this)),
+      systemTranslator(new QTranslator(this)),
       currentLanguage("English")
 {
     QString prefix = "CodeMore";
@@ -105,14 +106,18 @@ void
 LocalizationDispatcher::retranslate()
 {
     QCoreApplication::removeTranslator(this->translator);
+    QCoreApplication::removeTranslator(this->systemTranslator);
 
     if (this->currentLanguage != "English") {
         QLocale locale(this->languages.value(this->currentLanguage));
 
         QString prefix = "CodeMore";
         QString translationDirectory = "translations";
-        if (translator->load(locale, prefix, "_", translationDirectory)) {
+        if (translator->load(locale, prefix, "_", translationDirectory) &&
+            systemTranslator->load(locale, "qt", "_", translationDirectory))
+        {
             QCoreApplication::installTranslator(translator);
+            QCoreApplication::installTranslator(systemTranslator);
 
             fillCurrentTranslation();
         } else {

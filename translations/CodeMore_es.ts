@@ -21,7 +21,7 @@
     <name>Languages</name>
     <message>
         <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
-        <location filename="../src/LocalizationDispatcher.cpp" line="65"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="66"/>
         <source>English</source>
         <translation></translation>
     </message>
@@ -130,7 +130,7 @@
         <translation>Una tarea</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="35"/>
+        <location filename="../qml/NewTaskDialog.qml" line="36"/>
         <source>Task description</source>
         <translation>Descripción de la tarea</translation>
     </message>
