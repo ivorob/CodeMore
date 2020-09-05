@@ -49,7 +49,7 @@ SET (QML_FILES
 FILE (GLOB JS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/js/*.js)
 
 SET (TRANSLATION
-        # russian
+        ${TRANSLATION_DIR}/CodeMore_en.ts
         ${TRANSLATION_DIR}/CodeMore_ru.ts
         ${TRANSLATION_DIR}/CodeMore_es.ts
     )
@@ -80,13 +80,17 @@ ADD_CUSTOM_TARGET (
 ADD_CUSTOM_COMMAND(TARGET CodeMore
         POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:CodeMore>/translations
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/CodeMore_en.qm $<TARGET_FILE_DIR:CodeMore>/translations/CodeMore_en.qm
         COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/CodeMore_ru.qm $<TARGET_FILE_DIR:CodeMore>/translations/CodeMore_ru.qm
         COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/CodeMore_es.qm $<TARGET_FILE_DIR:CodeMore>/translations/CodeMore_es.qm
+        COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CodeMore_en.qm
         COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CodeMore_ru.qm
+        COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CodeMore_es.qm
     )
 
 ADD_CUSTOM_COMMAND(TARGET CodeMore
         PRE_BUILD
+        COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_en.ts
         COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_ru.ts
         COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_es.ts
     )
