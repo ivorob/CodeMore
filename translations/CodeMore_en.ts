@@ -125,12 +125,12 @@
         <translation>New task</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="25"/>
+        <location filename="../qml/NewTaskDialog.qml" line="33"/>
         <source>Task</source>
         <translation>Task</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="36"/>
+        <location filename="../qml/NewTaskDialog.qml" line="60"/>
         <source>Task description</source>
         <translation>Task description</translation>
     </message>
