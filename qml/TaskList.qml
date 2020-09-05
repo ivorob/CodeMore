@@ -76,7 +76,7 @@ Rectangle {
 
                     MouseArea {
                         anchors.fill: parent
-                        onClicked: taskListView.currentIndex = index
+                        acceptedButtons: Qt.LeftButton | Qt.RightButton
 
                         onDoubleClicked: {
                             var dialog = Dialogs.openEditTaskDialog(root, task, description)
@@ -89,6 +89,42 @@ Rectangle {
                                 }
 
                                 dialog.accepted.connect(taskChanged)
+                            }
+                        }
+
+                        onClicked: {
+                            if (mouse.button == Qt.LeftButton) {
+                                taskListView.currentIndex = index
+                            } else if (mouse.button == Qt.RightButton) {
+                                contextMenu.popup()
+                            }
+                        }
+
+                        Menu {
+                            id: contextMenu
+
+                            MenuItem {
+                                text: qsTr("Start timer")
+                            }
+
+                            MenuItem {
+                                text: qsTr("Approve")
+                            }
+
+                            MenuItem {
+                                text: qsTr("Fail")
+                            }
+
+                            MenuItem {
+                                text: qsTr("Edit")
+                            }
+
+                            MenuItem {
+                                text: qsTr("Copy")
+                            }
+
+                            MenuItem {
+                                text: qsTr("Delete")
                             }
                         }
                     }

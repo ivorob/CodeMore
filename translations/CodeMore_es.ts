@@ -189,4 +189,37 @@
         <translation>Todos los archivos (*)</translation>
     </message>
 </context>
+<context>
+    <name>TaskList</name>
+    <message>
+        <location filename="../qml/TaskList.qml" line="107"/>
+        <source>Start timer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskList.qml" line="111"/>
+        <source>Approve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskList.qml" line="119"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskList.qml" line="123"/>
+        <source>Copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskList.qml" line="127"/>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskList.qml" line="115"/>
+        <source>Fail</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>
