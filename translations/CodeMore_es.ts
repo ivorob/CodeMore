@@ -125,12 +125,12 @@
         <translation>Nuevo desafío</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="25"/>
+        <location filename="../qml/NewTaskDialog.qml" line="33"/>
         <source>Task</source>
         <translation>Una tarea</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="36"/>
+        <location filename="../qml/NewTaskDialog.qml" line="60"/>
         <source>Task description</source>
         <translation>Descripción de la tarea</translation>
     </message>
@@ -150,7 +150,7 @@
     <message>
         <location filename="../qml/OpenDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Todos los archivos (*.*)</translation>
+        <translation>Todos los archivos (*)</translation>
     </message>
 </context>
 <context>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../qml/SaveDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Todos los archivos (*.*)</translation>
+        <translation>Todos los archivos (*)</translation>
     </message>
 </context>
 </TS>

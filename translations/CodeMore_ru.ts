@@ -129,12 +129,12 @@
         <translation>Добавить задачу</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="25"/>
+        <location filename="../qml/NewTaskDialog.qml" line="33"/>
         <source>Task</source>
         <translation>Задача</translation>
     </message>
     <message>
-        <location filename="../qml/NewTaskDialog.qml" line="36"/>
+        <location filename="../qml/NewTaskDialog.qml" line="60"/>
         <source>Task description</source>
         <translation>Описание задачи</translation>
     </message>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../qml/OpenDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Все файлы (*.*)</translation>
+        <translation>Все файлы (*)</translation>
     </message>
 </context>
 <context>
@@ -165,17 +165,6 @@
         <location filename="../src/TodoListSerializer.cpp" line="118"/>
         <source>Incorrect file</source>
         <translation>Ошибка в формате файла</translation>
-    </message>
-</context>
-<context>
-    <name>QPlatformTheme</name>
-    <message>
-        <source>&amp;Yes</source>
-        <translation type="vanished">Да</translation>
-    </message>
-    <message>
-        <source>&amp;No</source>
-        <translation type="vanished">Нет</translation>
     </message>
 </context>
 <context>
@@ -201,7 +190,7 @@
     <message>
         <location filename="../qml/SaveDialog.qml" line="8"/>
         <source>All files (*)</source>
-        <translation>Все файлы (*.*)</translation>
+        <translation>Все файлы (*)</translation>
     </message>
 </context>
 </TS>

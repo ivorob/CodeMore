@@ -9,42 +9,79 @@ Dialog {
     title: qsTr("New task")
     modality: Qt.WindowModal
     standardButtons: StandardButton.Ok | StandardButton.Cancel
+    width: 350
 
-    property var text;
+    property var taskTitle;
+    property var taskDescription;
 
     onAccepted: {
-        text = textInput.text
+        taskTitle = taskTitleInput.text
+        taskDescription = taskDescriptionInput.text
     }
 
-    RowLayout {
+    ColumnLayout {
         anchors.fill: parent
 
-        Text {
-            Layout.minimumWidth: 50
-
-            text: qsTr("Task")
-        }
-
         TextField {
-            id: textInput
+            id: taskTitleInput
             selectByMouse: true
 
             Layout.fillWidth: true
             Layout.minimumWidth: 150
             Layout.preferredHeight: 30
 
-            placeholderText: qsTr("Task description")
+            placeholderText: qsTr("Task")
+
+            background: Rectangle {
+                border.width: 1
+                border.color: "lightgrey"
+                radius: 3
+
+                color: root.color
+            }
 
             Component.onCompleted: {
-                if (newTaskDialog.text !== undefined) {
-                    text = newTaskDialog.text
+                if (newTaskDialog.taskTitle !== undefined) {
+                    text = newTaskDialog.taskTitle
                 }
             }
+        }
+
+        Flickable {
+            Layout.fillWidth: true
+            Layout.minimumHeight: 150
+
+            TextArea.flickable: TextArea {
+                id: taskDescriptionInput
+                anchors.fill: parent
+
+                selectByMouse: true
+
+                placeholderText: qsTr("Task description")
+                wrapMode: TextArea.Wrap
+
+                background: Rectangle {
+                    border.width: 1
+                    border.color: "lightgrey"
+                    radius: 3
+
+                    color: root.color
+                }
+
+                Component.onCompleted: {
+                    if (newTaskDialog.taskDescription !== undefined) {
+                        text = newTaskDialog.taskDescription
+                    }
+                }
+
+            }
+
+            ScrollBar.vertical: ScrollBar {}
         }
     }
 
     Component.onCompleted: {
         visible = true
-        textInput.focus = true
+        taskTitleInput.focus = true
     }
 }

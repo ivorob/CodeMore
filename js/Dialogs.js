@@ -42,10 +42,11 @@ function openNewTaskDialog(id)
     return openDialog("qrc:/qml/NewTaskDialog.qml", id, {})
 }
 
-function openEditTaskDialog(id, task)
+function openEditTaskDialog(id, task, description)
 {
     return openDialog("qrc:/qml/NewTaskDialog.qml", id, {
         title: qsTr("Modify task"),
-        text: task
+        taskTitle: task,
+        taskDescription: description
     })
 }
