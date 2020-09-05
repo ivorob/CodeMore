@@ -32,7 +32,10 @@ Rectangle {
                     var dialog = Dialogs.openNewTaskDialog(root)
                     if (dialog) {
                         var newTaskCreated = function() {
-                            dataModel.append({"task": dialog.text});
+                            dataModel.append({
+                                "task": dialog.taskTitle,
+                                "description" : dialog.taskDescription
+                            });
                             taskListView.currentIndex = dataModel.count - 1
 
                             InternalDataController.newChanges()
@@ -76,10 +79,11 @@ Rectangle {
                         onClicked: taskListView.currentIndex = index
 
                         onDoubleClicked: {
-                            var dialog = Dialogs.openEditTaskDialog(root, task)
+                            var dialog = Dialogs.openEditTaskDialog(root, task, description)
                             if (dialog) {
                                 var taskChanged = function() {
-                                    task = dialog.text
+                                    task = dialog.taskTitle
+                                    description = dialog.taskDescription
 
                                     InternalDataController.newChanges()
                                 }

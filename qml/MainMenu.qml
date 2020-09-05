@@ -44,7 +44,7 @@ MenuBar {
             shortcut: "Ctrl+Shift+S"
 
             onTriggered: {
-                openDialog("qrc:/qml/SaveDialog.qml", root)
+                Dialogs.openSaveDialog(root)
             }
         }
         MenuSeparator {}
