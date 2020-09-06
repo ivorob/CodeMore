@@ -8,6 +8,20 @@ Rectangle {
     property var title;
     property var dataModel;
 
+    function editTaskDialog(id, item) {
+        var dialog = Dialogs.openEditTaskDialog(root, item.task, item.description)
+        if (dialog) {
+            var taskChanged = function() {
+                item.task = dialog.taskTitle
+                item.description = dialog.taskDescription
+
+                InternalDataController.newChanges()
+            }
+
+            dialog.accepted.connect(taskChanged)
+        }
+    }
+
     ColumnLayout {
         anchors.fill: parent
 
@@ -79,16 +93,9 @@ Rectangle {
                         acceptedButtons: Qt.LeftButton | Qt.RightButton
 
                         onDoubleClicked: {
-                            var dialog = Dialogs.openEditTaskDialog(root, task, description)
-                            if (dialog) {
-                                var taskChanged = function() {
-                                    task = dialog.taskTitle
-                                    description = dialog.taskDescription
-
-                                    InternalDataController.newChanges()
-                                }
-
-                                dialog.accepted.connect(taskChanged)
+                            var item = dataModel.get(index)
+                            if (item) {
+                                editTaskDialog(root, item);
                             }
                         }
 
@@ -124,8 +131,14 @@ Rectangle {
 
                             MenuItem {
                                 text: qsTr("Edit")
-
                                 icon.source: "qrc:/img/edit.svg"
+
+                                onTriggered: {
+                                    var item = dataModel.get(index)
+                                    if (item) {
+                                        editTaskDialog(root, item)
+                                    }
+                                }
                             }
 
                             MenuItem {

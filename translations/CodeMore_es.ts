@@ -192,37 +192,37 @@
 <context>
     <name>TaskList</name>
     <message>
-        <location filename="../qml/TaskList.qml" line="108"/>
+        <location filename="../qml/TaskList.qml" line="115"/>
         <source>Start timer</source>
         <translation>Temporizador</translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="114"/>
+        <location filename="../qml/TaskList.qml" line="121"/>
         <source>Approve</source>
         <translation>Aprobar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="126"/>
+        <location filename="../qml/TaskList.qml" line="133"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="132"/>
+        <location filename="../qml/TaskList.qml" line="145"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="139"/>
+        <location filename="../qml/TaskList.qml" line="152"/>
         <source>Copy: </source>
         <translation>Copiar: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="150"/>
+        <location filename="../qml/TaskList.qml" line="163"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="120"/>
+        <location filename="../qml/TaskList.qml" line="127"/>
         <source>Fail</source>
         <translation>Fallar</translation>
     </message>
