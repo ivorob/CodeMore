@@ -137,6 +137,11 @@ Rectangle {
                                 text: qsTr("Delete")
 
                                 icon.source: "qrc:/img/delete.svg"
+                                onTriggered: {
+                                    dataModel.remove(index)
+
+                                    InternalDataController.newChanges()
+                                }
                             }
                         }
                     }

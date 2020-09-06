@@ -39,6 +39,8 @@ function nextDay(viewId, newDay)
         viewId.currentIndex = newDay
 
         viewId.currentItem.color = "lightsteelblue"
+
+        InternalDataController.newChanges()
     }
 }
 
