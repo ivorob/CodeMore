@@ -96,6 +96,7 @@ Rectangle {
                             if (mouse.button == Qt.LeftButton) {
                                 taskListView.currentIndex = index
                             } else if (mouse.button == Qt.RightButton) {
+                                taskListView.currentIndex = index
                                 contextMenu.popup()
                             }
                         }
@@ -129,14 +130,26 @@ Rectangle {
 
                             MenuItem {
                                 text: qsTr("Copy")
-
                                 icon.source: "qrc:/img/copy.svg"
+
+                                onTriggered: {
+                                    var item = dataModel.get(index)
+                                    if (item) {
+                                        dataModel.insert(index + 1, {
+                                            "task": qsTr("Copy: ") + item.task,
+                                            "description" : item.description
+                                        });
+
+                                        taskListView.currentIndex = index + 1
+                                        InternalDataController.newChanges()
+                                    }
+                                }
                             }
 
                             MenuItem {
                                 text: qsTr("Delete")
-
                                 icon.source: "qrc:/img/delete.svg"
+
                                 onTriggered: {
                                     dataModel.remove(index)
 
