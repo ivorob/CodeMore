@@ -105,26 +105,38 @@ Rectangle {
 
                             MenuItem {
                                 text: qsTr("Start timer")
+
+                                icon.source: "qrc:/img/pomodoro_timer.svg"
                             }
 
                             MenuItem {
                                 text: qsTr("Approve")
+
+                                icon.source: "qrc:/img/approve.svg"
                             }
 
                             MenuItem {
                                 text: qsTr("Fail")
+
+                                icon.source: "qrc:/img/fail.svg"
                             }
 
                             MenuItem {
                                 text: qsTr("Edit")
+
+                                icon.source: "qrc:/img/edit.svg"
                             }
 
                             MenuItem {
                                 text: qsTr("Copy")
+
+                                icon.source: "qrc:/img/copy.svg"
                             }
 
                             MenuItem {
                                 text: qsTr("Delete")
+
+                                icon.source: "qrc:/img/delete.svg"
                             }
                         }
                     }

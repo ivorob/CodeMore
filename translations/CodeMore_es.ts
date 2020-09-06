@@ -197,27 +197,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="111"/>
+        <location filename="../qml/TaskList.qml" line="113"/>
         <source>Approve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="119"/>
+        <location filename="../qml/TaskList.qml" line="125"/>
         <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="123"/>
+        <location filename="../qml/TaskList.qml" line="131"/>
         <source>Copy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="127"/>
+        <location filename="../qml/TaskList.qml" line="137"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskList.qml" line="115"/>
+        <location filename="../qml/TaskList.qml" line="119"/>
         <source>Fail</source>
         <translation type="unfinished"></translation>
     </message>
