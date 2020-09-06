@@ -157,7 +157,7 @@ ApplicationWindow {
                 Layout.row: 1
                 Layout.column: 2
 
-                TaskList {
+                TaskListExpectations {
                     id: expectationsControl
                     title: qsTr("Expectations")
 
@@ -167,7 +167,7 @@ ApplicationWindow {
                     dataModel: ListModel {}
                 }
 
-                TaskList {
+                TaskListReality {
                     id: realityControl
                     title: qsTr("Reality")
 

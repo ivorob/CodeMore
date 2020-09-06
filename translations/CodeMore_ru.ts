@@ -193,4 +193,65 @@
         <translation>Все файлы (*)</translation>
     </message>
 </context>
+<context>
+    <name>TaskListExpectations</name>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="115"/>
+        <source>Start timer</source>
+        <translation>Запустить таймер</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="121"/>
+        <source>Approve</source>
+        <translation>Завершить</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="127"/>
+        <source>Fail</source>
+        <translation>Провалить</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="133"/>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="145"/>
+        <source>Copy</source>
+        <translation>Копировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="152"/>
+        <source>Copy: </source>
+        <translation>Копия: </translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="163"/>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>TaskListReality</name>
+    <message>
+        <location filename="../qml/TaskListReality.qml" line="115"/>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListReality.qml" line="127"/>
+        <source>Copy</source>
+        <translation>Копировать</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListReality.qml" line="134"/>
+        <source>Copy: </source>
+        <translation>Копия: </translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListReality.qml" line="145"/>
+        <source>Delete</source>
+        <translation>Удалить</translation>
+    </message>
+</context>
 </TS>

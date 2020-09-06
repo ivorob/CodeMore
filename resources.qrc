@@ -8,10 +8,19 @@
         <file>qml/OpenDialog.qml</file>
         <file>qml/SaveChanges.qml</file>
         <file>qml/NewTaskDialog.qml</file>
-        <file>qml/TaskList.qml</file>
+        <file>qml/TaskListExpectations.qml</file>
+        <file>qml/TaskListReality.qml</file>
+
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
         <file>img/completed.svg</file>
+        <file>img/pomodoro_timer.svg</file>
+        <file>img/approve.svg</file>
+        <file>img/fail.svg</file>
+        <file>img/edit.svg</file>
+        <file>img/copy.svg</file>
+        <file>img/delete.svg</file>
+
         <file>js/TodoDataHandling.js</file>
         <file>js/JsonUtils.js</file>
         <file>js/InternalDataController.js</file>
