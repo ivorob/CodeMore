@@ -194,32 +194,32 @@
     <message>
         <location filename="../qml/TaskList.qml" line="107"/>
         <source>Start timer</source>
-        <translation type="unfinished"></translation>
+        <translation>Start timer</translation>
     </message>
     <message>
         <location filename="../qml/TaskList.qml" line="113"/>
         <source>Approve</source>
-        <translation type="unfinished"></translation>
+        <translation>Approve</translation>
     </message>
     <message>
         <location filename="../qml/TaskList.qml" line="125"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit</translation>
     </message>
     <message>
         <location filename="../qml/TaskList.qml" line="131"/>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copy</translation>
     </message>
     <message>
         <location filename="../qml/TaskList.qml" line="137"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Delete</translation>
     </message>
     <message>
         <location filename="../qml/TaskList.qml" line="119"/>
         <source>Fail</source>
-        <translation type="unfinished"></translation>
+        <translation>Fail</translation>
     </message>
 </context>
 </TS>
