@@ -42,7 +42,8 @@ SET (QML_FILES
         ${QML_DIR}/OpenDialog.qml
         ${QML_DIR}/SaveChanges.qml
         ${QML_DIR}/SaveDialog.qml
-        ${QML_DIR}/TaskList.qml
+        ${QML_DIR}/TaskListExpectations.qml
+        ${QML_DIR}/TaskListReality.qml
         ${QML_DIR}/TodoListModel.qml
     )
 

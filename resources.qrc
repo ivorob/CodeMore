@@ -8,7 +8,8 @@
         <file>qml/OpenDialog.qml</file>
         <file>qml/SaveChanges.qml</file>
         <file>qml/NewTaskDialog.qml</file>
-        <file>qml/TaskList.qml</file>
+        <file>qml/TaskListExpectations.qml</file>
+        <file>qml/TaskListReality.qml</file>
 
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
