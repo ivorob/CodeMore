@@ -18,6 +18,19 @@
     </message>
 </context>
 <context>
+    <name>InternalDataController</name>
+    <message>
+        <location filename="../js/InternalDataController.js" line="133"/>
+        <source>Completed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../js/InternalDataController.js" line="143"/>
+        <source>Failed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Languages</name>
     <message>
         <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
@@ -111,12 +124,12 @@
         <translation>Ожидания</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="172"/>
+        <location filename="../qml/MainWindow.qml" line="177"/>
         <source>Reality</source>
         <translation>Реальность</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="184"/>
+        <location filename="../qml/MainWindow.qml" line="189"/>
         <source>Next day</source>
         <translation>Завершить день</translation>
     </message>
@@ -196,37 +209,37 @@
 <context>
     <name>TaskListExpectations</name>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="115"/>
+        <location filename="../qml/TaskListExpectations.qml" line="118"/>
         <source>Start timer</source>
         <translation>Запустить таймер</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="121"/>
+        <location filename="../qml/TaskListExpectations.qml" line="124"/>
         <source>Approve</source>
         <translation>Завершить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="127"/>
+        <location filename="../qml/TaskListExpectations.qml" line="137"/>
         <source>Fail</source>
         <translation>Провалить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="133"/>
+        <location filename="../qml/TaskListExpectations.qml" line="150"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="145"/>
+        <location filename="../qml/TaskListExpectations.qml" line="162"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="152"/>
+        <location filename="../qml/TaskListExpectations.qml" line="169"/>
         <source>Copy: </source>
         <translation>Копия: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="163"/>
+        <location filename="../qml/TaskListExpectations.qml" line="180"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
@@ -234,22 +247,22 @@
 <context>
     <name>TaskListReality</name>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="115"/>
+        <location filename="../qml/TaskListReality.qml" line="117"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="127"/>
+        <location filename="../qml/TaskListReality.qml" line="129"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="134"/>
+        <location filename="../qml/TaskListReality.qml" line="136"/>
         <source>Copy: </source>
         <translation>Копия: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="145"/>
+        <location filename="../qml/TaskListReality.qml" line="147"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>

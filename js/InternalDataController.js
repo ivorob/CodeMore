@@ -126,3 +126,23 @@ function openFile()
         openFileDialog()
     }
 }
+
+function approveTask(item)
+{
+    realityControl.dataModel.append({
+        "task" : qsTr("Completed: ") + item.task,
+        "description" : item.description
+    })
+
+    realityControl.newIndex(realityControl.dataModel.count - 1)
+}
+
+function failTask(item)
+{
+    realityControl.dataModel.append({
+        "task" : qsTr("Failed: ") + item.task,
+        "description" : item.description
+    })
+
+    realityControl.newIndex(realityControl.dataModel.count - 1)
+}

@@ -8,6 +8,8 @@ Rectangle {
     property var title;
     property var dataModel;
 
+    signal newIndex(int index)
+
     function editTaskDialog(id, item) {
         var dialog = Dialogs.openEditTaskDialog(root, item.task, item.description)
         if (dialog) {
@@ -156,6 +158,12 @@ Rectangle {
                 }
 
                 model: dataModel
+
+                Component.onCompleted: {
+                    newIndex.connect(function(index) {
+                        taskListView.currentIndex = index
+                    })
+                }
             }
         }
     }

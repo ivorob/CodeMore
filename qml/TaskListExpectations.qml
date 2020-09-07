@@ -8,6 +8,9 @@ Rectangle {
     property var title;
     property var dataModel;
 
+    signal approve(var task)
+    signal fail(var task)
+
     function editTaskDialog(id, item) {
         var dialog = Dialogs.openEditTaskDialog(root, item.task, item.description)
         if (dialog) {
@@ -119,14 +122,28 @@ Rectangle {
 
                             MenuItem {
                                 text: qsTr("Approve")
-
                                 icon.source: "qrc:/img/approve.svg"
+
+                                onTriggered: {
+                                    var item = dataModel.get(index)
+                                    if (item) {
+                                        console.log("approve: " + JSON.stringify(item));
+                                        approve(item)
+                                    }
+                                }
                             }
 
                             MenuItem {
                                 text: qsTr("Fail")
-
                                 icon.source: "qrc:/img/fail.svg"
+
+                                onTriggered: {
+                                    var item = dataModel.get(index)
+                                    if (item) {
+                                        console.log("fail: " + JSON.stringify(item))
+                                        fail(item)
+                                    }
+                                }
                             }
 
                             MenuItem {

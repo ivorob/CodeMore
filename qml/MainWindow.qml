@@ -165,6 +165,11 @@ ApplicationWindow {
                     Layout.fillHeight: true
 
                     dataModel: ListModel {}
+
+                    Component.onCompleted: {
+                        expectationsControl.approve.connect(InternalDataController.approveTask)
+                        expectationsControl.fail.connect(InternalDataController.failTask)
+                    }
                 }
 
                 TaskListReality {
