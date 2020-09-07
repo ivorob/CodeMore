@@ -127,7 +127,6 @@ Rectangle {
                                 onTriggered: {
                                     var item = dataModel.get(index)
                                     if (item) {
-                                        console.log("approve: " + JSON.stringify(item));
                                         approve(item)
                                     }
                                 }
@@ -140,7 +139,6 @@ Rectangle {
                                 onTriggered: {
                                     var item = dataModel.get(index)
                                     if (item) {
-                                        console.log("fail: " + JSON.stringify(item))
                                         fail(item)
                                     }
                                 }

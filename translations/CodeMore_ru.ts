@@ -22,12 +22,12 @@
     <message>
         <location filename="../js/InternalDataController.js" line="133"/>
         <source>Completed: </source>
-        <translation type="unfinished"></translation>
+        <translation>Завершенная: </translation>
     </message>
     <message>
         <location filename="../js/InternalDataController.js" line="143"/>
         <source>Failed: </source>
-        <translation type="unfinished"></translation>
+        <translation>Проваленная: </translation>
     </message>
 </context>
 <context>
@@ -219,27 +219,27 @@
         <translation>Завершить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="137"/>
+        <location filename="../qml/TaskListExpectations.qml" line="136"/>
         <source>Fail</source>
         <translation>Провалить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="150"/>
+        <location filename="../qml/TaskListExpectations.qml" line="148"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="162"/>
+        <location filename="../qml/TaskListExpectations.qml" line="160"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="169"/>
+        <location filename="../qml/TaskListExpectations.qml" line="167"/>
         <source>Copy: </source>
         <translation>Копия: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="180"/>
+        <location filename="../qml/TaskListExpectations.qml" line="178"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
