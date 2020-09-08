@@ -7,11 +7,14 @@ SET (MAIN_SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../src)
 SET (SOURCES
         ${SRC_DIR}/tests.cpp
         ${SRC_DIR}/TodoListSerializerTests.cpp
+        ${SRC_DIR}/SettingsTests.cpp
         ${MAIN_SRC_DIR}/TodoListSerializer.cpp
+        ${MAIN_SRC_DIR}/Settings.cpp
     )
 
 SET (HEADERS
         ${MAIN_SRC_DIR}/TodoListSerializer.h
+        ${MAIN_SRC_DIR}/Settings.h
     )
 
 ADD_EXECUTABLE (tests ${SOURCES})
