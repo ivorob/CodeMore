@@ -5,15 +5,17 @@
 
 TEST(Settings, currentLocaleTest)
 {
-    ASSERT_EQ(QLocale(), Settings::instance().getCurrentLocale());
+    Settings settings;
+    ASSERT_EQ(QLocale(), settings.getCurrentLocale());
 
     QLocale locale(QLocale::Czech);
-    Settings::instance().setCurrentLocale(locale);
-    ASSERT_EQ(locale, Settings::instance().getCurrentLocale());
+    settings.setCurrentLocale(locale);
+    ASSERT_EQ(locale, settings.getCurrentLocale());
 }
 TEST(Settings, saveSettingsToInvalidDevice)
 {
-    ASSERT_FALSE(Settings::instance().save(nullptr));
+    Settings settings;
+    ASSERT_FALSE(settings.save(nullptr));
 }
 
 TEST(Settings, saveSettings)
@@ -22,20 +24,42 @@ TEST(Settings, saveSettings)
     buffer.open(QBuffer::ReadWrite);
     buffer.seek(0);
 
-    ASSERT_TRUE(Settings::instance().save(&buffer));
+    Settings settings;
+    settings.setCurrentLocale(QLocale(QLocale::Czech));
+    ASSERT_TRUE(settings.save(&buffer));
 
     buffer.seek(0);
     QByteArray data = buffer.readAll();
-    ASSERT_EQ("{\n    \"currentLocale\": \"Czech\"\n}\n", data);
+    ASSERT_EQ("{\n    \"currentLocale\": \"cs\"\n}\n", data);
+}
+TEST(Settings, readSettingsFromInvalidDevice)
+{
+    Settings settings;
+    ASSERT_FALSE(settings.read(nullptr));
 }
 
-/*TEST(Settings, openSettings)
+TEST(Settings, readSettingsInvalidLocale)
 {
     QBuffer buffer;
     buffer.open(QBuffer::ReadWrite);
     buffer.seek(0);
     buffer.write("{\n    \"currentLocale\": \"Russian\"\n}\n");
+    buffer.seek(0);
 
-    ASSERT_TRUE(Settings::instance().open(&buffer));
-    ASSERT_EQ(QLocale(), 
-}*/
+    Settings settings;
+    ASSERT_TRUE(settings.read(&buffer));
+    ASSERT_EQ(QLocale::c(), settings.getCurrentLocale());
+}
+
+TEST(Settings, readSettings)
+{
+    QBuffer buffer;
+    buffer.open(QBuffer::ReadWrite);
+    buffer.seek(0);
+    buffer.write("{\n    \"currentLocale\": \"ru\"\n}\n");
+    buffer.seek(0);
+
+    Settings settings;
+    ASSERT_TRUE(settings.read(&buffer));
+    ASSERT_EQ(QLocale("ru"), settings.getCurrentLocale());
+}

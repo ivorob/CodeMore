@@ -3,6 +3,7 @@
 #include <QDebug>
 
 #include "LocalizationDispatcher.h"
+#include "Settings.h"
 
 namespace {
 
@@ -98,6 +99,7 @@ LocalizationDispatcher::setCurrentLanguage(const QString& language)
             this->currentLanguage = it.key();
 
             retranslate();
+            updateSettings();
         }
     }
 }
@@ -126,4 +128,15 @@ LocalizationDispatcher::retranslate()
     }
 
     engine->retranslate();
+}
+
+void
+LocalizationDispatcher::updateSettings()
+{
+    QLocale locale(this->languages.value(this->currentLanguage));
+    if (Settings::instance().getCurrentLocale() != locale) {
+        Settings::instance().setCurrentLocale(locale);
+
+        Settings::write();
+    }
 }

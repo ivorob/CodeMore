@@ -33,23 +33,23 @@
 <context>
     <name>Languages</name>
     <message>
-        <location filename="../src/LocalizationDispatcher.cpp" line="11"/>
-        <location filename="../src/LocalizationDispatcher.cpp" line="66"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="12"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="67"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../src/LocalizationDispatcher.cpp" line="12"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="13"/>
         <source>Russian</source>
         <translation>Русский</translation>
     </message>
     <message>
-        <location filename="../src/LocalizationDispatcher.cpp" line="13"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="14"/>
         <source>Deutch</source>
         <translation>Deutch</translation>
     </message>
     <message>
-        <location filename="../src/LocalizationDispatcher.cpp" line="14"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="15"/>
         <source>Spanish</source>
         <translation>Español</translation>
     </message>

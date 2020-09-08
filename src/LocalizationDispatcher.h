@@ -20,6 +20,7 @@ private:
     void fillLanguages(const QString& prefix, const QString& directory);
     void fillCurrentTranslation();
     void retranslate();
+    void updateSettings();
 private:
     QQmlEngine *engine;
     QTranslator *translator;
