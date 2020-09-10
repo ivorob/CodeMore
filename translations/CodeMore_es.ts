@@ -205,37 +205,42 @@
 <context>
     <name>TaskListExpectations</name>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="118"/>
+        <location filename="../qml/TaskListExpectations.qml" line="153"/>
+        <source>Day #</source>
+        <translation type="unfinished">Día #</translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="142"/>
         <source>Start timer</source>
         <translation>Temporizador</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="124"/>
+        <location filename="../qml/TaskListExpectations.qml" line="163"/>
         <source>Approve</source>
         <translation>Aprobar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="136"/>
+        <location filename="../qml/TaskListExpectations.qml" line="175"/>
         <source>Fail</source>
         <translation>Fallar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="148"/>
+        <location filename="../qml/TaskListExpectations.qml" line="187"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="160"/>
+        <location filename="../qml/TaskListExpectations.qml" line="199"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="167"/>
+        <location filename="../qml/TaskListExpectations.qml" line="206"/>
         <source>Copy: </source>
         <translation>Copiar: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="178"/>
+        <location filename="../qml/TaskListExpectations.qml" line="217"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
@@ -243,22 +248,22 @@
 <context>
     <name>TaskListReality</name>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="117"/>
+        <location filename="../qml/TaskListReality.qml" line="119"/>
         <source>Edit</source>
         <translation>Editar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="129"/>
+        <location filename="../qml/TaskListReality.qml" line="131"/>
         <source>Copy</source>
         <translation>Copiar</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="136"/>
+        <location filename="../qml/TaskListReality.qml" line="138"/>
         <source>Copy: </source>
         <translation>Copiar: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="147"/>
+        <location filename="../qml/TaskListReality.qml" line="149"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>

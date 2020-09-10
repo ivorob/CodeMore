@@ -50,3 +50,8 @@ function openEditTaskDialog(id, task, description)
         taskDescription: description
     })
 }
+
+function openPomodoroTimer(id, info)
+{
+    return openDialog("qrc:/qml/PomodoroTimer.qml", id, info);
+}
