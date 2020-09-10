@@ -41,9 +41,33 @@ Rectangle {
             }
 
             RoundButton {
+                id: pomodoroTimerButton
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                Layout.preferredHeight: 25
+                Layout.preferredWidth: 25
+                enabled: false
 
-                text: "\uff0b"
+                icon.source: "qrc:/img/pomodoro_timer.svg"
+
+                onClicked: {
+                    var coordinares = pomodoroTimerButton.mapToItem(null, 
+                        pomodoroTimerButton.width / 2, pomodoroTimerButton.width / 2)
+                    var dialog = Dialogs.openPomodoroTimer(root, {
+                        x: coordinares.x,
+                        y: coordinares.y,
+                    });
+                    if (dialog) {
+                        dialog.x -= dialog.implicitWidth
+                    }
+                }
+            }
+
+            RoundButton {
+                Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                Layout.preferredHeight: 25
+                Layout.preferredWidth: 25
+
+                icon.source: "qrc:/img/plus.svg"
 
                 onClicked: {
                     var dialog = Dialogs.openNewTaskDialog(root)
@@ -118,6 +142,21 @@ Rectangle {
                                 text: qsTr("Start timer")
 
                                 icon.source: "qrc:/img/pomodoro_timer.svg"
+                                onTriggered: {
+                                    pomodoroTimerButton.enabled = true
+
+                                    var coordinares = pomodoroTimerButton.mapToItem(null, 
+                                        pomodoroTimerButton.width / 2, pomodoroTimerButton.height / 2)
+                                    var dialog = Dialogs.openPomodoroTimer(root, {
+                                        x: coordinares.x,
+                                        y: coordinares.y,
+                                        task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
+                                            ": " + dataModel.get(taskListView.currentIndex).task
+                                    });
+                                    if (dialog) {
+                                        dialog.x -= dialog.implicitWidth
+                                    }
+                                }
                             }
 
                             MenuItem {

@@ -41,8 +41,10 @@ Rectangle {
 
             RoundButton {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                Layout.preferredHeight: 25
+                Layout.preferredWidth: 25
 
-                text: "\uff0b"
+                icon.source: "qrc:/img/plus.svg"
 
                 onClicked: {
                     var dialog = Dialogs.openNewTaskDialog(root)
