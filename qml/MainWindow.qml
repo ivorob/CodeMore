@@ -117,7 +117,7 @@ ApplicationWindow {
 
                 Layout.preferredWidth: parent.width / 3
                 Layout.row: 1
-                Layout.column: 1
+                Layout.column: 0
 
                 Layout.preferredHeight: parent.height
                 flickableDirection: Flickable.VerticalFlick
@@ -155,7 +155,7 @@ ApplicationWindow {
                 Layout.bottomMargin: 3
                 Layout.rightMargin: 3
                 Layout.row: 1
-                Layout.column: 2
+                Layout.column: 1
 
                 TaskListExpectations {
                     id: expectationsControl
