@@ -115,11 +115,13 @@ LocalizationDispatcher::retranslate()
 
         QString prefix = "CodeMore";
         QString translationDirectory = "translations";
-        if (translator->load(locale, prefix, "_", translationDirectory) &&
-            systemTranslator->load(locale, "qt", "_", translationDirectory))
+        if (translator->load(locale, prefix, "_", translationDirectory)) {
         {
             QCoreApplication::installTranslator(translator);
-            QCoreApplication::installTranslator(systemTranslator);
+
+            if (systemTranslator->load(locale, "qt", "_", translationDirectory)) {
+                QCoreApplication::installTranslator(systemTranslator);
+            }
 
             fillCurrentTranslation();
         } else {
