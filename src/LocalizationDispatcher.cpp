@@ -25,7 +25,7 @@ LocalizationDispatcher::LocalizationDispatcher(QQmlEngine *engine, QLocale local
       currentLanguage("English")
 {
     QString prefix = "CodeMore";
-    QString translationDirectory = "translations";
+    QString translationDirectory = QCoreApplication::applicationDirPath() + "translations";
     fillLanguages(prefix, translationDirectory);
     fillCurrentTranslation();
 
@@ -114,7 +114,7 @@ LocalizationDispatcher::retranslate()
         QLocale locale(this->languages.value(this->currentLanguage));
 
         QString prefix = "CodeMore";
-        QString translationDirectory = "translations";
+        QString translationDirectory = QCoreApplication::applicationDirPath() + "/translations";
         if (translator->load(locale, prefix, "_", translationDirectory))
         {
             QCoreApplication::installTranslator(translator);
