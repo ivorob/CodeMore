@@ -36,6 +36,7 @@ for:
             - cd build
             - cmake -G "Unix Makefiles" .. -DCMAKE_PREFIX_PATH=/usr/local/top/qt
             - cmake --build . --config Release
+            - mkdir -p CodeMore.app/Contents/PlugIns/imageformats
             - cp /usr/local/opt/qt/plugins/imageformats/libqsvg.dylib CodeMore.app/Contents/PlugIns/imageformats
             - macdeployqt CodeMore.app -qmldir=/usr/local/opt/qt/qml -dmg
             - sh ../ci/scripts/macos/make_macos_installer.sh CodeMore $(cat < ../version)
