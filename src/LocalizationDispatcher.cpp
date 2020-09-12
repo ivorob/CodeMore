@@ -25,18 +25,18 @@ LocalizationDispatcher::LocalizationDispatcher(QQmlEngine *engine, QLocale local
       currentLanguage("English")
 {
     QString prefix = "CodeMore";
-    QString translationDirectory = QCoreApplication::applicationDirPath() + "translations";
+    QString translationDirectory = QCoreApplication::applicationDirPath() + "/translations";
     fillLanguages(prefix, translationDirectory);
     fillCurrentTranslation();
 
     setCurrentLanguage(QLocale::languageToString(locale.language()));
 }
 
+#include <fstream>
 void
 LocalizationDispatcher::fillLanguages(const QString& prefix, const QString& directory)
 {
-    QString localizationDirectory = QCoreApplication::applicationDirPath() + "/" + directory;
-    QDirIterator it(localizationDirectory, QStringList() << prefix + "_*.qm", QDir::NoFilter);
+    QDirIterator it(directory, QStringList() << prefix + "_*.qm", QDir::NoFilter);
     while (it.hasNext()) {
         QString path = it.next();
 
