@@ -35,7 +35,7 @@ for:
             - mkdir build
             - cd build
             - cmake -G "Unix Makefiles" .. -DCMAKE_PREFIX_PATH=/usr/local/top/qt
-            - cmake --build . --config Release
+            - cmake --build . -econfig Release
             - mkdir -p CodeMore.app/Contents/PlugIns/imageformats
             - cp /usr/local/opt/qt/plugins/imageformats/libqsvg.dylib CodeMore.app/Contents/PlugIns/imageformats
             - macdeployqt CodeMore.app -qmldir=/usr/local/opt/qt/qml -dmg
@@ -56,10 +56,9 @@ for:
             - cmake -G "Visual Studio 15 2017 Win64" .. -DCMAKE_PREFIX_PATH=C:\Qt\5.12.6\msvc2017_64
             - cmake --build . --config Release
             - c:\Qt\5.12.6\msvc2017_64\bin\windeployqt --qmldir C:\Qt\5.12.6\msvc2017_64\qml %APPVEYOR_BUILD_FOLDER%\build\Release\CodeMore.exe
-        after_build:
-            - cmd: 7z a CodeMore.zip %APPVEYOR_BUILD_FOLDER%\build\Release\*
+            - cmake --build . --target package --config Release
         artifacts:
-            - path: build\CodeMore.zip
+            - path: build\CodeMore-*-win64.exe
 
 install:
 
