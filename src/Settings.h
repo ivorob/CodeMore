@@ -17,6 +17,7 @@ public:
     static Settings& instance();
     static bool read();
     static bool write();
+    static QString getSettingsDirectoryPath();
 private:
     void readCurrentLocale(const QJsonObject& settings);
 private:

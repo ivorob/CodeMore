@@ -2,6 +2,7 @@
 #include <QJsonDocument>
 #include <QCoreApplication>
 #include <QFile>
+#include <QDir>
 
 #include "Settings.h"
 
@@ -72,7 +73,7 @@ Settings::readCurrentLocale(const QJsonObject& settings)
 bool
 Settings::read()
 {
-    QString path = qApp->applicationDirPath() + "/settings.json";
+    QString path = getSettingsDirectoryPath() + "/settings.json";
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text | QIODevice::ExistingOnly)) {
         return false;
@@ -84,11 +85,19 @@ Settings::read()
 bool
 Settings::write()
 {
-    QString path = qApp->applicationDirPath() + "/settings.json";
-    QFile file(path);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
-        return false;
+    QString applicationSettingsDirectory(getSettingsDirectoryPath());
+    if (QDir().mkpath(applicationSettingsDirectory)) {
+        QFile file(applicationSettingsDirectory + "/settings.json");
+        if (file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+            return Settings::instance().save(&file);
+        }
     }
 
-    return Settings::instance().save(&file);
+    return false;
+}
+
+QString
+Settings::getSettingsDirectoryPath()
+{
+    return QDir::homePath() + "/" + QCoreApplication::applicationName();
 }
