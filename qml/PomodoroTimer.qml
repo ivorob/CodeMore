@@ -10,7 +10,7 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     property string task;
-    property int secondsToComplete: 25
+    property int secondsToComplete: 25 * 60
 
     function secondsToTime(timerSeconds) {
         var seconds = timerSeconds % 60
