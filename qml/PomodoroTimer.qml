@@ -10,6 +10,16 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     property string task;
+    property int secondsToComplete: 25
+
+    function secondsToTime(timerSeconds) {
+        var seconds = timerSeconds % 60
+        var minutes = (timerSeconds - seconds) / 60
+
+        var result = ((minutes < 10) ? "0" + minutes : minutes) + ":" +
+               ((seconds < 10) ? "0" + seconds : seconds)
+        return result
+    }
 
     ColumnLayout {
         Text {
@@ -27,17 +37,25 @@ Popup {
             Layout.fillWidth: true
 
             Text {
-                text: "25:00"
+                text: secondsToTime(secondsToComplete)
 
                 font.weight: Font.Bold
                 font.pointSize: 22
             }
 
             Button {
+                id: pomodoroTrigger
                 text: qsTr("Start")
                 font.pointSize: 14
 
                 icon.source: "qrc:/img/start_timer.svg"
+
+                onClicked: {
+                    text = qsTr("Stop")
+                    icon.source = "qrc:/img/stop_timer.svg"
+
+                    taskTimer.start()
+                }
             }
         }
 
@@ -88,6 +106,24 @@ Popup {
 
         Rectangle {
             Layout.preferredHeight: 10
+        }
+
+        Timer {
+            id: taskTimer
+
+            interval: 1000
+            running: false
+            repeat: true
+
+            onTriggered: {
+                console.log("triggered")
+                if (pomodoroTimer.secondsToComplete != 0) {
+                    --pomodoroTimer.secondsToComplete
+                } else {
+                    taskTimer.stop()
+                    //pomodoroTrigger.text = qsTr("Take a brake")
+                }
+            }
         }
     }
 }
