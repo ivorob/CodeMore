@@ -3,6 +3,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QTranslator>
+#include <QFont>
 #include <QDebug>
 
 #include "BusinessLogic.h"
@@ -16,6 +17,10 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     app.setWindowIcon(QIcon(":/img/favicon.png"));
+
+    QFont font = app.font();
+    font.setPixelSize(11);
+    app.setFont(font);
 
     Settings::read();
 
