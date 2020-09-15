@@ -30,5 +30,6 @@
         <file>js/InternalDataController.js</file>
         <file>js/FileUtils.js</file>
         <file>js/Dialogs.js</file>
+        <file>js/PomodoroTimer.js</file>
     </qresource>
 </RCC>
