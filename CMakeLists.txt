@@ -36,19 +36,7 @@ SET (HEADERS
         ${SRC_DIR}/Settings.h
     )
 
-SET (QML_FILES
-        ${QML_DIR}/AboutWindow.qml
-        ${QML_DIR}/MainMenu.qml
-        ${QML_DIR}/MainWindow.qml
-        ${QML_DIR}/NewTaskDialog.qml
-        ${QML_DIR}/OpenDialog.qml
-        ${QML_DIR}/SaveChanges.qml
-        ${QML_DIR}/SaveDialog.qml
-        ${QML_DIR}/TaskListExpectations.qml
-        ${QML_DIR}/TaskListReality.qml
-        ${QML_DIR}/TodoListModel.qml
-    )
-
+FILE (GLOB QML_FILES ${CMAKE_CURRENT_SOURCE_DIR}/qml/*.qml)
 FILE (GLOB JS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/js/*.js)
 
 SET (TRANSLATION

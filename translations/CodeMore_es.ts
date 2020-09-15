@@ -167,6 +167,40 @@
     </message>
 </context>
 <context>
+    <name>PomodoroTimer</name>
+    <message>
+        <location filename="../js/PomodoroTimer.js" line="27"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PomodoroTimer.qml" line="19"/>
+        <source>Pomodoro</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PomodoroTimer.qml" line="26"/>
+        <source>Time until break</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PomodoroTimer.qml" line="41"/>
+        <location filename="../js/PomodoroTimer.js" line="35"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PomodoroTimer.qml" line="85"/>
+        <source>TODAY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PomodoroTimer.qml" line="93"/>
+        <source>Pomodoros</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>QObject</name>
     <message>
         <location filename="../src/TodoListSerializer.cpp" line="82"/>

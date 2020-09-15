@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
+import 'qrc:/js/PomodoroTimer.js' as PomodoroTimerHelper
 
 Popup {
     id: pomodoroTimer
@@ -11,15 +12,7 @@ Popup {
 
     property string task;
     property int secondsToComplete: 25 * 60
-
-    function secondsToTime(timerSeconds) {
-        var seconds = timerSeconds % 60
-        var minutes = (timerSeconds - seconds) / 60
-
-        var result = ((minutes < 10) ? "0" + minutes : minutes) + ":" +
-               ((seconds < 10) ? "0" + seconds : seconds)
-        return result
-    }
+    property int state : 0;
 
     ColumnLayout {
         Text {
@@ -37,7 +30,7 @@ Popup {
             Layout.fillWidth: true
 
             Text {
-                text: secondsToTime(secondsToComplete)
+                text: PomodoroTimerHelper.secondsToTime(secondsToComplete)
 
                 font.weight: Font.Bold
                 font.pointSize: 22
@@ -51,10 +44,7 @@ Popup {
                 icon.source: "qrc:/img/start_timer.svg"
 
                 onClicked: {
-                    text = qsTr("Stop")
-                    icon.source = "qrc:/img/stop_timer.svg"
-
-                    taskTimer.start()
+                    PomodoroTimerHelper.goToNextState();
                 }
             }
         }
@@ -116,7 +106,6 @@ Popup {
             repeat: true
 
             onTriggered: {
-                console.log("triggered")
                 if (pomodoroTimer.secondsToComplete != 0) {
                     --pomodoroTimer.secondsToComplete
                 } else {
