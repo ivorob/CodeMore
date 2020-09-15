@@ -11,7 +11,7 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     property string task;
-    property int secondsToComplete: 25 * 60
+    property int secondsToComplete: 10
     property int state : 0;
 
     ColumnLayout {
@@ -30,10 +30,16 @@ Popup {
             Layout.fillWidth: true
 
             Text {
+                id: timerDisplay
                 text: PomodoroTimerHelper.secondsToTime(secondsToComplete)
 
                 font.weight: Font.Bold
                 font.pointSize: 22
+            }
+
+            Rectangle {
+                id: timerDisplayBackground
+                visible: false
             }
 
             Button {
@@ -109,9 +115,20 @@ Popup {
                 if (pomodoroTimer.secondsToComplete != 0) {
                     --pomodoroTimer.secondsToComplete
                 } else {
-                    taskTimer.stop()
-                    //pomodoroTrigger.text = qsTr("Take a brake")
+                    PomodoroTimerHelper.timeIsOver()
                 }
+            }
+        }
+
+        Timer {
+            id: blinkTimer
+
+            interval: 500
+            running: false
+            repeat: true
+
+            onTriggered: {
+                PomodoroTimerHelper.blinkTime()
             }
         }
     }

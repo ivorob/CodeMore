@@ -169,8 +169,13 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="27"/>
+        <location filename="../js/PomodoroTimer.js" line="54"/>
         <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../js/PomodoroTimer.js" line="67"/>
+        <source>Break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -184,18 +189,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="41"/>
-        <location filename="../js/PomodoroTimer.js" line="35"/>
+        <location filename="../qml/PomodoroTimer.qml" line="47"/>
+        <location filename="../js/PomodoroTimer.js" line="43"/>
+        <location filename="../js/PomodoroTimer.js" line="79"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="85"/>
+        <location filename="../qml/PomodoroTimer.qml" line="91"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="93"/>
+        <location filename="../qml/PomodoroTimer.qml" line="99"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>
