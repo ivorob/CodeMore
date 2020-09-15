@@ -24,6 +24,7 @@
         <file>img/plus.svg</file>
         <file>img/stop_timer.svg</file>
         <file>img/start_timer.svg</file>
+        <file>img/pause_timer.svg</file>
 
         <file>js/TodoDataHandling.js</file>
         <file>js/JsonUtils.js</file>
