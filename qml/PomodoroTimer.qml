@@ -11,7 +11,9 @@ Popup {
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
     property string task;
-    property int secondsToComplete: 10
+    property int pomodoroTime: 25 * 60
+    property int breakTime: 5 * 60
+    property int secondsToComplete: pomodoroTime
     property int state : 0;
 
     ColumnLayout {

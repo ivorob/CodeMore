@@ -183,29 +183,29 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="19"/>
+        <location filename="../qml/PomodoroTimer.qml" line="21"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="26"/>
+        <location filename="../qml/PomodoroTimer.qml" line="28"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="47"/>
+        <location filename="../qml/PomodoroTimer.qml" line="49"/>
         <location filename="../js/PomodoroTimer.js" line="43"/>
         <location filename="../js/PomodoroTimer.js" line="79"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="91"/>
+        <location filename="../qml/PomodoroTimer.qml" line="93"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="99"/>
+        <location filename="../qml/PomodoroTimer.qml" line="101"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>

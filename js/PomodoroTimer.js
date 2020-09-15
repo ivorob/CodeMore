@@ -43,7 +43,7 @@ function goToInitState()
     pomodoroTrigger.text = qsTr("Start")
     pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
 
-    pomodoroTimer.secondsToComplete = 10
+    pomodoroTimer.secondsToComplete = pomodoroTimer.pomodoroTime
     pomodoroTimer.state = 0
 }
 
@@ -55,7 +55,7 @@ function goToPomodoroState()
     pomodoroTrigger.icon.source = "qrc:/img/stop_timer.svg"
 
     pomodoroTimer.state = 1;
-    pomodoroTimer.secondsToComplete = 10
+    pomodoroTimer.secondsToComplete = pomodoroTimer.pomodoroTime
 
     taskTimer.start()
 }
@@ -79,7 +79,7 @@ function goToBreakState()
     pomodoroTrigger.text = qsTr("Start")
     pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
 
-    pomodoroTimer.secondsToComplete = 2
+    pomodoroTimer.secondsToComplete = pomodoroTimer.breakTime
     pomodoroTimer.state = 3
 
     taskTimer.start()
