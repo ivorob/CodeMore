@@ -11,6 +11,8 @@
         <file>qml/TaskListExpectations.qml</file>
         <file>qml/TaskListReality.qml</file>
         <file>qml/PomodoroTimer.qml</file>
+        <file>qml/CustomButton.qml</file>
+        <file>qml/CustomRoundButton.qml</file>
 
         <file>img/favicon.png</file>
         <file>img/logo.png</file>

@@ -39,7 +39,7 @@ Rectangle {
                 Layout.fillWidth: true
             }
 
-            RoundButton {
+            CustomRoundButton {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.preferredHeight: 25
                 Layout.preferredWidth: 25
