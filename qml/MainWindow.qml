@@ -182,7 +182,7 @@ ApplicationWindow {
                     dataModel: ListModel {}
                 }
 
-                Button {
+                CustomButton {
                     Layout.preferredHeight: 28
                     Layout.alignment: Qt.AlignRight
 

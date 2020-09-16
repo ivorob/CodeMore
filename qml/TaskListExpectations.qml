@@ -40,7 +40,7 @@ Rectangle {
                 Layout.fillWidth: true
             }
 
-            RoundButton {
+            CustomRoundButton {
                 id: pomodoroTimerButton
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.preferredHeight: 25
@@ -62,7 +62,7 @@ Rectangle {
                 }
             }
 
-            RoundButton {
+            CustomRoundButton {
                 Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                 Layout.preferredHeight: 25
                 Layout.preferredWidth: 25

@@ -44,7 +44,7 @@ Popup {
                 visible: false
             }
 
-            Button {
+            CustomButton {
                 id: pomodoroTrigger
                 text: qsTr("Start")
                 font.pointSize: 14
