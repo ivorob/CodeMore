@@ -3,10 +3,12 @@ import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
 import "qrc:/js/InternalDataController.js" as InternalDataController
 import "qrc:/js/Dialogs.js" as Dialogs
+import "qrc:/js/PomodoroTimer.js" as PomodoroTimerHelper
 
 Rectangle {
     property var title;
     property var dataModel;
+    property var pomodoroTimer;
 
     signal approve(var task)
     signal fail(var task)
@@ -52,13 +54,7 @@ Rectangle {
                 onClicked: {
                     var coordinares = pomodoroTimerButton.mapToItem(null, 
                         pomodoroTimerButton.width / 2, pomodoroTimerButton.width / 2)
-                    var dialog = Dialogs.openPomodoroTimer(root, {
-                        x: coordinares.x,
-                        y: coordinares.y,
-                    });
-                    if (dialog) {
-                        dialog.x -= dialog.implicitWidth
-                    }
+                    PomodoroTimerHelper.showPomodoroTimer(pomodoroTimer, coordinares.x, coordinares.y, pomodoroTimer.implicitWidth)
                 }
             }
 
@@ -75,7 +71,8 @@ Rectangle {
                         var newTaskCreated = function() {
                             dataModel.append({
                                 "task": dialog.taskTitle,
-                                "description" : dialog.taskDescription
+                                "description" : dialog.taskDescription,
+                                "guid" : root.businessLogic.generateGUID()
                             });
                             taskListView.currentIndex = dataModel.count - 1
 
@@ -144,18 +141,7 @@ Rectangle {
                                 icon.source: "qrc:/img/pomodoro_timer.svg"
                                 onTriggered: {
                                     pomodoroTimerButton.enabled = true
-
-                                    var coordinares = pomodoroTimerButton.mapToItem(null, 
-                                        pomodoroTimerButton.width / 2, pomodoroTimerButton.height / 2)
-                                    var dialog = Dialogs.openPomodoroTimer(root, {
-                                        x: coordinares.x,
-                                        y: coordinares.y,
-                                        task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
-                                            ": " + dataModel.get(taskListView.currentIndex).task
-                                    });
-                                    if (dialog) {
-                                        dialog.x -= dialog.implicitWidth
-                                    }
+                                    PomodoroTimerHelper.openPomodoroTimer()
                                 }
                             }
 

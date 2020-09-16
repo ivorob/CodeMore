@@ -3,6 +3,7 @@
 #include <QXmlStreamReader>
 #include <QFile>
 #include <QUrl>
+#include <QUuid>
 
 #include "BusinessLogic.h"
 #include "TodoListSerializer.h"
@@ -40,4 +41,10 @@ BusinessLogic::loadFromFile(const QString& filename) const
 
     QXmlStreamReader reader(&file);
     return serializer.read(reader);
+}
+
+QString
+BusinessLogic::generateGUID() const
+{
+    return QUuid::createUuid().toString();
 }
