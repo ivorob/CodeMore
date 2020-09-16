@@ -119,7 +119,7 @@ function openPomodoroTimer()
             y: coordinares.y,
             task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
                 ": " + dataModel.get(taskListView.currentIndex).task,
-            taskGUID: dataModel.guid
+            taskGUID: dataModel.get(taskListView.currentIndex).guid
         });
         if (pomodoroTimer) {
             pomodoroTimer.x -= pomodoroTimer.implicitWidth
@@ -127,7 +127,7 @@ function openPomodoroTimer()
     } else {
         pomodoroTimer.task = qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
                 ": " + dataModel.get(taskListView.currentIndex).task
-        pomodoroTimer.taskGUID = dataModel.guid
+        pomodoroTimer.taskGUID = dataModel.get(taskListView.currentIndex).guid
 
         showPomodoroTimer(pomodoroTimer, coordinares.x, coordinares.y, pomodoroTimer.implicitWidth)
     }

@@ -60,6 +60,10 @@ function deserializeTodoList(model, text)
     if (text.length != 0) {
         var dataModel = JSON.parse(text)
         for (var i = 0; i < dataModel.length; ++i) {
+            if (dataModel[i].guid === undefined) {
+                dataModel[i].guid = businessLogic.generateGUID()
+            }
+
             model.append(dataModel[i])
         }
     }

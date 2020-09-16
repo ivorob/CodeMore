@@ -169,29 +169,29 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="21"/>
+        <location filename="../qml/PomodoroTimer.qml" line="22"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="28"/>
+        <location filename="../qml/PomodoroTimer.qml" line="29"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="49"/>
+        <location filename="../qml/PomodoroTimer.qml" line="50"/>
         <location filename="../js/PomodoroTimer.js" line="43"/>
         <location filename="../js/PomodoroTimer.js" line="79"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="93"/>
+        <location filename="../qml/PomodoroTimer.qml" line="94"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="101"/>
+        <location filename="../qml/PomodoroTimer.qml" line="102"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>

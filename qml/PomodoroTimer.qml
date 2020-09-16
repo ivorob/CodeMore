@@ -10,7 +10,8 @@ Popup {
     focus: true
     closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
-    property string task;
+    property alias task : taskText.text;
+    property string taskGUID;
     property int pomodoroTime: 25 * 60
     property int breakTime: 5 * 60
     property int secondsToComplete: pomodoroTime
@@ -68,6 +69,8 @@ Popup {
             color: "#F5F5F5"
 
             Text {
+                id: taskText
+
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 anchors.leftMargin: 3
@@ -75,8 +78,6 @@ Popup {
                 elide: Text.ElideRight
 
                 wrapMode: Text.NoWrap
-
-                text: task
             }
         }
 
