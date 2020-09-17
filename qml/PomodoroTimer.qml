@@ -12,10 +12,14 @@ Popup {
 
     property alias task : taskText.text;
     property string taskGUID;
+
     property int pomodoroTime: 25 * 60
     property int breakTime: 5 * 60
     property int secondsToComplete: pomodoroTime
+    property int timeToKeep: 10;
     property int state : 0;
+
+    signal keepTime(string guid, int interval)
 
     ColumnLayout {
         Text {
@@ -117,8 +121,14 @@ Popup {
             onTriggered: {
                 if (pomodoroTimer.secondsToComplete != 0) {
                     --pomodoroTimer.secondsToComplete
+                    --pomodoroTimer.timeToKeep
                 } else {
                     PomodoroTimerHelper.timeIsOver()
+                }
+
+                if (pomodoroTimer.timeToKeep == 0) {
+                    pomodoroTimer.keepTime(pomodoroTimer.taskGUID, 10)
+                    pomodoroTimer.timeToKeep = 10
                 }
             }
         }
