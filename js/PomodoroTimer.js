@@ -119,7 +119,8 @@ function openPomodoroTimer()
             y: coordinares.y,
             task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day +
                 ": " + dataModel.get(taskListView.currentIndex).task,
-            taskGUID: dataModel.get(taskListView.currentIndex).guid
+            taskGUID: dataModel.get(taskListView.currentIndex).guid,
+            taskDay: todoListView.model.get(todoListView.currentIndex).day
         });
         if (pomodoroTimer) {
             pomodoroTimer.x -= pomodoroTimer.implicitWidth

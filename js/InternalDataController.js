@@ -147,15 +147,20 @@ function failTask(item)
     realityControl.newIndex(realityControl.dataModel.count - 1)
 }
 
-function updateTime(guid, interval)
+function updateTime(taskDay, guid, interval)
 {
-    var dataModel = expectationsControl.dataModel
-    for (var i = 0; i < dataModel.count; ++i) {
-        var item = dataModel.get(i)
-        if (item.guid == guid) {
-            item.time += interval
+    if (taskDay + 1 != todoListView.currentIndex) {
+        TodoDataHandler.updateTaskTime(todoListView.goals, taskDay - 1, guid, interval)
+    } else {
+        var dataModel = expectationsControl.dataModel
+        for (var i = 0; i < dataModel.count; ++i) {
+            var item = dataModel.get(i)
+            if (item.guid == guid) {
+                item.time += interval
 
-            newChanges()
+                newChanges()
+                break;
+            }
         }
     }
 }
