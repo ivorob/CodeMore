@@ -34,7 +34,7 @@
     <name>Languages</name>
     <message>
         <location filename="../src/LocalizationDispatcher.cpp" line="12"/>
-        <location filename="../src/LocalizationDispatcher.cpp" line="67"/>
+        <location filename="../src/LocalizationDispatcher.cpp" line="66"/>
         <source>English</source>
         <translation></translation>
     </message>
@@ -173,29 +173,29 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="21"/>
+        <location filename="../qml/PomodoroTimer.qml" line="26"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="28"/>
+        <location filename="../qml/PomodoroTimer.qml" line="33"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="49"/>
+        <location filename="../qml/PomodoroTimer.qml" line="54"/>
         <location filename="../js/PomodoroTimer.js" line="43"/>
         <location filename="../js/PomodoroTimer.js" line="79"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="93"/>
+        <location filename="../qml/PomodoroTimer.qml" line="98"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="101"/>
+        <location filename="../qml/PomodoroTimer.qml" line="106"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>
@@ -211,7 +211,7 @@
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="120"/>
-        <location filename="../js/PomodoroTimer.js" line="128"/>
+        <location filename="../js/PomodoroTimer.js" line="130"/>
         <source>Day #</source>
         <translation type="unfinished">День #</translation>
     </message>
@@ -259,37 +259,42 @@
         <translation type="obsolete">День #</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="139"/>
+        <location filename="../qml/TaskListExpectations.qml" line="145"/>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/TaskListExpectations.qml" line="173"/>
         <source>Start timer</source>
         <translation>Запустить таймер</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="149"/>
+        <location filename="../qml/TaskListExpectations.qml" line="183"/>
         <source>Approve</source>
         <translation>Завершить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="161"/>
+        <location filename="../qml/TaskListExpectations.qml" line="195"/>
         <source>Fail</source>
         <translation>Провалить</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="173"/>
+        <location filename="../qml/TaskListExpectations.qml" line="207"/>
         <source>Edit</source>
         <translation>Редактировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="185"/>
+        <location filename="../qml/TaskListExpectations.qml" line="219"/>
         <source>Copy</source>
         <translation>Копировать</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="192"/>
+        <location filename="../qml/TaskListExpectations.qml" line="226"/>
         <source>Copy: </source>
         <translation>Копия: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="203"/>
+        <location filename="../qml/TaskListExpectations.qml" line="239"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>

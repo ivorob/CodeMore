@@ -30,7 +30,7 @@ function nextDay(viewId, newDay)
     if (viewId.currentIndex != newDay)
     {
         TodoDataHandler.keepData(viewId.goals,
-            viewId.currentIndex, 
+            viewId.currentIndex,
             TodoDataHandler.serializeTodoList(expectationsControl.dataModel),
             TodoDataHandler.serializeTodoList(realityControl.dataModel)
         )
@@ -60,6 +60,14 @@ function deserializeTodoList(model, text)
     if (text.length != 0) {
         var dataModel = JSON.parse(text)
         for (var i = 0; i < dataModel.length; ++i) {
+            if (dataModel[i].guid === undefined) {
+                dataModel[i].guid = businessLogic.generateGUID()
+            }
+
+            if (dataModel[i].time == undefined) {
+                dataModel[i].time = 0
+            }
+
             model.append(dataModel[i])
         }
     }

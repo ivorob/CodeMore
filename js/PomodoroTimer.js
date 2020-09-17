@@ -111,23 +111,25 @@ function hideTime()
 
 function openPomodoroTimer()
 {
-    var coordinares = pomodoroTimerButton.mapToItem(null, 
+    var coordinares = pomodoroTimerButton.mapToItem(null,
         pomodoroTimerButton.width / 2, pomodoroTimerButton.height / 2)
     if (!pomodoroTimer) {
         pomodoroTimer = Dialogs.openPomodoroTimer(root, {
             x: coordinares.x,
             y: coordinares.y,
-            task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
+            task: qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day +
                 ": " + dataModel.get(taskListView.currentIndex).task,
-            taskGUID: dataModel.guid
+            taskGUID: dataModel.get(taskListView.currentIndex).guid
         });
         if (pomodoroTimer) {
             pomodoroTimer.x -= pomodoroTimer.implicitWidth
+
+            pomodoroTimer.keepTime.connect(InternalDataController.updateTime)
         }
     } else {
-        pomodoroTimer.task = qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day + 
+        pomodoroTimer.task = qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day +
                 ": " + dataModel.get(taskListView.currentIndex).task
-        pomodoroTimer.taskGUID = dataModel.guid
+        pomodoroTimer.taskGUID = dataModel.get(taskListView.currentIndex).guid
 
         showPomodoroTimer(pomodoroTimer, coordinares.x, coordinares.y, pomodoroTimer.implicitWidth)
     }
@@ -135,7 +137,7 @@ function openPomodoroTimer()
 
 function showPomodoroTimer(pomodoroTimer, x, y, width)
 {
-    pomodoroTimer.x = x - width 
+    pomodoroTimer.x = x - width
     pomodoroTimer.y = y
 
     pomodoroTimer.open()

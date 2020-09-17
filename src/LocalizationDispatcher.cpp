@@ -32,7 +32,6 @@ LocalizationDispatcher::LocalizationDispatcher(QQmlEngine *engine, QLocale local
     setCurrentLanguage(QLocale::languageToString(locale.language()));
 }
 
-#include <fstream>
 void
 LocalizationDispatcher::fillLanguages(const QString& prefix, const QString& directory)
 {

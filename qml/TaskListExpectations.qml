@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
+import QtGraphicalEffects 1.0
+
 import "qrc:/js/InternalDataController.js" as InternalDataController
 import "qrc:/js/Dialogs.js" as Dialogs
 import "qrc:/js/PomodoroTimer.js" as PomodoroTimerHelper
@@ -52,7 +54,7 @@ Rectangle {
                 icon.source: "qrc:/img/pomodoro_timer.svg"
 
                 onClicked: {
-                    var coordinares = pomodoroTimerButton.mapToItem(null, 
+                    var coordinares = pomodoroTimerButton.mapToItem(null,
                         pomodoroTimerButton.width / 2, pomodoroTimerButton.width / 2)
                     PomodoroTimerHelper.showPomodoroTimer(pomodoroTimer, coordinares.x, coordinares.y, pomodoroTimer.implicitWidth)
                 }
@@ -105,11 +107,43 @@ Rectangle {
                     width: parent.width
                     color: ListView.isCurrentItem ? "lightsteelblue" : root.color
 
-                    Text {
-                        anchors.left: parent.left
-                        anchors.leftMargin: 3
-                        anchors.verticalCenter: parent.verticalCenter
-                        text: task
+                    RowLayout {
+                        anchors.fill: parent
+
+                        Text {
+                            Layout.fillWidth: true
+                            Layout.leftMargin: 3
+
+                            text: task
+                        }
+
+                        Item {
+                            Layout.preferredWidth: parent.height - 3
+                            Layout.preferredHeight: parent.height - 3
+                            visible: time > 60
+
+                            Image {
+                                id: clockImage
+                                anchors.fill: parent
+
+                                source: "qrc:/img/clock.svg"
+                            }
+
+                            ColorOverlay {
+                                anchors.fill: clockImage
+                                source: clockImage
+
+                                color: "grey"
+                            }
+                        }
+
+                        Text {
+                            Layout.rightMargin: 3
+                            visible: time > 60
+
+                            color: "grey"
+                            text: Math.floor(time / 60) + qsTr("m")
+                        }
                     }
 
                     MouseArea {
@@ -190,7 +224,9 @@ Rectangle {
                                     if (item) {
                                         dataModel.insert(index + 1, {
                                             "task": qsTr("Copy: ") + item.task,
-                                            "description" : item.description
+                                            "description" : item.description,
+                                            "guid" : businessLogic.generateGUID(),
+                                            "time" : 0
                                         });
 
                                         taskListView.currentIndex = index + 1

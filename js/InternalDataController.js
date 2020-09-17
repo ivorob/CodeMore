@@ -1,10 +1,10 @@
 function saveToDisk(file) {
-    TodoDataHandler.keepData(todoListView.goals, 
-        todoListView.currentIndex, 
+    TodoDataHandler.keepData(todoListView.goals,
+        todoListView.currentIndex,
         TodoDataHandler.serializeTodoList(expectationsControl.dataModel),
         TodoDataHandler.serializeTodoList(realityControl.dataModel))
 
-    businessLogic.saveToFile(file, 
+    businessLogic.saveToFile(file,
         JsonUtils.convertListModelToJson(todoListView.model),
         JSON.stringify(todoListView.goals));
 
@@ -145,4 +145,17 @@ function failTask(item)
     })
 
     realityControl.newIndex(realityControl.dataModel.count - 1)
+}
+
+function updateTime(guid, interval)
+{
+    var dataModel = expectationsControl.dataModel
+    for (var i = 0; i < dataModel.count; ++i) {
+        var item = dataModel.get(i)
+        if (item.guid == guid) {
+            item.time += interval
+
+            newChanges()
+        }
+    }
 }
