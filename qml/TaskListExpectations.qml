@@ -6,6 +6,7 @@ import QtGraphicalEffects 1.0
 import "qrc:/js/InternalDataController.js" as InternalDataController
 import "qrc:/js/Dialogs.js" as Dialogs
 import "qrc:/js/PomodoroTimer.js" as PomodoroTimerHelper
+import 'qrc:/js/TodoDataHandling.js' as TodoDataHandler
 
 Rectangle {
     property var title;
@@ -74,7 +75,8 @@ Rectangle {
                             dataModel.append({
                                 "task": dialog.taskTitle,
                                 "description" : dialog.taskDescription,
-                                "guid" : root.businessLogic.generateGUID()
+                                "guid" : businessLogic.generateGUID(),
+                                "time" : 0
                             });
                             taskListView.currentIndex = dataModel.count - 1
 

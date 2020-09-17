@@ -20,6 +20,25 @@ function restoreData(goals, day)
     return goals[day]
 }
 
+function updateTaskTime(goals, day, taskGUID, interval)
+{
+    if (day >= 0 && goals[day] !== undefined) {
+        var changed = false
+        var expectations = JSON.parse(goals[day].expectations)
+        for (var i = 0; i < expectations.length; ++i) {
+            if (expectations[i].guid == taskGUID) {
+                expectations[i].time += interval
+                changed = true
+                break;
+            }
+        }
+
+        if (changed) {
+            goals[day].expectations = JSON.stringify(expectations)
+        }
+    }
+}
+
 function nextDay(viewId, newDay)
 {
     var model = viewId.model
