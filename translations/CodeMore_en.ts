@@ -20,12 +20,12 @@
 <context>
     <name>InternalDataController</name>
     <message>
-        <location filename="../js/InternalDataController.js" line="133"/>
+        <location filename="../js/InternalDataController.js" line="146"/>
         <source>Completed: </source>
         <translation>Completed: </translation>
     </message>
     <message>
-        <location filename="../js/InternalDataController.js" line="143"/>
+        <location filename="../js/InternalDataController.js" line="156"/>
         <source>Failed: </source>
         <translation>Failed: </translation>
     </message>
@@ -169,29 +169,29 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="27"/>
+        <location filename="../qml/PomodoroTimer.qml" line="31"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="34"/>
+        <location filename="../qml/PomodoroTimer.qml" line="38"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="55"/>
+        <location filename="../qml/PomodoroTimer.qml" line="59"/>
         <location filename="../js/PomodoroTimer.js" line="43"/>
         <location filename="../js/PomodoroTimer.js" line="79"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="99"/>
+        <location filename="../qml/PomodoroTimer.qml" line="103"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="107"/>
+        <location filename="../qml/PomodoroTimer.qml" line="111"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>
@@ -207,7 +207,7 @@
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="120"/>
-        <location filename="../js/PomodoroTimer.js" line="131"/>
+        <location filename="../js/PomodoroTimer.js" line="132"/>
         <source>Day #</source>
         <translation type="unfinished">Day #</translation>
     </message>
@@ -255,42 +255,42 @@
         <translation type="obsolete">Day #</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="147"/>
+        <location filename="../qml/TaskListExpectations.qml" line="149"/>
         <source>m</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="175"/>
+        <location filename="../qml/TaskListExpectations.qml" line="177"/>
         <source>Start timer</source>
         <translation>Start timer</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="185"/>
+        <location filename="../qml/TaskListExpectations.qml" line="187"/>
         <source>Approve</source>
         <translation>Approve</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="197"/>
+        <location filename="../qml/TaskListExpectations.qml" line="199"/>
         <source>Fail</source>
         <translation>Fail</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="209"/>
+        <location filename="../qml/TaskListExpectations.qml" line="211"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="221"/>
+        <location filename="../qml/TaskListExpectations.qml" line="223"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="228"/>
+        <location filename="../qml/TaskListExpectations.qml" line="230"/>
         <source>Copy: </source>
         <translation>Copy: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="241"/>
+        <location filename="../qml/TaskListExpectations.qml" line="243"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>

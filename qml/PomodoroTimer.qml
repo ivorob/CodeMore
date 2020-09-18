@@ -20,7 +20,11 @@ Popup {
     property int timeToKeep: 10;
     property int state : 0;
 
+    property alias taskTimer : taskTimer;
+    property alias pomodoroTrigger: pomodoroTrigger;
+
     signal keepTime(int taskDay, string guid, int interval)
+    signal closeTimer()
 
     ColumnLayout {
         Text {

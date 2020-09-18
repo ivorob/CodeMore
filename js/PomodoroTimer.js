@@ -38,10 +38,10 @@ function timeIsOver()
 
 function goToInitState()
 {
-    taskTimer.stop()
+    pomodoroTimer.taskTimer.stop()
 
-    pomodoroTrigger.text = qsTr("Start")
-    pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
+    pomodoroTimer.pomodoroTrigger.text = qsTr("Start")
+    pomodoroTimer.pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
 
     pomodoroTimer.secondsToComplete = pomodoroTimer.pomodoroTime
     pomodoroTimer.state = 0
@@ -49,23 +49,23 @@ function goToInitState()
 
 function goToPomodoroState()
 {
-    taskTimer.stop()
+    pomodoroTimer.taskTimer.stop()
 
-    pomodoroTrigger.text = qsTr("Stop")
-    pomodoroTrigger.icon.source = "qrc:/img/stop_timer.svg"
+    pomodoroTimer.pomodoroTrigger.text = qsTr("Stop")
+    pomodoroTimer.pomodoroTrigger.icon.source = "qrc:/img/stop_timer.svg"
 
     pomodoroTimer.state = 1;
     pomodoroTimer.secondsToComplete = pomodoroTimer.pomodoroTime
 
-    taskTimer.start()
+    pomodoroTimer.taskTimer.start()
 }
 
 function goToTakeBreakState()
 {
-    taskTimer.stop()
+    pomodoroTimer.taskTimer.stop()
 
-    pomodoroTrigger.text = qsTr("Break")
-    pomodoroTrigger.icon.source = "qrc:/img/pause_timer.svg"
+    pomodoroTimer.pomodoroTrigger.text = qsTr("Break")
+    pomodoroTimer.pomodoroTrigger.icon.source = "qrc:/img/pause_timer.svg"
 
     pomodoroTimer.state = 2
     blinkTimer.start()
@@ -76,13 +76,13 @@ function goToBreakState()
     blinkTimer.stop()
     showTime()
 
-    pomodoroTrigger.text = qsTr("Start")
-    pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
+    pomodoroTimer.pomodoroTrigger.text = qsTr("Start")
+    pomodoroTimer.pomodoroTrigger.icon.source = "qrc:/img/start_timer.svg"
 
     pomodoroTimer.secondsToComplete = pomodoroTimer.breakTime
     pomodoroTimer.state = 3
 
-    taskTimer.start()
+    pomodoroTimer.taskTimer.start()
 }
 
 function blinkTime()
@@ -126,6 +126,7 @@ function openPomodoroTimer()
             pomodoroTimer.x -= pomodoroTimer.implicitWidth
 
             pomodoroTimer.keepTime.connect(InternalDataController.updateTime)
+            pomodoroTimer.closeTimer.connect(goToInitState)
         }
     } else {
         pomodoroTimer.task = qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day +
