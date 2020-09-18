@@ -162,7 +162,7 @@ function failTask(item)
 
 function updateTime(taskDay, guid, interval)
 {
-    if (taskDay + 1 != todoListView.currentIndex) {
+    if (taskDay != todoListView.currentIndex + 1) {
         TodoDataHandler.updateTaskTime(todoListView.goals, taskDay - 1, guid, interval)
     } else {
         var dataModel = expectationsControl.dataModel

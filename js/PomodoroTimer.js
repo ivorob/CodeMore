@@ -125,7 +125,11 @@ function openPomodoroTimer()
         if (pomodoroTimer) {
             pomodoroTimer.x -= pomodoroTimer.implicitWidth
 
-            pomodoroTimer.keepTime.connect(InternalDataController.updateTime)
+            pomodoroTimer.keepTime.connect(function(taskDay, guid, interval) {
+                if (pomodoroTimer.state == 1) { //pomodoro state
+                    InternalDataController.updateTime(taskDay, guid, interval)
+                }
+            })
             pomodoroTimer.closeTimer.connect(goToInitState)
         }
     } else {

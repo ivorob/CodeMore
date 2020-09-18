@@ -211,7 +211,7 @@
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="120"/>
-        <location filename="../js/PomodoroTimer.js" line="132"/>
+        <location filename="../js/PomodoroTimer.js" line="136"/>
         <source>Day #</source>
         <translation type="unfinished">День #</translation>
     </message>
