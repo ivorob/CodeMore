@@ -60,6 +60,8 @@ function newTodoList() {
                 expectationsControl.dataModel.clear()
                 realityControl.dataModel.clear()
                 root.filename = ""
+
+                closeTimer()
             }
         }
     }
@@ -71,6 +73,15 @@ function newTodoList() {
         dialog.accepted.connect(newTodoListHandler)
     } else {
         newTodoListHandler()
+    }
+}
+
+function closeTimer()
+{
+    if (expectationsControl.pomodoroTimer) {
+        expectationsControl.pomodoroTimer.closeTimer()
+        expectationsControl.pomodoroTimer.visible = false
+        expectationsControl.pomodoroTimerButton.enabled = false
     }
 }
 
@@ -114,7 +125,9 @@ function closeApplication()
 function openFile()
 {
     var openFileDialog = function() {
-        Dialogs.openOpenDialog(root)
+        var dialog = Dialogs.openOpenDialog(root)
+
+        dialog.accepted.connect(closeTimer)
     }
 
     if (isNewChanges()) {

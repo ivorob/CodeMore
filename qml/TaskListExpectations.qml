@@ -13,6 +13,8 @@ Rectangle {
     property var dataModel;
     property var pomodoroTimer;
 
+    property alias pomodoroTimerButton : pomodoroTimerButton;
+
     signal approve(var task)
     signal fail(var task)
 
@@ -242,6 +244,11 @@ Rectangle {
                                 icon.source: "qrc:/img/delete.svg"
 
                                 onTriggered: {
+                                    var item = dataModel.get(index)
+                                    if (pomodoroTimer && item.guid == pomodoroTimer.taskGUID) {
+                                        InternalDataController.closeTimer()
+                                    }
+
                                     dataModel.remove(index)
 
                                     InternalDataController.newChanges()
