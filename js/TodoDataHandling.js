@@ -63,6 +63,18 @@ function nextDay(viewId, newDay)
     }
 }
 
+function updatePomodoros(viewId, count)
+{
+    if (count == 0) {
+        return
+    }
+
+    var model = viewId.model
+    if (model) {
+        model.get(viewId.currentIndex).pomodoros += count
+    }
+}
+
 function serializeTodoList(model)
 {
     var dataModel = []

@@ -38,6 +38,7 @@ function timeIsOver()
 
 function goToInitState()
 {
+    pomodoroTimer.blinkTimer.stop()
     pomodoroTimer.taskTimer.stop()
 
     pomodoroTimer.pomodoroTrigger.text = qsTr("Start")
@@ -66,9 +67,12 @@ function goToTakeBreakState()
 
     pomodoroTimer.pomodoroTrigger.text = qsTr("Break")
     pomodoroTimer.pomodoroTrigger.icon.source = "qrc:/img/pause_timer.svg"
+    pomodoroTimer.pomodoros += 1
 
     pomodoroTimer.state = 2
     blinkTimer.start()
+
+    TodoDataHandler.updatePomodoros(todoListView, 1)
 }
 
 function goToBreakState()
@@ -130,12 +134,14 @@ function openPomodoroTimer()
                     InternalDataController.updateTime(taskDay, guid, interval)
                 }
             })
+            pomodoroTimer.pomodoros = todoListView.model.get(todoListView.currentIndex).pomodoros
             pomodoroTimer.closeTimer.connect(goToInitState)
         }
     } else {
         pomodoroTimer.task = qsTr("Day #") + todoListView.model.get(todoListView.currentIndex).day +
                 ": " + dataModel.get(taskListView.currentIndex).task
         pomodoroTimer.taskGUID = dataModel.get(taskListView.currentIndex).guid
+        pomodoroTimer.pomodoros = todoListView.model.get(todoListView.currentIndex).pomodoros
 
         showPomodoroTimer(pomodoroTimer, coordinares.x, coordinares.y, pomodoroTimer.implicitWidth)
     }

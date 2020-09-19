@@ -24,7 +24,8 @@ function openFromDisk(file) {
 
             todoListView.model.append({
                 "day" : currentDay,
-                "itemState" : parseInt(json[i].state)
+                "itemState" : parseInt(json[i].state),
+                "pomodoros" : parseInt(json[i].pomodoros)
             })
 
             TodoDataHandler.keepData(todoListView.goals, currentDay - 1, json[i].expectations, json[i].reality)

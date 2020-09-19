@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 2.4
 import 'qrc:/js/PomodoroTimer.js' as PomodoroTimerHelper
+import 'qrc:/js/TodoDataHandling.js' as TodoDataHandler
 
 Popup {
     id: pomodoroTimer
@@ -19,6 +20,7 @@ Popup {
     property int secondsToComplete: pomodoroTime
     property int timeToKeep: 10;
     property int state : 0;
+    property int pomodoros: 0
 
     property alias taskTimer : taskTimer;
     property alias pomodoroTrigger: pomodoroTrigger;
@@ -108,7 +110,7 @@ Popup {
             Text {
                 Layout.fillWidth: true
 
-                text: "0 " + qsTr("Pomodoros")
+                text: pomodoros + " " + qsTr("Pomodoros")
             }
         }
 
