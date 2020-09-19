@@ -20,12 +20,12 @@
 <context>
     <name>InternalDataController</name>
     <message>
-        <location filename="../js/InternalDataController.js" line="146"/>
+        <location filename="../js/InternalDataController.js" line="147"/>
         <source>Completed: </source>
         <translation>Completed: </translation>
     </message>
     <message>
-        <location filename="../js/InternalDataController.js" line="156"/>
+        <location filename="../js/InternalDataController.js" line="157"/>
         <source>Failed: </source>
         <translation>Failed: </translation>
     </message>
@@ -169,45 +169,45 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="31"/>
+        <location filename="../qml/PomodoroTimer.qml" line="33"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="38"/>
+        <location filename="../qml/PomodoroTimer.qml" line="40"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="59"/>
-        <location filename="../js/PomodoroTimer.js" line="43"/>
-        <location filename="../js/PomodoroTimer.js" line="79"/>
+        <location filename="../qml/PomodoroTimer.qml" line="61"/>
+        <location filename="../js/PomodoroTimer.js" line="44"/>
+        <location filename="../js/PomodoroTimer.js" line="83"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="103"/>
+        <location filename="../qml/PomodoroTimer.qml" line="105"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="111"/>
+        <location filename="../qml/PomodoroTimer.qml" line="113"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="54"/>
+        <location filename="../js/PomodoroTimer.js" line="55"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="67"/>
+        <location filename="../js/PomodoroTimer.js" line="68"/>
         <source>Break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="120"/>
-        <location filename="../js/PomodoroTimer.js" line="136"/>
+        <location filename="../js/PomodoroTimer.js" line="124"/>
+        <location filename="../js/PomodoroTimer.js" line="144"/>
         <source>Day #</source>
         <translation type="unfinished">Day #</translation>
     </message>
@@ -215,9 +215,9 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/TodoListSerializer.cpp" line="109"/>
-        <location filename="../src/TodoListSerializer.cpp" line="124"/>
-        <location filename="../src/TodoListSerializer.cpp" line="143"/>
+        <location filename="../src/TodoListSerializer.cpp" line="108"/>
+        <location filename="../src/TodoListSerializer.cpp" line="123"/>
+        <location filename="../src/TodoListSerializer.cpp" line="142"/>
         <source>Incorrect file</source>
         <translation>Incorrect file</translation>
     </message>
