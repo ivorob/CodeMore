@@ -23,7 +23,10 @@ Popup {
     property int pomodoros: 0
 
     property alias taskTimer : taskTimer;
+    property alias blinkTimer: blinkTimer
     property alias pomodoroTrigger: pomodoroTrigger;
+    property alias timerDisplayBackground: timerDisplayBackground;
+    property alias timerDisplay: timerDisplay;
 
     signal keepTime(int taskDay, string guid, int interval)
     signal closeTimer()

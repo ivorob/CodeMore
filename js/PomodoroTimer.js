@@ -39,6 +39,8 @@ function timeIsOver()
 function goToInitState()
 {
     pomodoroTimer.blinkTimer.stop()
+    showTime()
+
     pomodoroTimer.taskTimer.stop()
 
     pomodoroTimer.pomodoroTrigger.text = qsTr("Start")
@@ -100,14 +102,14 @@ function blinkTime()
 
 function showTime()
 {
-    timerDisplayBackground.visible = false
-    timerDisplay.visible = true
+    pomodoroTimer.timerDisplayBackground.visible = false
+    pomodoroTimer.timerDisplay.visible = true
 }
 
 function hideTime()
 {
-    timerDisplayBackground.height = timerDisplay.height
-    timerDisplayBackground.width = timerDisplay.width
+    pomodoroTimer.timerDisplayBackground.height = timerDisplay.height
+    pomodoroTimer.timerDisplayBackground.width = timerDisplay.width
 
     timerDisplayBackground.visible = true
     timerDisplay.visible = false
