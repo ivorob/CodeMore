@@ -7,7 +7,7 @@ namespace {
 
 QString itemsTreeJson()
 {
-    return "[{\"itemState\":1,\"day\":1},{\"itemState\":0,\"day\":2},{\"itemState\":0,\"day\":7}]";
+    return "[{\"itemState\":1,\"day\":1, \"pomodoros\":0},{\"itemState\":0,\"day\":2, \"pomodoros\":0},{\"itemState\":0,\"day\":7}]";
 }
 
 QString dataJson()
@@ -36,21 +36,20 @@ TEST(TodoListSerializer, saveTest)
 <todoList>
     <day>
         <index>1</index>
+        <pomodoros>0</pomodoros>
         <state>1</state>
         <expectations>- first task</expectations>
         <reality>- first task: completed</reality>
     </day>
     <day>
         <index>2</index>
+        <pomodoros>0</pomodoros>
         <state>0</state>
         <expectations>- some new task</expectations>
-        <reality></reality>
     </day>
     <day>
         <index>7</index>
         <state>0</state>
-        <expectations></expectations>
-        <reality></reality>
     </day>
 </todoList>
 )", data.toStdString());
@@ -70,21 +69,20 @@ TEST(TodoListSerializer, unassignedDayDataSaveTest)
 <todoList>
     <day>
         <index>1</index>
+        <pomodoros>0</pomodoros>
         <state>1</state>
         <expectations>- first task</expectations>
         <reality>- first task: completed</reality>
     </day>
     <day>
         <index>2</index>
+        <pomodoros>0</pomodoros>
         <state>0</state>
         <expectations>- some new task</expectations>
-        <reality></reality>
     </day>
     <day>
         <index>7</index>
         <state>0</state>
-        <expectations></expectations>
-        <reality></reality>
     </day>
 </todoList>
 )", data.toStdString());
@@ -114,12 +112,14 @@ TEST(TodoListSerializer, readTest)
     <day>
         <index>1</index>
         <state>1</state>
+        <pomodoros>2</pomodoros>
         <expectations>- first task</expectations>
         <reality>- first task: completed</reality>
     </day>
     <day>
         <index>2</index>
         <state>0</state>
+        <pomodoros>0</pomodoros>
         <expectations>- some new task</expectations>
         <reality></reality>
     </day>
@@ -128,7 +128,7 @@ TEST(TodoListSerializer, readTest)
     QXmlStreamReader reader(data);
     QString json = serializer.read(reader);
     ASSERT_FALSE(reader.hasError());
-    ASSERT_EQ("[{\"expectations\":\"- first task\",\"index\":\"1\",\"reality\":\"- first task: completed\",\"state\":\"1\"},{\"expectations\":\"- some new task\",\"index\":\"2\",\"reality\":\"\",\"state\":\"0\"}]", json.toStdString());
+    ASSERT_EQ("[{\"expectations\":\"- first task\",\"index\":\"1\",\"pomodoros\":\"2\",\"reality\":\"- first task: completed\",\"state\":\"1\"},{\"expectations\":\"- some new task\",\"index\":\"2\",\"pomodoros\":\"0\",\"reality\":\"\",\"state\":\"0\"}]", json.toStdString());
 }
 
 TEST(TodoListSerializer, readNotXmlTest)

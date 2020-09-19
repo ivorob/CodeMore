@@ -25,6 +25,7 @@ SET (SOURCES
         ${SRC_DIR}/main.cpp
         ${SRC_DIR}/BusinessLogic.cpp
         ${SRC_DIR}/TodoListSerializer.cpp
+        ${SRC_DIR}/TodoListTagsFactory.cpp
         ${SRC_DIR}/LocalizationDispatcher.cpp
         ${SRC_DIR}/Settings.cpp
     )
@@ -32,6 +33,7 @@ SET (SOURCES
 SET (HEADERS
         ${SRC_DIR}/BusinessLogic.h
         ${SRC_DIR}/TodoListSerializer.h
+        ${SRC_DIR}/TodoListTagsFactory.h
         ${SRC_DIR}/LocalizationDispatcher.h
         ${SRC_DIR}/Settings.h
     )
@@ -114,7 +116,7 @@ SET (CPACK_PACKAGE_EXECUTABLES ${PROJECT_NAME} ${PROJECT_NAME})
 
 IF (WIN32)
     INSTALL (FILES ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE DESTINATION .)
-    INSTALL (DIRECTORY $<TARGET_FILE_DIR:CodeMore>/ 
+    INSTALL (DIRECTORY $<TARGET_FILE_DIR:CodeMore>/
         DESTINATION .
     )
     INCLUDE (CPack)

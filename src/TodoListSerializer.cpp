@@ -18,22 +18,19 @@ TodoListSerializer::write(QXmlStreamWriter& writer, const QString& itemsJson, co
         for (const auto& item : items) {
             if (item.isObject()) {
                 QJsonObject currentItem = item.toObject();
-                QString itemState = obtainJsonField(item, "itemState");
-                QString day = obtainJsonField(item, "day");
-                if (!day.isEmpty() && !itemState.isEmpty())
+
+                auto dayItems = obtainJsonFields(item);
+                if (!dayItems.isEmpty() && dayItems.count("index") != 0)
                 {
                     writer.writeStartElement("day");
 
-                    writer.writeTextElement("index", day);
-                    writer.writeTextElement("state", itemState);
-
+                    auto day = dayItems.value("index");
                     int dayIndex = day.toInt();
                     QJsonValue dayDataValue = data.value(QString("%1").arg(dayIndex - 1));
-                    QString expectations = obtainJsonField(dayDataValue, "expectations");
-                    QString reality = obtainJsonField(dayDataValue, "reality");
+                    auto taskItems = obtainJsonFields(dayDataValue);
 
-                    writer.writeTextElement("expectations", expectations);
-                    writer.writeTextElement("reality", reality);
+                    writeDayItems(writer, dayItems);
+                    writeDayItems(writer, taskItems);
 
                     writer.writeEndElement();
                 }
@@ -56,6 +53,25 @@ TodoListSerializer::parseDataJson(const QString& dataJson) const
     return {};
 }
 
+QMap<QString, QString>
+TodoListSerializer::obtainJsonFields(const QJsonValue& dayDataValue) const
+{
+    QMap<QString, QString> fields;
+
+    const auto& supportedTags = tagsFactory.getSupportedTags();
+    QMap<QString, QString>::const_iterator it = supportedTags.cbegin();
+    while (it != supportedTags.end()) {
+        QString item = obtainJsonField(dayDataValue, it.key());
+        if (!item.isEmpty()) {
+            fields[it.value()] = item;
+        }
+
+        ++it;
+    }
+
+    return fields;
+}
+
 QString
 TodoListSerializer::obtainJsonField(const QJsonValue& dayDataValue, const QString& name) const
 {
@@ -69,6 +85,16 @@ TodoListSerializer::obtainJsonField(const QJsonValue& dayDataValue, const QStrin
     }
 
     return {};
+}
+
+void
+TodoListSerializer::writeDayItems(QXmlStreamWriter& writer, const QMap<QString, QString>& items) const
+{
+    QMap<QString, QString>::const_iterator it = items.cbegin();
+    while (it != items.cend()) {
+        writer.writeTextElement(it.key(), it.value());
+        ++it;
+    }
 }
 
 QString
@@ -104,16 +130,14 @@ TodoListSerializer::readTodoList(QXmlStreamReader& reader) const
 QJsonValue
 TodoListSerializer::readDay(QXmlStreamReader& reader) const
 {
+    const auto& supportedTags = tagsFactory.getSupportedTags();
+    const auto tags = supportedTags.values();
+
     QJsonObject result;
     while (reader.readNextStartElement()) {
-        if (reader.name() == "index") {
-            result.insert("index", reader.readElementText());
-        } else if (reader.name() == "state") {
-            result.insert("state", reader.readElementText());
-        } else if (reader.name() == "expectations") {
-            result.insert("expectations", reader.readElementText());
-        } else if (reader.name() == "reality") {
-            result.insert("reality", reader.readElementText());
+        QString tagName = reader.name().toString();
+        if (tags.contains(tagName.toUtf8())) {
+            result.insert(tagName.toUtf8(), reader.readElementText());
         } else {
             reader.raiseError(QObject::tr("Incorrect file"));
         }

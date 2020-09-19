@@ -219,9 +219,9 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/TodoListSerializer.cpp" line="82"/>
-        <location filename="../src/TodoListSerializer.cpp" line="97"/>
-        <location filename="../src/TodoListSerializer.cpp" line="118"/>
+        <location filename="../src/TodoListSerializer.cpp" line="109"/>
+        <location filename="../src/TodoListSerializer.cpp" line="124"/>
+        <location filename="../src/TodoListSerializer.cpp" line="143"/>
         <source>Incorrect file</source>
         <translation>Ошибка в формате файла</translation>
     </message>
