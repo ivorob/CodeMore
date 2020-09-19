@@ -169,45 +169,45 @@
 <context>
     <name>PomodoroTimer</name>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="33"/>
+        <location filename="../qml/PomodoroTimer.qml" line="36"/>
         <source>Pomodoro</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="40"/>
+        <location filename="../qml/PomodoroTimer.qml" line="43"/>
         <source>Time until break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="61"/>
-        <location filename="../js/PomodoroTimer.js" line="44"/>
-        <location filename="../js/PomodoroTimer.js" line="83"/>
+        <location filename="../qml/PomodoroTimer.qml" line="64"/>
+        <location filename="../js/PomodoroTimer.js" line="46"/>
+        <location filename="../js/PomodoroTimer.js" line="85"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="105"/>
+        <location filename="../qml/PomodoroTimer.qml" line="108"/>
         <source>TODAY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PomodoroTimer.qml" line="113"/>
+        <location filename="../qml/PomodoroTimer.qml" line="116"/>
         <source>Pomodoros</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="55"/>
+        <location filename="../js/PomodoroTimer.js" line="57"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="68"/>
+        <location filename="../js/PomodoroTimer.js" line="70"/>
         <source>Break</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../js/PomodoroTimer.js" line="124"/>
-        <location filename="../js/PomodoroTimer.js" line="144"/>
+        <location filename="../js/PomodoroTimer.js" line="126"/>
+        <location filename="../js/PomodoroTimer.js" line="143"/>
         <source>Day #</source>
         <translation type="unfinished">Día #</translation>
     </message>
