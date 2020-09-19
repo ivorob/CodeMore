@@ -109,23 +109,21 @@ LocalizationDispatcher::retranslate()
     QCoreApplication::removeTranslator(this->translator);
     QCoreApplication::removeTranslator(this->systemTranslator);
 
-    if (this->currentLanguage != "English") {
-        QLocale locale(this->languages.value(this->currentLanguage));
+    QLocale locale(this->languages.value(this->currentLanguage));
 
-        QString prefix = "CodeMore";
-        QString translationDirectory = QCoreApplication::applicationDirPath() + "/translations";
-        if (translator->load(locale, prefix, "_", translationDirectory))
-        {
-            QCoreApplication::installTranslator(translator);
+    QString prefix = "CodeMore";
+    QString translationDirectory = QCoreApplication::applicationDirPath() + "/translations";
+    if (translator->load(locale, prefix, "_", translationDirectory))
+    {
+        QCoreApplication::installTranslator(translator);
 
-            if (systemTranslator->load(locale, "qt", "_", translationDirectory)) {
-                QCoreApplication::installTranslator(systemTranslator);
-            }
-
-            fillCurrentTranslation();
-        } else {
-            qDebug() << "Cannot load translation";
+        if (systemTranslator->load(locale, "qt", "_", translationDirectory)) {
+            QCoreApplication::installTranslator(systemTranslator);
         }
+
+        fillCurrentTranslation();
+    } else {
+        qDebug() << "Cannot load translation";
     }
 
     engine->retranslate();

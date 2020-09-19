@@ -175,45 +175,45 @@
     <message>
         <location filename="../qml/PomodoroTimer.qml" line="36"/>
         <source>Pomodoro</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomodoro</translation>
     </message>
     <message>
         <location filename="../qml/PomodoroTimer.qml" line="43"/>
         <source>Time until break</source>
-        <translation type="unfinished"></translation>
+        <translation>Время до перерыва</translation>
     </message>
     <message>
         <location filename="../qml/PomodoroTimer.qml" line="64"/>
         <location filename="../js/PomodoroTimer.js" line="46"/>
         <location filename="../js/PomodoroTimer.js" line="85"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Старт</translation>
     </message>
     <message>
         <location filename="../qml/PomodoroTimer.qml" line="108"/>
         <source>TODAY</source>
-        <translation type="unfinished"></translation>
+        <translation>СЕГОДНЯ</translation>
     </message>
     <message>
         <location filename="../qml/PomodoroTimer.qml" line="116"/>
         <source>Pomodoros</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomodoros</translation>
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="57"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Стоп</translation>
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="70"/>
         <source>Break</source>
-        <translation type="unfinished"></translation>
+        <translation>Отдых</translation>
     </message>
     <message>
         <location filename="../js/PomodoroTimer.js" line="126"/>
         <location filename="../js/PomodoroTimer.js" line="143"/>
         <source>Day #</source>
-        <translation type="unfinished">День #</translation>
+        <translation>День #</translation>
     </message>
 </context>
 <context>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../qml/TaskListExpectations.qml" line="149"/>
         <source>m</source>
-        <translation type="unfinished"></translation>
+        <translation>м</translation>
     </message>
     <message>
         <location filename="../qml/TaskListExpectations.qml" line="177"/>
