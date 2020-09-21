@@ -12,21 +12,28 @@ MenuBar {
     Menu {
         title: qsTr("&File")
 
-        Action { 
+        palette {
+            window: themeDispatcher.getStringProperty("fileMenu", "color")
+            dark: themeDispatcher.getStringProperty("fileMenu", "border")
+            light: themeDispatcher.getStringProperty("fileMenu", "selection.color")
+            windowText: themeDispatcher.getStringProperty("fileMenu", "textColor")
+        }
+
+        Action {
             text: qsTr("&New")
             shortcut: "Ctrl+N"
 
             onTriggered: root.newTodoList()
         }
 
-        Action { 
+        Action {
             text: qsTr("&Open...")
             shortcut: "Ctrl+O"
-        
+
             onTriggered: root.openFile()
         }
 
-        Action { 
+        Action {
             text: qsTr("&Save")
             shortcut: "Ctrl+S"
 
@@ -39,7 +46,7 @@ MenuBar {
             }
         }
 
-        Action { 
+        Action {
             text: qsTr("Save &As...")
             shortcut: "Ctrl+Shift+S"
 
@@ -48,8 +55,8 @@ MenuBar {
             }
         }
         MenuSeparator {}
-        Action { 
-            text: qsTr("&Quit") 
+        Action {
+            text: qsTr("&Quit")
 
             onTriggered: root.close()
         }
@@ -57,6 +64,13 @@ MenuBar {
 
     Menu {
         title: qsTr("&Language")
+
+        palette {
+            window: themeDispatcher.getStringProperty("languageMenu", "color")
+            dark: themeDispatcher.getStringProperty("languageMenu", "border")
+            light: themeDispatcher.getStringProperty("languageMenu", "selection.color")
+            windowText: themeDispatcher.getStringProperty("languageMenu", "textColor")
+        }
 
         Repeater {
             id: languagesMenu
@@ -89,7 +103,14 @@ MenuBar {
     Menu {
         title: qsTr("&Help")
 
-        Action { 
+        palette {
+            window: themeDispatcher.getStringProperty("helpMenu", "color")
+            dark: themeDispatcher.getStringProperty("helpMenu", "border")
+            light: themeDispatcher.getStringProperty("helpMenu", "selection.color")
+            windowText: themeDispatcher.getStringProperty("helpMenu", "textColor")
+        }
+
+        Action {
             text: qsTr("&About")
             shortcut: "F1"
 

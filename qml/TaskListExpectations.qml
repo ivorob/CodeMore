@@ -18,6 +18,8 @@ Rectangle {
     signal approve(var task)
     signal fail(var task)
 
+    color: themeDispatcher.getStringProperty("expectations", "color")
+
     function editTaskDialog(id, item) {
         var dialog = Dialogs.openEditTaskDialog(root, item.task, item.description)
         if (dialog) {
@@ -97,6 +99,7 @@ Rectangle {
 
             border.width: 1
             border.color: "#ccc"
+            color: themeDispatcher.getStringProperty("expectations", "workzone.color")
 
             ListView {
                 id: taskListView
@@ -109,7 +112,9 @@ Rectangle {
                 delegate: Rectangle {
                     height: 20
                     width: parent.width
-                    color: ListView.isCurrentItem ? "lightsteelblue" : root.color
+                    color: ListView.isCurrentItem
+                                ? themeDispatcher.getStringProperty("expectations", "selection.color")
+                                : themeDispatcher.getStringProperty("expectations", "workzone.color")
 
                     RowLayout {
                         anchors.fill: parent
@@ -173,10 +178,17 @@ Rectangle {
                         Menu {
                             id: contextMenu
 
+                            palette {
+                                window: themeDispatcher.getStringProperty("expectations", "contextMenu.color")
+                                dark: themeDispatcher.getStringProperty("expectations", "contextMenu.border")
+                                light: themeDispatcher.getStringProperty("expectations", "contextMenu.selection.color")
+                                windowText: themeDispatcher.getStringProperty("expectations", "contextMenu.textColor")
+                            }
+
                             MenuItem {
                                 text: qsTr("Start timer")
-
                                 icon.source: "qrc:/img/pomodoro_timer.svg"
+
                                 onTriggered: {
                                     pomodoroTimerButton.enabled = true
                                     PomodoroTimerHelper.openPomodoroTimer()

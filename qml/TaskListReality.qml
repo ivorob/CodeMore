@@ -8,6 +8,8 @@ Rectangle {
     property var title;
     property var dataModel;
 
+    color: themeDispatcher.getStringProperty("reality", "color")
+
     signal newIndex(int index)
 
     function editTaskDialog(id, item) {
@@ -72,6 +74,8 @@ Rectangle {
             border.width: 1
             border.color: "#ccc"
 
+            color: themeDispatcher.getStringProperty("reality", "workzone.color")
+
             ListView {
                 id: taskListView
 
@@ -83,7 +87,9 @@ Rectangle {
                 delegate: Rectangle {
                     height: 20
                     width: parent.width
-                    color: ListView.isCurrentItem ? "lightsteelblue" : root.color
+                    color: ListView.isCurrentItem
+                                ? themeDispatcher.getStringProperty("reality", "selection.color")
+                                : themeDispatcher.getStringProperty("reality", "workzone.color")
 
                     Text {
                         anchors.left: parent.left
@@ -114,6 +120,13 @@ Rectangle {
 
                         Menu {
                             id: contextMenu
+
+                            palette {
+                                window: themeDispatcher.getStringProperty("reality", "contextMenu.color")
+                                dark: themeDispatcher.getStringProperty("reality", "contextMenu.border")
+                                light: themeDispatcher.getStringProperty("reality", "contextMenu.selection.color")
+                                windowText: themeDispatcher.getStringProperty("reality", "contextMenu.textColor")
+                            }
 
                             MenuItem {
                                 text: qsTr("Edit")

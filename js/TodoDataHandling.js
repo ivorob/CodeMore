@@ -57,7 +57,7 @@ function nextDay(viewId, newDay)
         viewId.currentItem.color = root.color
         viewId.currentIndex = newDay
 
-        viewId.currentItem.color = "lightsteelblue"
+        viewId.currentItem.color = themeDispatcher.getStringProperty("todoListView", "selection.color")
 
         InternalDataController.newChanges()
     }

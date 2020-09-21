@@ -8,15 +8,18 @@ SET (SOURCES
         ${SRC_DIR}/tests.cpp
         ${SRC_DIR}/TodoListSerializerTests.cpp
         ${SRC_DIR}/SettingsTests.cpp
+        ${SRC_DIR}/ThemeDispatcherTests.cpp
         ${MAIN_SRC_DIR}/TodoListSerializer.cpp
         ${MAIN_SRC_DIR}/TodoListTagsFactory.cpp
         ${MAIN_SRC_DIR}/Settings.cpp
+        ${MAIN_SRC_DIR}/ThemeDispatcher.cpp
     )
 
 SET (HEADERS
         ${MAIN_SRC_DIR}/TodoListSerializer.h
         ${MAIN_SRC_DIR}/TodoListTagsFactory.h
         ${MAIN_SRC_DIR}/Settings.h
+        ${MAIN_SRC_DIR}/ThemeDispatcher.h
     )
 
 ADD_EXECUTABLE (tests ${SOURCES})
