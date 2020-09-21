@@ -13,7 +13,6 @@
         <file>qml/PomodoroTimer.qml</file>
         <file>qml/CustomButton.qml</file>
         <file>qml/CustomRoundButton.qml</file>
-        <file>qml/StyledMenuItem.qml</file>
 
         <file>img/favicon.png</file>
         <file>img/logo.png</file>
