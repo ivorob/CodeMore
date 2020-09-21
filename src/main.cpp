@@ -8,6 +8,7 @@
 
 #include "BusinessLogic.h"
 #include "LocalizationDispatcher.h"
+#include "ThemeDispatcher.h"
 #include "Settings.h"
 
 int main(int argc, char *argv[])
@@ -31,6 +32,9 @@ int main(int argc, char *argv[])
 
     BusinessLogic businessLogic;
     engine.rootContext()->setContextProperty("businessLogic", &businessLogic);
+
+    ThemeDispatcher themeDispatcher;
+    engine.rootContext()->setContextProperty("themeDispatcher", &themeDispatcher);
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/MainWindow.qml")));
     return app.exec();

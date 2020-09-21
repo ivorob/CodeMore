@@ -28,6 +28,7 @@ SET (SOURCES
         ${SRC_DIR}/TodoListTagsFactory.cpp
         ${SRC_DIR}/LocalizationDispatcher.cpp
         ${SRC_DIR}/Settings.cpp
+        ${SRC_DIR}/ThemeDispatcher.cpp
     )
 
 SET (HEADERS
@@ -36,6 +37,7 @@ SET (HEADERS
         ${SRC_DIR}/TodoListTagsFactory.h
         ${SRC_DIR}/LocalizationDispatcher.h
         ${SRC_DIR}/Settings.h
+        ${SRC_DIR}/ThemeDispatcher.h
     )
 
 FILE (GLOB QML_FILES ${CMAKE_CURRENT_SOURCE_DIR}/qml/*.qml)
@@ -63,7 +65,7 @@ ENDIF ()
 ADD_SUBDIRECTORY (third_party)
 
 IF (WIN32)
-    ADD_EXECUTABLE (CodeMore WIN32 ${SOURCES} ${HEADERS} ${RESOURCES} ${QM})
+    ADD_EXECUTABLE (CodeMore ${SOURCES} ${HEADERS} ${RESOURCES} ${QM})
 ELSEIF (APPLE)
     ADD_EXECUTABLE (CodeMore MACOSX_BUNDLE ${SOURCES} ${HEADERS} ${RESOURCES} ${QM})
     SET_TARGET_PROPERTIES (CodeMore PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Info.plist)

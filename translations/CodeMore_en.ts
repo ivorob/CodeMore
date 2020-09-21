@@ -62,42 +62,42 @@
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="16"/>
+        <location filename="../qml/MainMenu.qml" line="23"/>
         <source>&amp;New</source>
         <translation>&amp;New</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="23"/>
+        <location filename="../qml/MainMenu.qml" line="30"/>
         <source>&amp;Open...</source>
         <translation>&amp;Open...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="30"/>
+        <location filename="../qml/MainMenu.qml" line="37"/>
         <source>&amp;Save</source>
         <translation>&amp;Save</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="43"/>
+        <location filename="../qml/MainMenu.qml" line="50"/>
         <source>Save &amp;As...</source>
         <translation>Save &amp;As...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="52"/>
+        <location filename="../qml/MainMenu.qml" line="59"/>
         <source>&amp;Quit</source>
         <translation>&amp;Quit</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="59"/>
+        <location filename="../qml/MainMenu.qml" line="66"/>
         <source>&amp;Language</source>
         <translation>&amp;Language</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="90"/>
+        <location filename="../qml/MainMenu.qml" line="104"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="93"/>
+        <location filename="../qml/MainMenu.qml" line="114"/>
         <source>&amp;About</source>
         <translation>&amp;About</translation>
     </message>
@@ -105,27 +105,27 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../qml/MainWindow.qml" line="15"/>
+        <location filename="../qml/MainWindow.qml" line="16"/>
         <source>CodeMore</source>
         <translation>CodeMore</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="93"/>
+        <location filename="../qml/MainWindow.qml" line="96"/>
         <source>Day #</source>
         <translation>Day #</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="162"/>
+        <location filename="../qml/MainWindow.qml" line="165"/>
         <source>Expectations</source>
         <translation>Expectations</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="177"/>
+        <location filename="../qml/MainWindow.qml" line="180"/>
         <source>Reality</source>
         <translation>Reality</translation>
     </message>
     <message>
-        <location filename="../qml/MainWindow.qml" line="189"/>
+        <location filename="../qml/MainWindow.qml" line="192"/>
         <source>Next day</source>
         <translation>Next day</translation>
     </message>
@@ -255,42 +255,42 @@
         <translation type="obsolete">Day #</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="149"/>
+        <location filename="../qml/TaskListExpectations.qml" line="154"/>
         <source>m</source>
         <translation>m</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="177"/>
+        <location filename="../qml/TaskListExpectations.qml" line="189"/>
         <source>Start timer</source>
         <translation>Start timer</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="187"/>
+        <location filename="../qml/TaskListExpectations.qml" line="199"/>
         <source>Approve</source>
         <translation>Approve</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="199"/>
+        <location filename="../qml/TaskListExpectations.qml" line="211"/>
         <source>Fail</source>
         <translation>Fail</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="211"/>
+        <location filename="../qml/TaskListExpectations.qml" line="223"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="223"/>
+        <location filename="../qml/TaskListExpectations.qml" line="235"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="230"/>
+        <location filename="../qml/TaskListExpectations.qml" line="242"/>
         <source>Copy: </source>
         <translation>Copy: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListExpectations.qml" line="243"/>
+        <location filename="../qml/TaskListExpectations.qml" line="255"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>
@@ -298,22 +298,22 @@
 <context>
     <name>TaskListReality</name>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="119"/>
+        <location filename="../qml/TaskListReality.qml" line="132"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="131"/>
+        <location filename="../qml/TaskListReality.qml" line="144"/>
         <source>Copy</source>
         <translation>Copy</translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="138"/>
+        <location filename="../qml/TaskListReality.qml" line="151"/>
         <source>Copy: </source>
         <translation>Copy: </translation>
     </message>
     <message>
-        <location filename="../qml/TaskListReality.qml" line="149"/>
+        <location filename="../qml/TaskListReality.qml" line="162"/>
         <source>Delete</source>
         <translation>Delete</translation>
     </message>

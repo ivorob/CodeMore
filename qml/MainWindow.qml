@@ -11,6 +11,7 @@ ApplicationWindow {
     id: root
     width: 800
     height: 640
+    color: themeDispatcher.getStringProperty("root", "color")
     title: {
         var result = qsTr("CodeMore")
 
@@ -39,6 +40,7 @@ ApplicationWindow {
 
     Rectangle {
         anchors.fill: parent
+        color: root.color
 
         GridLayout {
             anchors.fill: parent
@@ -52,7 +54,8 @@ ApplicationWindow {
                     id: todoListItem
                     height: 40
                     width: parent.width
-                    color: todoListView.currentIndex == index ? "lightsteelblue" : root.color
+                    color: todoListView.currentIndex == index ?
+                                themeDispatcher.getStringProperty("todoListView", "selection.color") : root.color
 
                     Rectangle {
                         width: 1
@@ -69,7 +72,7 @@ ApplicationWindow {
                         hoverEnabled: true
 
                         onEntered: {
-                            todoListItem.color = "lightsteelblue";
+                            todoListItem.color = themeDispatcher.getStringProperty("todoListView", "selection.color");
                         }
 
                         onExited: {
@@ -86,7 +89,7 @@ ApplicationWindow {
                             anchors.verticalCenter: parent.verticalCenter
                             anchors.fill: parent
 
-                            Text { 
+                            Text {
                                 Layout.leftMargin: 5
                                 Layout.fillWidth: true
 
@@ -123,7 +126,7 @@ ApplicationWindow {
                 flickableDirection: Flickable.VerticalFlick
                 boundsBehavior: Flickable.StopAtBounds
                 clip: true
-                
+
                 model: TodoListModel {}
                 delegate: todoListDelegate
                 focus: true
