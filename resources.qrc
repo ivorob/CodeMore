@@ -35,5 +35,7 @@
         <file>js/FileUtils.js</file>
         <file>js/Dialogs.js</file>
         <file>js/PomodoroTimer.js</file>
+
+        <file>themes/Default.theme</file>
     </qresource>
 </RCC>
