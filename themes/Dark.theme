@@ -1,0 +1,71 @@
+{
+    "name" : "Default",
+    "style" : {
+        "todoListView" : {
+            "selection" : {
+                "color" : "lightgray"
+            }
+        },
+        "root" : {
+            "color" : "lightgray"
+        },
+        "expectations" : {
+            "color" : "lightgray",
+            "selection" : {
+                "color" : "lightsteelblue"
+            },
+            "workzone" : {
+                "color" : "lightgray"
+            },
+            "contextMenu" : {
+                "color" : "lightgray",
+                "border" : "white",
+                "selection" : {
+                    "color" : "#F5F5F5"
+                },
+                "textColor" : "white"
+            }
+        },
+        "reality" : {
+            "color" : "lightgray",
+            "selection" : {
+                "color" : "lightsteelblue"
+            },
+            "workzone" : {
+                "color" : "lightgray"
+            },
+            "contextMenu" : {
+                "color" : "lightgray",
+                "border" : "white",
+                "selection" : {
+                    "color" : "#F5F5F5"
+                },
+                "textColor" : "white"
+            }
+        },
+        "fileMenu" : {
+            "color" : "lightgray",
+            "border" : "white",
+            "selection" : {
+                "color" : "#F5F5F5"
+            },
+            "textColor" : "white"
+        },
+        "languageMenu" : {
+            "color" : "lightgray",
+            "border" : "white",
+            "selection" : {
+                "color" : "#F5F5F5"
+            },
+            "textColor" : "white"
+        },
+        "helpMenu" : {
+            "color" : "lightgray",
+            "border" : "white",
+            "selection" : {
+                "color" : "#F5F5F5"
+            },
+            "textColor" : "white"
+        }
+    }
+}
