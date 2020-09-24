@@ -90,6 +90,13 @@ ADD_CUSTOM_COMMAND (TARGET CodeMore
         COMMAND ${CMAKE_COMMAND} -E remove ${CMAKE_BINARY_DIR}/CodeMore_es.qm
     )
 
+# themes
+ADD_CUSTOM_COMMAND (TARGET CodeMore
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E make_directory $<TARGET_FILE_DIR:CodeMore>/themes
+        COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/themes/Dark.theme $<TARGET_FILE_DIR:CodeMore>/themes/
+    )
+
 ADD_CUSTOM_COMMAND (TARGET CodeMore
         PRE_BUILD
         COMMAND lupdate ${QML_FILES} ${SOURCES} ${JS_FILES} -ts ${CMAKE_CURRENT_SOURCE_DIR}/translations/CodeMore_en.ts
