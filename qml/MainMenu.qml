@@ -101,6 +101,45 @@ MenuBar {
     }
 
     Menu {
+        title: qsTr("&Themes")
+
+        palette {
+            window: themeDispatcher.getStringProperty("themesMenu", "color")
+            dark: themeDispatcher.getStringProperty("themesMenu", "border")
+            light: themeDispatcher.getStringProperty("themesMenu", "selection.color")
+            windowText: themeDispatcher.getStringProperty("themesMenu", "textColor")
+        }
+
+        Repeater {
+            id: themesMenu
+            model: businessLogic.getThemes()
+
+            MenuItem {
+                checkable: true
+                checked: modelData == themeDispatcher.getThemeName()
+
+                text: modelData
+
+                onTriggered: {
+                    var currentTheme = themeDispatcher.getThemeName()
+                    for (var i = 0; i < themesMenu.model.length; ++i) {
+                        var themeItem = themesMenu.itemAt(i)
+                        if (themeItem) {
+                            themeItem.checked = themeItem.text == modelData
+
+                            if (themeItem.checked && themeItem.text != currentTheme) {
+                                if (!businessLogic.setTheme(modelData)) {
+                                    console.log("Cannot load theme: " + modelData)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    Menu {
         title: qsTr("&Help")
 
         palette {

@@ -1,5 +1,5 @@
 {
-    "name" : "Default",
+    "name" : "Dark",
     "style" : {
         "todoListView" : {
             "selection" : {
@@ -52,6 +52,14 @@
             "textColor" : "white"
         },
         "languageMenu" : {
+            "color" : "lightgray",
+            "border" : "white",
+            "selection" : {
+                "color" : "#F5F5F5"
+            },
+            "textColor" : "white"
+        },
+        "themesMenu" : {
             "color" : "lightgray",
             "border" : "white",
             "selection" : {

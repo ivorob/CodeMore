@@ -59,6 +59,14 @@
             },
             "textColor" : "black"
         },
+        "themesMenu" : {
+            "color" : "white",
+            "border" : "black",
+            "selection" : {
+                "color" : "#F5F5F5"
+            },
+            "textColor" : "black"
+        },
         "helpMenu" : {
             "color" : "white",
             "border" : "black",

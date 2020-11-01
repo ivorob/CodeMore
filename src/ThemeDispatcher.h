@@ -12,10 +12,9 @@ public:
     ThemeDispatcher(QObject *parent = nullptr);
 
     Q_INVOKABLE QString getStringProperty(const QString& ownerId, const QString& name) const;
+    Q_INVOKABLE QString getThemeName() const;
 
     bool loadTheme(QIODevice *device);
-
-    QString getThemeName() const;
     void setThemeName(const QString& name);
 private:
     using ItemProperties = QMap<QString, QString>;
