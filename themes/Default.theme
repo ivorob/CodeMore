@@ -3,7 +3,7 @@
     "style" : {
         "todoListView" : {
             "selection" : {
-                "color" : "white"
+                "color" : "lightsteelblue"
             }
         },
         "root" : {
