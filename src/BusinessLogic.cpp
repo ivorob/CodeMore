@@ -4,13 +4,16 @@
 #include <QFile>
 #include <QUrl>
 #include <QUuid>
+#include <QDirIterator>
 
 #include "BusinessLogic.h"
 #include "TodoListSerializer.h"
 
 BusinessLogic::BusinessLogic(QObject *parent)
-    : QObject(parent)
+    : QObject(parent),
+      themeDispatcher(new ThemeDispatcher)
 {
+    initThemes();
 }
 
 void
@@ -47,4 +50,52 @@ QString
 BusinessLogic::generateGUID() const
 {
     return QUuid::createUuid().toString();
+}
+
+QStringList
+BusinessLogic::getThemes() const
+{
+    return this->themes;
+}
+
+bool
+BusinessLogic::setTheme(const QString& theme)
+{
+    if (themeDispatcher) {
+        QString path;
+        if (theme == "Default") {
+            path = ":/themes/";
+        } else {
+            path = QCoreApplication::applicationDirPath() + "/themes/";
+        }
+
+        QFile themeFile(path + theme + ".theme");
+        if (themeFile.open(QIODevice::ReadOnly | QIODevice::Text | QIODevice::ExistingOnly)) {
+            return themeDispatcher->loadTheme(&themeFile);
+        }
+    }
+
+    return false;
+}
+
+void
+BusinessLogic::initThemes()
+{
+    this->themes = QStringList {"Default"};
+
+    QDirIterator it(
+            QCoreApplication::applicationDirPath() + "/themes",
+            QStringList() << "*.theme");
+    while (it.hasNext()) {
+        it.next();
+
+        const auto& fileInfo = it.fileInfo();
+        this->themes << fileInfo.baseName();
+    }
+}
+
+ThemeDispatcher *
+BusinessLogic::getThemeDispatcher()
+{
+    return this->themeDispatcher.get();
 }

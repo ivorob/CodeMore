@@ -93,11 +93,16 @@
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="104"/>
+        <source>&amp;Themes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenu.qml" line="143"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenu.qml" line="114"/>
+        <location filename="../qml/MainMenu.qml" line="153"/>
         <source>&amp;About</source>
         <translation>&amp;About</translation>
     </message>

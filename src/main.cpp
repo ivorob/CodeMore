@@ -32,9 +32,7 @@ int main(int argc, char *argv[])
 
     BusinessLogic businessLogic;
     engine.rootContext()->setContextProperty("businessLogic", &businessLogic);
-
-    ThemeDispatcher themeDispatcher;
-    engine.rootContext()->setContextProperty("themeDispatcher", &themeDispatcher);
+    engine.rootContext()->setContextProperty("themeDispatcher", businessLogic.getThemeDispatcher());
 
     engine.load(QUrl(QStringLiteral("qrc:/qml/MainWindow.qml")));
     return app.exec();
